@@ -46,7 +46,7 @@
         </div>
         <div class="container">
             <div class="card card-login">
-                <h2>Olá de volta!</h2>
+                <h2> Login </h2>
                 <div class="formulario">
                     <div class="campo">
                         <span>E-mail:</span>
@@ -58,6 +58,7 @@
                     </div>
                     <button class="botao" onclick="entrar()">Entrar</button>
                 </div>
+            
 
                 <div id="div_aguardar" class="loading-div">
                     <img src="./assets/circle-loading.gif" id="loading-gif">
@@ -69,12 +70,7 @@
     </div>
 
     <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-            <span class="version">v1.0.0</span>
-        </div>
-    </div>
+    
     <!--footer fim-->
 
 </body>
@@ -89,10 +85,13 @@
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
+        var tamanhoEmail = emailVar.length;
+        var indiceArroba = email.indexOF('@');
+        var indicePonto = email.indexOF('.');
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            mensagem_erro.innerHTML = "Ei! Preencha os Campos!";
             finalizarAguardar();
             return false;
         }
@@ -148,6 +147,21 @@
         })
 
         return false;
+   
+      if(tamanhoEmail < 7 ){
+        cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Número de caracteres insuficiente, amado(a)!";
+            finalizarAguardar();
+            return false; 
+      } else if(tamanhoEmail > 45){
+        cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Número de carcateres muito Grande, amado(a)!";
+            finalizarAguardar();
+            return false;
+      }
+   
+   
+   
     }
 
     function sumirMensagem() {

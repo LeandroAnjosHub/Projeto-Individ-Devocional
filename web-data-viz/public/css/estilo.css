@@ -157,8 +157,14 @@ body {
 }
 
 .footer .container {
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
   text-align: center;
+  flex-direction: row;
+}
+
+.footer .container h2{
+  color: #fff;
 }
 
 .footer .container .version {
@@ -183,23 +189,38 @@ body {
 
 .card {
   width: 30%;
-  background-color: #998a88;
+  /* background-color: #998a88; */
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   flex-direction: column;
   height: fit-content;
-  padding: 20px 0;
+  padding: 90px 0;
   margin-top: 20px;
   column-gap: 200px;
-  background-image: url("c:\Users\Windows 10\Downloads\Logo_Projeto_Indiv-removebg-preview.png");
+  background-image: url("luxa.org-opacity-changed-Logo_Projeto_Indiv-removebg-preview.png");
+  background-size: cover;
+  width: 500px;
+  height: 300px;
+}
+
+.cardImage{
+  width: 100px;
+  height: 70px;
 }
 
 .card h2 {
   margin: 0;
   font-size: 30px;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: #000000;
+}
+
+span{
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: #000000;
 }
 
 
@@ -224,7 +245,7 @@ body {
 }
 
 .formulario select {
-  border: 2px solid #32b9cd;
+  border: 2px solid #000000;
   background-color: white;
   color: gray;
   height: 36px;
@@ -279,7 +300,7 @@ body {
 
 .card_erro {
   display: none;
-  background-color: #fff;
+  background-color: #b7b7b7;
   color: black;
   width: 230px;
   position: fixed;
@@ -305,11 +326,13 @@ body {
 }
 
 input {
+  display: flex;
   margin-bottom: 10px;
-  border: 2px solid #32b9cd;
+  border: 6px solid #000000;
   padding: 10px;
   text-align: center;
   border-radius: 10px;
+
 }
 
 .btn {
