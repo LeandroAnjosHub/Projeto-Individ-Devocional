@@ -65,12 +65,12 @@
             <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
           </div>
           <div class="campo">
-            <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
             <span>CPF:</span>
             <input id="cpf_input" type="text" placeholder="Seu Cpf" />
+          </div>
+          <div class="campo">
+            <span>Senha:</span>
+            <input id="senha_input" type="password" placeholder="******" />
           </div>
           <div class="campo">
             <span>Confirmação da Senha:</span>
@@ -119,13 +119,13 @@
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco) <br> ";
+        "Preencha todos os campos, amado(a)! <br> ";
 
       finalizarAguardar();
       return false;
     }  else if(tamanho_nome <= 1){
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML += `Nome inválido! Precisa ter mais que 1 caractere <br> `
+      mensagem_erro.innerHTML += `Coloque um nome de verdade, amadao(a)! <br> `
       
       finalizarAguardar();
       return false;
@@ -143,7 +143,7 @@
       return false;
      } if(confirmacaoSenhaVar != senhaVar){
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML += `Digite a mesma senha inserida anteriormente! <br> `
+      mensagem_erro.innerHTML += `Digite a mesma senha inserida anteriormente, amado(a)! <br> `
 
       finalizarAguardar();
       return false;

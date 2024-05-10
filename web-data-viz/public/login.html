@@ -11,7 +11,7 @@
     <script src="./js/sessao.js"></script>
 
     <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
+    <link rel="icon" href="assets/icon/favicon2.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
@@ -86,9 +86,11 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var tamanhoEmail = emailVar.length;
-        var indiceArroba = email.indexOF('@');
-        var indicePonto = email.indexOF('.');
+        var indiceArroba = emailVar.indexOf('@');
+        var indicePonto = emailVar.indexOf('.');
+        var tamanhoSenha = senhaVar.length;
 
+        console.log(tamanhoEmail);
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Ei! Preencha os Campos!";
@@ -97,7 +99,23 @@
         }
         else {
             setInterval(sumirMensagem, 5000)
-        }
+        }  
+        if(indiceArroba < 0 && indicePonto < 0){
+        mensagem_erro.innerHTML = `Insira um email que contenha @ e .(ponto), amado(a)! <br>`  
+      }
+        if(tamanhoEmail < 7 ){
+        cardErro.style.display = "block"
+            mensagem_erro.innerHTML += "Número de carcateres insuficiente no email!<br>";
+            finalizarAguardar();
+            return false; 
+      } else if(tamanhoEmail > 45){
+        cardErro.style.display = "block"
+            mensagem_erro.innerHTML += "Número de carcateres muito grande no email!";
+            finalizarAguardar();
+            return false;
+      } else if(tamanhoSenha <= 6){
+        mensagem_erro.innerHTML += `Sua senha precisa ter pelo menos 7 caracteres, amado(a)!`
+      }
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -148,17 +166,7 @@
 
         return false;
    
-      if(tamanhoEmail < 7 ){
-        cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Número de caracteres insuficiente, amado(a)!";
-            finalizarAguardar();
-            return false; 
-      } else if(tamanhoEmail > 45){
-        cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Número de carcateres muito Grande, amado(a)!";
-            finalizarAguardar();
-            return false;
-      }
+     
    
    
    
