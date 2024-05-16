@@ -33,6 +33,17 @@ body {
   justify-content: center;
 }
 
+.dash {
+  width: 80%;
+  position: relative;
+  top: 0;
+  left: 20%;
+  background-color: #161618;
+  height: 100vh;
+  overflow: auto;
+}
+
+
 .dash-right .avisos {
   width: 100%;
   color: rgb(216, 216, 216);
@@ -363,7 +374,7 @@ canvas {
   left: 0;
   z-index: 999;
   height: 100vh;
-  width: 15%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
