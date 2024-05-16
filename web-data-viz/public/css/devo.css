@@ -8,6 +8,8 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+
+
 .devo{
   display: flex;
   /* width:calc(170vh - var(--tamanho-devo) - 2px); */
