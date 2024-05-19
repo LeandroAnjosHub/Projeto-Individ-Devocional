@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotidiano</title>
+    <link rel="stylesheet" href="./../css/leitRapida.css">
+</head>
+<body>
+    <div class="btn-nav-white">
+        <a href="./devo.html">
+            <h3> < Devocionais</h3>
+        </a>
+    </div>
+    <center>
+        <h1 class="fontBr">With God</h1>
+        </center> <br>
+        <center>
+            <h1>Tomando decisões</h1>
+            <p>Entregue o seu caminho ao Senhor; confie nele, <br>
+               e ele agirá; ele deixará claro como a alvorada 
+               que você é justo, e como o sol do meio-dia que você é inocente. <br>
+               Descanse no Senhor e aguarde por ele com paciência; 
+               não se aborreça com o sucesso dos outros nem com aqueles <br>
+               que maquinam o mal. Evite a ira e rejeite a fúria; 
+               não se irrite: isso só leva ao mal. <br> - Salmos 37: 5-8</p>
+        </center>
+        <center>
+            <h1>Contextualização</h1>
+            <p>O livro de Salmos tem sua autoria <br>
+                atribuida a diversos autores (como por
+                exemplo, Davi, Asafe, Filhos de Corá, <br>
+                etc), entretanto, o livro inteiro é muito
+                rico por apresentar passagens que <br>
+                demonstram uma vida de comunhão
+                com Deus em oração e louvor. Uma <br>
+                das coisas que o versículo base
+                dessa devocional pode nos ensinar <br>
+                é exatamente sobre isso: comunhão
+                e relacionamento. Deus nos mostra <br>
+                que uma vida de relacionamento
+                com Ele afasta de nós todo o medo, <br>
+                dúvida e insegurança.</p> <br>
+             <h1>Reflexão</h1>
+             <p>Às vezes nos sentimos em situações <br>
+                difíceis e não sabemos qual decisão
+                tomar. Pra onde tenho que ir? O que <br>
+                eu tenho que escolher? Isso acontece
+                muitas vezes porque temos medo <br>
+                do que pode acontecer se tomarmos
+                determinada decisão ou até mesmo <br>
+                ficamos ansiosos ao pensar no que
+                pode acontecer depois. Quando nos <br>
+                sentimos assim, temos que olhar para
+                dentro do nosso coração e perguntar: <br>
+                porque eu quero seguir por esse
+                caminho? A partir do momento que <br>
+                entendemos a motivação de cada
+                caminho que queremos seguir, temos <br>
+                que nos perguntar: isso se alinha com
+                a vontade de Deus para minha vida? <br>
+                A vontade de Deus para muitos pode
+                ser misteriosa, mas, na verdade, Jesus <br>
+                em vida ensinou que é bem simples
+                seguir a vontade do Pai: temos que <br>
+                estar próximos dele. Quando temos
+                um melhor amigo, sabemos o que ele <br>
+                quer, ou se ele gostou de alguma piada
+                solta na rodinha só pelo olhar dele, <br>
+                não é? Com Deus é a mesma coisa:
+                se o conhecermos e formos próximos, <br>
+                saberemos em qual direção seguir.
+                A vontade de Deus é boa perfeita e <br>
+                agradável, Ele quer que sejamos  
+                e principalmente, que vivamos uma vida <br>
+                relevante em Espírito e em Verdade.
+                Dessa forma, fica muito mais fácil <br>
+                tomar decisões, já que temos um Pai
+                que está lado a lado, em cada passo <br>
+                que damos.</p>  
+                <h1>Conclusão</h1>
+                <p>Ao tomarmos decisões tendemos a <br>
+                    querer controlar tudo e confiar apenas
+                    no nosso próprio julgamento, e é por <br>
+                    isso que temos sempre que lembrar de
+                    entregar o caminho para Ele. Reflita: <br>
+                    Como isso se alinha com a vontade de
+                    Deus para minha vida? Ore, fale com <br>
+                    Deus, pergunte e não tenha medo de
+                    tomar alguma decisão! Confia naquele <br>
+                    que te Ama e que está ao seu lado.
+                    Lembre do que Jesus ensinou: ame <br>
+                    aos próximos como a ti mesmo e ame
+                    a Deus sobre todas as coisas. Que <br>
+                    suas decisões girem em torno dessa
+                    verdade!</p>    
+            </center>
+            <center>
+                <div class="anotacoes">
+                   <h1>Anotações</h1>
+                   <input type="text" id="input_anotacoes" placeholder="Faça suas anotações aqui..." class="input-anot">
+                  <button onclick="anotar()">Ler anotação</button> <br> <br> <br>
+                  <div id="div_mensagem" style="color: aliceblue; font-size: larger;"></div>    
+                </div>
+              </center>
+</body>
+</html>
+<script>
+     var anot = [];
+    function anotar(){
+        
+        div_mensagem.innerHTML += ``
+     
+        var anotacao = input_anotacoes.value;
+
+        anot.push(anotacao);
+
+        for (let i = 0; i < anot.length; i++) {
+    
+            div_mensagem.innerHTML = `${anot[i]} <br>`
+        }
+    }
+</script>

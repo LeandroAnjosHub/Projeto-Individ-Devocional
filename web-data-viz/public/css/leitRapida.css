@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #2d2d2d;
+}
+
+.fontBr{
+    font-family: breath;
+    color: #ffffff;
+    width: fit-content;
+    font-weight: 500;
+  }
+
+  h1{
+    color: #8ba693;
+  }
+
+  p{
+    color: aliceblue;
+    font-size: 20px;
+  }
+  h3{
+    color: aliceblue;
+  }
+
+  .anotacoes input{
+    background-color: #2d2d2d;
+    border-radius: 30px;
+    width: 300px;
+    height: 30px;
+    color: #ffffff;
+  }
+
+  .anotacoes button{
+    border-radius: 30px;
+    width: 200px;
+    height: 30px;
+    background-color: #8ba693;
+    font-size: medium;
+  }
+
+ .anotacoes{
+    height: 300px;
+    width: 500px;
+ }

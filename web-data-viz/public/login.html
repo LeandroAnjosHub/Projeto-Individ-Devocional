@@ -114,8 +114,10 @@
             finalizarAguardar();
             return false;
       } else if(tamanhoSenha <= 6){
+        cardErro.style.display = "block"
         mensagem_erro.innerHTML += `Sua senha precisa ter pelo menos 7 caracteres, amado(a)!`
         finalizarAguardar();
+        return false;
       }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -146,7 +148,7 @@
                     sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.htm./";
+                        window.location = "./dashboard/devo.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

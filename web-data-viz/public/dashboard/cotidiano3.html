@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotidiano</title>
+    <link rel="stylesheet" href="./../css/leitRapida.css">
+</head>
+<body>
+    <div class="btn-nav-white">
+        <a href="./devo.html">
+            <h3> < Devocionais</h3>
+        </a>
+    </div>
+    <center>
+        <h1 class="fontBr">With God</h1>
+        </center> <br>
+        <center>
+            <h1>Por que estou passando por isso?</h1>
+            <p> Mas tenho contado com a ajuda de Deus até o dia de hoje, <br>
+                e, por este motivo, estou aqui e dou testemunho tanto a 
+                gente simples como a gente importante. Não estou dizendo <br>
+                nada além do que os profetas e Moisés disseram que haveria 
+                de acontecer; que o Cristo haveria de sofrer e, sendo o primeiro <br> 
+                a ressuscitar dentre os mortos, proclamaria luz para o seu próprio 
+                povo e para os gentios”. <br> - Atos 26: 22-23 (Se possível leia do 1 ao 26)</p>
+                <h1>Contextualização</h1>
+                <p>Paulo tem uma história incrível. Ele <br>
+                    perseguia cristãos e era cheio de
+                    ódio em seu coração, até que um dia, <br>
+                    conheceu o Amor de Jesus de verdade
+                    (Atos 9) e se apaixonou. Depois disso, <br>
+                    fez-se disposto a espalhar aquilo que
+                    ele mais amava para outras pessoas. <br>
+                    Na passagem base dessa devocional,
+                    Paulo está se defendendo diante de <br>
+                    um tribunal que quer atribuir a ele
+                    uma pena de morte já que autoridades <br>
+                    da época se incomodavam com a
+                    pregação da palavra de Cristo.</p> <br>
+                    <h1>Reflexão</h1>
+                    <p>Ao meditarmos nesse capítulo <br>
+                        podemos perceber que a vida de
+                        Paulo não foi nada fácil. Ele passou <br>
+                        por muita coisa muito ruim e difícil, e
+                        muitos, no lugar dele, teriam desistido. <br>
+                        É muito mais fácil abandonarmos algo
+                        para pararmos de ser confrontados <br>
+                        por aquilo e, então, vivermos uma
+                        vida mais confortável. É muito mais <br>
+                        fácil não fazermos quando estamos
+                        cobertos do medo de errar ou falhar. <br>
+                        É muito mais fácil desistir. Porém,
+                        Paulo sabia que o amor dele por pregar <br>
+                        o evangelho era muito maior do que
+                        qualquer aflição que ele iria passar e <br>
+                        mais do que isso: a felicidade de viver
+                        o seu propósito era muito maior do <br>
+                        que qualquer tristeza momentânea.
+                        Além disso, sua história foi a prova <br>
+                        em vida de como o amor de Jesus
+                        salva e é transformador. Muitas vezes, <br>
+                        nos pegamos pensando: Por que eu
+                        estou passando por isso? Por que isso <br>
+                        só acontece comigo? Por que não é
+                        mais fácil? Bom, essas são perguntas <br>
+                        que nunca poderemos responder
+                        mesmo. Porém, assim como Paulo, <br>
+                        podemos ser gratos ao cumprirmos
+                        o nosso chamado. E mais: podemos <br>
+                        usar nossas experiências de vida para <br>
+                        ajudar outras pessoas, assim como
+                        ele fez! Pode ser difícil e às vezes <br>
+                        podemos nos sentir assustados, mas
+                        temos um Pai que segura nossa mão <br>
+                        e enfrenta o caminho difícil junto da
+                        gente.</p>
+                        <h1>Conclusão</h1>
+                        <p>Em João 16:33 Jesus fala que o <br>
+                            mundo é muito difícil e que no meio
+                            do caminho vamos encontrar muitos <br>
+                            problemas, mas não podemos nos
+                            abalar por causa disso. Ele, em vida, <br>
+                            mostrou que apesar de todos os
+                            problemas, podemos viver uma vida <br>
+                            feliz cumprindo o nosso chamado
+                            e ajudando aqueles que estão ao <br>
+                            nosso redor. Que tal nos desafiarmos
+                            a tirar dos momentos difíceis forças <br>
+                            para continuar? E se usarmos nossas 
+                            experiências de vida para ajudar <br>
+                            aqueles que estão passando por ele?
+                            Que assim como Paulo, nosso caráter <br>
+                            esteja fundado no Amor de Jesus.</p>
+            </center>
+            <center>
+                <div class="anotacoes">
+                   <h1>Anotações</h1>
+                   <input type="text" id="input_anotacoes" placeholder="Faça suas anotações aqui..." class="input-anot">
+                  <button onclick="anotar()">Ler anotação</button> <br> <br> <br>
+                  <div id="div_mensagem" style="color: aliceblue; font-size: larger;"></div>    
+                </div>
+              </center>
+</body>
+</html>
+<script>
+     var anot = [];
+    function anotar(){
+        
+        div_mensagem.innerHTML += ``
+     
+        var anotacao = input_anotacoes.value;
+
+        anot.push(anotacao);
+
+        for (let i = 0; i < anot.length; i++) {
+    
+            div_mensagem.innerHTML = `${anot[i]} <br>`
+        }
+    }
+</script>

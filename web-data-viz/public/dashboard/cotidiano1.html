@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotidiano</title>
+    <link rel="stylesheet" href="./../css/leitRapida.css">
+</head>
+<body>
+    <div class="btn-nav-white">
+        <a href="./devo.html">
+            <h3> < Devocionais</h3>
+        </a>
+    </div>
+    <center>
+        <h1 class="fontBr">With God</h1>
+        </center> <br>
+        <center>
+            <h1> O que eu cultivo no meu coração?</h1>
+            <p>Acima de tudo, guarde o teu coração, <br>
+                pois dele depende toda a sua vida. <br>
+            - Provérbios 4:23</p> <br>
+        </center>
+        <center>
+            <h1>Contextualização</h1>
+            <p>O livro de provérbios foi escrito por <br>
+                Salomão, um rei considerado um dos 
+                mais sábios e uma das coisas mais <br>
+                importantes na sua história era que 
+                ele sempre pedia sabedoria para Deus: <br>
+                para tomar decisões, aprender coisas 
+                novas e principalmente para entender <br>
+                as coisas que aconteciam em sua vida 
+                e que envolviam os planos de Deus. O <br>
+                livro de provérbios nos ensina muito 
+                sobre o caráter daqueles que querem <br>
+                ser filhos de Deus e como tudo isso nos 
+                conduz à integridade e satisfação.</p> <br>
+               
+                <h1>Reflexão</h1>
+                <p>Já parou para olhar dentro de si e <br>
+                    entender afinal: o que eu cultivo dentro
+                    do meu coração? As vezes, isso pode <br>
+                    parecer muito abstrato, porém é um
+                    tipo de reflexão muito importante. O <br>
+                    verso base da devocional foi escrito
+                    por Salomão, um rei que teve o trono <br>
+                    por 40 anos e, em provérbios, ele
+                    deixou registrada toda a sua sabedoria <br>
+                    adquirida no decorrer dos anos junto
+                    de Deus. Ele foi considerado um dos <br>
+                    reis mais sábios, e em provérbios, ele 
+                    dedica essa sabedoria ao Pai. <br> Ok, já
+                    entendemos que temos que ser sábios, <br>
+                    mas afinal, como? A dica principal do
+                    verso de hoje deixa isso bem claro: <br>
+                    guardando o nosso coração. Ao
+                    guardarmos nosso coração, estamos <br>
+                    preservando quem nós somos em
+                    espírito e em Verdade. É importante <br>
+                    que protejamos nossa mente, emoções
+                    e vontades, já que nem sempre <br>
+                    fazemos aquilo que é o melhor para
+                    nós. Muitas vezes, nos colocamos em <br>
+                    situações de autocobrança, julgamento
+                    e autopunição que deturpam a imagem <br>
+                    que nós temos de nós mesmos, ou seja, 
+                    tiram de nós o valor que Deus <br>
+                    quer que nós enxerguemos. Quando
+                    guardamos nosso coração de coisas <br>
+                    que não têm o caráter puro, amoroso,
+                    bondoso e perfeito do Pai, caminhamos <br>
+                    para a integridade e satisfação pessoal,
+                    afinal nossa vida depende da essência <br>
+                    que carregamos em nós.</p>
+        </center>
+        <center>
+            <h1>Conclusão</h1>
+            <p>O verso de hoje nos ensina sobre como <br>
+                o que colhemos em nossa vida reflete
+                diretamente o que cultivamos em <br>
+                nossos corações. Se desafie a pensar:
+                o que eu tenho cultivado em meu <br>
+                coração? Essas coisas que cultivam,
+                refletem a luz e o Amor que Jesus me <br>
+                ensinou? O que eu preciso mudar, para
+                encher meu coração de coisas boas e, <br>
+                como consequência, ajudar as pessoas
+                próximas a mim a cuidarem do coração <br>
+                delas também? Que você se sinta
+                motivado a abandonar tudo o que está <br>
+                firmado no seu coração que te afasta
+                do Pai.</p> <br>
+        </center>
+        <center>
+          <div class="anotacoes">
+             <h1>Anotações</h1>
+             <input type="text" id="input_anotacoes" placeholder="Faça suas anotações aqui..." class="input-anot">
+            <button onclick="anotar()">Ler anotação</button> <br> <br> <br>
+            <div id="div_mensagem" style="color: aliceblue; font-size: larger;"></div>    
+          </div>
+        </center>
+</body>
+</html>
+<script>
+    var anot = [];
+    function anotar(){
+        
+        div_mensagem.innerHTML += ``
+     
+        var anotacao = input_anotacoes.value;
+
+        anot.push(anotacao);
+
+        for (let i = 0; i < anot.length; i++) {
+    
+            div_mensagem.innerHTML = `${anot[i]} <br>`
+        }
+    }
+</script>
