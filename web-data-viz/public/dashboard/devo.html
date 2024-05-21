@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./../css/estilo.css" />
 </head>
 
-<body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
+<div onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
 
     <div class="janela">
 
@@ -48,8 +48,8 @@
         </div>
     </div>
 
-    <div class="dash">
-        <div class="area-parametros-emocoes">
+    <div class="dash"> 
+        <div class="area-parametros-emocoes" id="div_quadro_geral">
             <p class="titulo-legenda">
                 O que você está sentindo ?
             </p>
@@ -66,12 +66,17 @@
                     <img src="https://i.pinimg.com/originals/74/74/9a/74749aebc340339b312a54f304a43f2e.jpg"> <br>
                     <a href="./quadroRaiva.html" class="button" style="color: black; background-color: brown;"> Raiva </a> <br>
                 </div>
-                <div class="item-regua">
+                <div class="item-regua"> 
                     <img src="https://ofuxico.com.br/wp-content/uploads/2023/11/ansiedade-divertida-mente.jpg"> <br>
                     <a href="./quadroAnsi.html" class="button" style="color: black; background-color: chocolate;"> Ansiedade </a> <br>
                 </div>
+                    <div class="item-regua">
+                        <img src="https://lh5.googleusercontent.com/proxy/OnkjB9uOPmvvMgq_5kXKmwBTfl7-c0Ou00w8WWvb40Wp9kJp1EWJoQvExDtaWwTr38hMKlzBOcVLkKtACfNkMcGK9w1_x6WpaMSNjr0cRdhxwYUWBqIboD8_t1jFGWb8ibNj76pj-rI"> <br>
+                        <a href="./quadrooMedo.html" class="button" style="color: black; background-color: purple;">Medo</a> <br>
+                    </div>
+                </div>
             </div>
-        </div> <br>
+         <br>
         <center>
             <h1 style="color: aliceblue;">Introdução</h1>
         </center>
@@ -133,12 +138,17 @@
         </a>
      </div>
     </div>
-    </div>
+</div>  
+
 
 </body>
 
 <script>
-     
+     document.addEventListener('DOMContentLoaded', ()=>{
+        setTimeout(()=>{
+            div_quadro_geral.style.display = 'none';
+        }, 20000);
+     })
    
 
     function exibirAquarios() {

@@ -97,7 +97,7 @@
              <h1>Anotações</h1>
              <input type="text" id="input_anotacoes" placeholder="Faça suas anotações aqui..." class="input-anot">
             <button onclick="anotar()">Ler anotação</button> <br> <br> <br>
-            <div id="div_mensagem" style="color: aliceblue; font-size: larger;"></div>    
+            <div style="color: aliceblue; font-size: larger;"> <span id="span_mensagem"></span></div>    
           </div>
         </center>
 </body>
@@ -106,7 +106,7 @@
     var anot = [];
     function anotar(){
         
-        div_mensagem.innerHTML += ``
+        span_mensagem.innerHTML += ``
      
         var anotacao = input_anotacoes.value;
 
@@ -114,7 +114,7 @@
 
         for (let i = 0; i < anot.length; i++) {
     
-            div_mensagem.innerHTML = `${anot[i]} <br>`
+            span_mensagem.innerHTML = `${anot[i]} <br>`
         }
     }
 </script>
