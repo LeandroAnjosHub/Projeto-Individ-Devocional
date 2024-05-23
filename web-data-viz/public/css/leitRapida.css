@@ -22,6 +22,7 @@ body {
   }
   h3{
     color: aliceblue;
+    text-decoration: none;
   }
 
   .anotacoes input{

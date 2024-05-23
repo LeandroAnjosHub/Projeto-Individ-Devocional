@@ -65,10 +65,6 @@
             <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
           </div>
           <div class="campo">
-            <span>CPF:</span>
-            <input id="cpf_input" type="text" placeholder="Seu Cpf" />
-          </div>
-          <div class="campo">
             <span>Senha:</span>
             <input id="senha_input" type="password" placeholder="******" />
           </div>
@@ -101,20 +97,16 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    // var empresaVar = listaEmpresas.value
-    var cpfVar = cpf_input.value
     var tamanho_nome = nomeVar.length;
     var indice_arroba = emailVar.indexOf('@')
     var indice_ponto = emailVar.indexOf('.')
     var tamanho_senha = senhaVar.length;
-    var tamanho_cpf = cpfVar.length;
 
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      cpfVar == "" 
+      confirmacaoSenhaVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -146,14 +138,7 @@
 
       finalizarAguardar();
       return false;
-     } if(tamanho_cpf < 11){
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML += `CPF Inválido! <br> `
-
-      finalizarAguardar();
-      return false;
-     }
-    
+     } 
      else {
       setInterval(sumirMensagem, 5000);
     }
@@ -169,8 +154,7 @@
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
-        senhaServer: senhaVar,
-        cpfServer: cpfVar
+        senhaServer: senhaVar
       }),
     })
       .then(function (resposta) {
