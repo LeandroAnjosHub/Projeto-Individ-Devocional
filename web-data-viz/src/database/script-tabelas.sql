@@ -8,12 +8,11 @@ CREATE TABLE usuario (
 	nome VARCHAR(45),
 	email VARCHAR(45),
     senha VARCHAR(45),
-    cpf CHAR(12)
 );
 
 CREATE TABLE emocoes (
 	idEmocao INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(30)
+	nome VARCHAR(30)
 );
 
 CREATE TABLE anotacao (
