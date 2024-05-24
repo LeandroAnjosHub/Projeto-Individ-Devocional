@@ -1,0 +1,62 @@
+body {
+    margin: 15px;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(89, 87, 83);
+  }
+
+.bolinha::before{
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.quiz{
+    display: flex;
+    width: 650px;
+    height: 1000%;
+    background-color: #212124;
+    border: 3px solid black;
+    flex-direction: column;
+    border-radius: 14px;
+}
+
+/* .alternativas{
+    /* display: flex;
+    flex-direction:;
+    align-items: center; */
+    p{
+        color: #e7c499a3;
+    }
+
+    h1{
+        color: aliceblue;
+    }
+
+    button{
+        width: 150px;
+        height: 45px;
+        border: 2px solid black;
+        border-radius: 14px;
+    }
+
+    .mensagem{
+        color: aliceblue;
+        font-size: large;
+    }
+
+    span{
+        font-size:x-large;
+        color: aliceblue;
+    }
+
+    input[type="radio"]:checked .bolinha::before{
+        background-color: black; 
+    }
+
+    .quadro{
+        display: flex;
+        width: 80px;
+        height: 100px;
+        background-color: aliceblue;
+        color: #212124;
+    }
