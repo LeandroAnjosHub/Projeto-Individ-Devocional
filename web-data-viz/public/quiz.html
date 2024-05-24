@@ -105,6 +105,7 @@
 </html>
 <script>
     var respCerta = ['Davi', 'Belém', 'Harpa', 'manto', 'Jesus', 'boaTerra', 'Salomão', 'Josué', 'Ped', 'Longanimidade'];
+    var questErrada = [];
 
     function verificar() {
 
@@ -119,7 +120,7 @@
         }
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
-        } else {
+        } else {  
         }
 
         var valores2 = document.getElementsByName('q2');
@@ -198,6 +199,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+           
         }
 
         var valores8 = document.getElementsByName('q8');
@@ -249,7 +251,8 @@
         if (qtdAcertos < 1) {
             div_mensagem.innerHTML = `Aaaah, você não acertou nenhuma questão amado(a)! Mas não tem problema!<br>Jesus te convida a ler mais a Bíblie e conhecer mais dele!`
         } 
-         div_mensaResp.innerHTML = `<b class="quadro"> PKsj`
+         
+        // div_mensaResp.innerHTML = `<b class="quadro"> Resposta errada: ${questErrada.length}`
 
     }
 
