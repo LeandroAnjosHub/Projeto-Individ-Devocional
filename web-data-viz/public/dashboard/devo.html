@@ -145,6 +145,7 @@
 </body>
 
 <script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
      document.addEventListener('DOMContentLoaded', ()=>{
         setTimeout(()=>{
             div_quadro_geral.style.display = 'none';
@@ -171,7 +172,22 @@
     }
 
     function buscarEmocoesporId(){
-         
+        var emocao = '';
+        var emocaoVar = req.body.emocaoServer;
+        var nomeVar = req.body.nomeServer;
+        
+        fetch("/usuarios/acrescentarQ", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emocoaoServer: emocaoVar
+      }),
+    })
 
     }
 

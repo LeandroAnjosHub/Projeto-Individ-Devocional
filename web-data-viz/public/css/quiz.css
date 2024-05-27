@@ -55,8 +55,22 @@ body {
 
     .quadro{
         display: flex;
-        width: 80px;
-        height: 100px;
-        background-color: aliceblue;
-        color: #212124;
+        width: 138px;
+        height: 40px;
+        background-color: #212124;
+        color: aliceblue;
+        border: 2px solid aliceblue;
+        border-radius: 14px;
+        position: relative;
+        left: 10px;
+        top: 0px;
+        cursor: pointer;
+    }
+
+    .quadro p{
+        display: flex;
+        position: relative;
+        left: 10px;
+        color: aliceblue;
+        top: -5px;
     }

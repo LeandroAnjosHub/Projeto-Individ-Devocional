@@ -18,6 +18,7 @@
                 <p><input type="radio" name="q1" value="Tiago"> B) Tiago <br> </p>
                 <p><input type="radio" name="q1" value="Davi" id="resposta"> C) Davi <br> </p>
                 <p><input type="radio" name="q1" value="Marcos"> D) Marcos <br> <br> </p>
+                <div id="quadroResp1"></div>
             </div>
             <div id="quest2" class="alternativas">
                 <span> 2 - Em qual cidade Jesus nasceu?</span>
@@ -25,6 +26,7 @@
                 <p> <input type="radio" name="q2" value="Natal"> B) Natal <br> </p>
                 <p> <input type="radio" name="q2" value="Belém" id="resposta"> C) Belém <br> </p>
                 <p> <input type="radio" name="q2" value="Israel"> D) Israel <br> <br> </p>
+                <div id="quadroResp2"></div>
             </div>
             <div id="quest3" class="alternativas">
                 <span> 3 - Qual instrumento Davi gostava de tocar?</span>
@@ -32,6 +34,7 @@
                 <p> <input type="radio" name="q3" value="Harpa" id="resposta"> B) Harpa <br> </p>
                 <p><input type="radio" name="q3" value="Flauta"> C) Flauta <br> </p>
                 <p> <input type="radio" name="q3" value="Lira"> D) Lira <br> <br> </p>
+                <div id="quadroResp3"></div>
             </div>
             <div id="quest4" class="alternativas">
                 <span> 4 - Quando a mulher com fluxo de <br>sangue tocou nas vestes de Jesus, no <br> que ela
@@ -42,7 +45,8 @@
                     curada". <br> </p>
                 <p><input type="radio" name="q4" value="interrompe"> C) "Tenho que interromper o caminho de <br> Jesus".
                     <br> </p>
-                <p> <input type="radio" name="q4" value="Lira"> D) Lira <br> <br> </p>
+                <p> <input type="radio" name="q4" value="parar"> D) "Vou pegar nas vestes de Jess para me limpar". <br> <br> </p>
+                <div id="quadroResp4"></div>
             </div>
             <div id="quest5" class="alternativas">
                 <span> 5 - Quem ensinou aos dissípulos a oração do "Pai nosso"?</span>
@@ -50,6 +54,7 @@
                 <p> <input type="radio" name="q5" value="Jesus" id="resposta"> B) Jesus <br> </p>
                 <p><input type="radio" name="q5" value="Paulo"> C) Paulo <br> </p>
                 <p> <input type="radio" name="q5" value="Moisés"> D) Moisés <br> <br> </p>
+                <div id="quadroResp5"></div>
             </div>
             <div id="quest6" class="alternativas">
                 <span> 6 - Na parábola do semeador, quais <br> sementes que cresceram e deram uma <br>boa
@@ -59,7 +64,8 @@
                     terra. <br> </p>
                 <p><input type="radio" name="q6" value="espinhos"> C) As sementes que caíram entre os espinhos. <br>
                 </p>
-                <p> <input type="radio" name="q6" value="limpas"> D) As sementes que forem limpas <br> <br> </p>
+                <p> <input type="radio" name="q6" value="limpas"> D) As sementes que forem limpas. <br> <br> </p>
+                <div id="quadroResp6"></div>
             </div>
             <div id="quest7" class="alternativas">
                 <span> 7 - Quem foi o homem que podia pedir o que <br>quisesse para Deus, mas pediu somente uma coisa
@@ -68,6 +74,7 @@
                 <p> <input type="radio" name="q7" value="Paulo"> B) Paulo <br> </p>
                 <p><input type="radio" name="q7" value="Abraão"> C) Abraão <br> </p>
                 <p> <input type="radio" name="q7" value="Salomão" id="resposta"> D) Salomão <br> <br> </p>
+                <div id="quadroResp7"></div>
             </div>
             <div id="quest8" class="alternativas">
                 <span> 8 - Qual destes homens foi <br>escolhido por Deus para liderar os israelitas <br> na conquista da
@@ -76,6 +83,7 @@
                 <p> <input type="radio" name="q8" value="Moisés"> B) Moisés <br> </p>
                 <p><input type="radio" name="q8" value="José"> C) José <br> </p>
                 <p> <input type="radio" name="q8" value="Josué" id="resposta"> D) Josué <br> <br> </p>
+                <div id="quadroResp8"></div>
             </div>
             <div id="quest9" class="alternativas">
                 <span> 9 - Qual dos discípulos de Jesus andou<br>sobre as águas com ele? </span>
@@ -83,6 +91,7 @@
                 <p> <input type="radio" name="q9" value="Ped" id="resposta"> B) Pedro<br> </p>
                 <p><input type="radio" name="q9" value="João"> C) João<br> </p>
                 <p> <input type="radio" name="q9" value="André"> D) André<br> <br> </p>
+                <div id="quadroResp9"></div>
             </div>
             <div id="quest10" class="alternativas">
                 <span> 10 - Qual é o fruto do Espírito mencionado <br> por Paulo que é frequentemente traduzido
@@ -91,6 +100,7 @@
                 <p> <input type="radio" name="q10" value="Mansidão"> B) Mansidão<br> </p>
                 <p><input type="radio" name="q10" value="Longanimidade" id="resposta"> C) Longanimidade<br> </p>
                 <p> <input type="radio" name="q10" value="Autocontrole"> D) Autocontrole<br> <br> </p>
+                <div id="quadroResp10"></div>
             </div>
 
             <center>
@@ -252,7 +262,31 @@
             div_mensagem.innerHTML = `Aaaah, você não acertou nenhuma questão amado(a)! Mas não tem problema!<br>Jesus te convida a ler mais a Bíblie e conhecer mais dele!`
         } 
          
-        // div_mensaResp.innerHTML = `<b class="quadro"> Resposta errada: ${questErrada.length}`
+        quadroResp1.innerHTML = `<div class ="quadro"> <p> Mateus 10:2-4 </p>`
+        quadroResp2.innerHTML = `<div class ="quadro"> <p> Mateus 21:1-2 </p>`
+        quadroResp3.innerHTML = `<div class ="quadro"> <p> 1Samuel 16:23 </p>`
+        quadroResp4.innerHTML = `<div class ="quadro"> <p> Mateus 9:20-22 </p>`    
+        quadroResp5.innerHTML = `<div class ="quadro"> <p> Mateus 6:5-15 </p>`
+        quadroResp6.innerHTML = `<div class ="quadro"> <p> Mateus 13:23 </p>`
+        quadroResp7.innerHTML = `<div class ="quadro"> <p> 2Crônicas 1:7-12 </p>`
+        quadroResp8.innerHTML = `<div class ="quadro"> <p> Josué 1:1-5 </p>`
+        quadroResp9.innerHTML = `<div class ="quadro"> <p> Mateus 14:22-30 </p>`
+        quadroResp10.innerHTML = `<div class ="quadro"> <p> Gálatas 5:22 </p>`   
+
+
+            fetch("/usuarios/acrescentarQ", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        qtdAcertosServer: qtdAcertosVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar
+      }),
+    })
 
     }
 
