@@ -16,5 +16,106 @@
         <h1 class="fontBr">With God</h1>
         </center> <br>
     <center>
+        <center>
+            <h1>Vocação</h1>
+            <p>Que diremos, pois, segundo <br>
+               diante dessas coisas? Se Deus 
+               é por nós, quem será contra nós?. <br>
+               - Romanos 8:28-31</p>
+               <h1>Contextualização</h1>
+               <p>A carta de Paulo à romanos foi escrita <br>
+                aproximadamente em sua terceira
+                viagem missionária e nela Paulo <br>
+                conta da sua vontade de visitar o
+                povo mas, ao mesmo tempo, passa <br>
+                para eles, através da carta, diversos
+                conhecimentos sobre os princípios do <br>
+                Evangelho (a vida e palavra de Cristo).
+                No versículo base dessa devocional, <br>
+                Paulo fala sobre uma verdade vinda do
+                caráter de Deus em seu relacionamento <br>
+                conosco: Ele faz com que todas as
+                coisas cooperem para o bem daqueles <br>
+                que amam a Ele.</p>
+                <h1>Reflexão</h1>
+                <p>Mas afinal, o que é esse bem? Significa <br>
+                    que se eu amar a Deus sobre todas
+                    as coisas tudo vai dar certo na minha <br>
+                    vida? Eu vou me dar "bem" em tudo?
+                    Essa é uma interpretação que pode ser <br>
+                    feita de imediato, porém, como tudo
+                    na Bíblia, é importante que tenhamos <br>
+                    vontade de ir mais a fundo e entender
+                    o real sentido da palavra. Um pouco <br>
+                    mais à frente (vs. 29) entendemos
+                    que o verdadeiro sentido de "bem” no <br>
+                    contexto é: a construção de um caráter
+                    parecido com o de Cristo. Logo, Paulo <br>
+                    quer dizer que todas as coisas que
+                    vivemos, situações que passamos e <br>
+                    enfrentamos cooperam para moldar
+                    nosso caráter para ser cada vez mais <br>
+                    parecido com o de Cristo! Quando
+                    entendemos isso, vemos a real <br>
+                    relação entre amar a Deus e ter as
+                    coisas cooperando para o nosso bem: <br>
+                    se amarmos a Deus, entendemos
+                    nosso propósito para o Reino e <br>
+                    assim vivemos uma vida onde somos
+                    verdadeiramente Cristãos (pessoas <br>
+                    parecidas com Cristo). Com certeza
+                    é muito difícil e vamos enfrentar <br>
+                    muitas coisas difíceis durante nossa caminhada.
+                    Por esse motivo, também <br>
+                    podemos lembrar dos versos escritos
+                    em 1 Tessalonicenses 5:18 que nos <br>
+                    diz para darmos graças em todas as
+                    situações (mesmo as mais difíceis) <br>
+                    porque delas, podemos segurar na mão
+                    de Deus e falar: eu quero usar essa <br>
+                    situação para ficar mais parecido com
+                    Cristo!</p>
+                    <h1>Consluão</h1>
+                    <p>Jesus viveu uma vida espalhando <br>
+                        Amor, sabedoria e cuidado para
+                        com o próximo. Logo, ser 'Cristão' <br>
+                        é muito mais do que um rótulo, é o
+                        caráter daquele que se parece com <br>
+                        Cristo. Que tipo de situação estamos
+                        vivendo hoje que podem ser usadas <br>
+                        para nos tornarem mais parecidos
+                        com Ele? Que tipos de frutos você <br>
+                        está produzindo em sua vida para ter
+                        uma identidade cristã verdadeira? <br>
+                        Que sejamos pessoas parecidas com
+                        Cristo, que desfrutam do Espírito e <br>
+                        verdadeiramente espalham o Amor
+                        para o próximo.</p>
+        </center>
+        <center>
+            <div class="anotacoes">
+               <h1>Anotações</h1>
+               <input type="text" id="input_anotacoes" placeholder="Faça suas anotações aqui..." class="input-anot">
+              <button onclick="anotar()">Ler anotação</button> <br> <br> <br>
+              <div style="color: aliceblue; font-size: larger;"> <span id="span_mensagem"></span></div>    
+            </div>
+          </center>
+
 </body>
 </html>
+<script>
+    var anot = [];
+   function anotar(){
+       
+       span_mensagem.innerHTML += ``
+    
+       var anotacao = input_anotacoes.value;
+
+       anot.push(anotacao);
+
+       for (let i = 0; i < anot.length; i++) {
+   
+           span_mensagem.innerHTML = `${anot[i]}`
+       }
+   }
+</script>
