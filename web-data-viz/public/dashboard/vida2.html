@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With God | Devocional</title>
+    <link rel="stylesheet" href="./../css/leitRapida.css">
+</head>
+<body>
+    <div class="btn-nav-white">
+        <a href="./devo.html">
+            <h3> < Devocionais</h3>
+        </a>
+    </div>
+    <center>
+        <h1 class="fontBr">With God</h1>
+        </center> <br>
+    <center>
+        <center>
+            <h1>Inteligência e Sabedoria</h1>
+            <p>Não se moldem ao padrão deste <br>
+               mundo, mas transformem-se pela
+               renovação da sua mente, para que <br>
+               sejam capazes de experimentar
+               e comprovar a boa, agradável <br>
+               e perfeita vontade de Deus. <br>- Romanos 12:2</p>
+               <h1>Contextualização</h1>
+               <p>O versículo base da devocional usa o <br>
+                termo "conformar" ou "moldar" 
+                em um sentido de comparação <br> 
+                com "esquema” padrão 
+                ou aparência externa que gera certa
+                zona de conforto. <br>
+                Nesse sentido, 
+                Paulo aconselha aos Romanos para
+                que eles não se percam em uma zona <br>
+                de conforto, mas que sim, renovem
+                seus entendimentos para entenderem <br>
+                a vontade de Deus. O entendimento
+                citado, pode ser interpretado como <br>
+                sabedoria e inteligência. Mas, afinal, de
+                que tipo de sabedoria e inteligência <br>
+                Paulo está falando?</p>
+                <h1>Reflexão</h1>
+                <p>Nós sabemos que uma pessoa <br>
+                    inteligente é aquela que consegue
+                    aplicar com determinada maestria <br>
+                    algum tipo de conhecimento em
+                    alguma área. Por outro lado, quando <br>
+                    pensamos em sabedoria, logo nos
+                    vêm à mente pessoas mais velhas, <br>
+                    que por suas experiências de
+                    vida são consideradas sábias. Ao <br>
+                    focalizarmos no significado das duas
+                    palavras, entendemos o que Paulo <br>
+                    quis dizer aos romanos. Devemos ter
+                    inteligência para agir nas situações <br>
+                    e essa inteligência nós conseguimos
+                    quando buscamos entender a palavra <br>
+                    de Deus e o que ela tem a nos oferecer 
+                    de maneira profunda. Por outro lado, <br>
+                    sabedoria está atrelado a tudo aquilo
+                    que guardamos em nossa memória e <br>
+                    cultivamos em nossos corações. Tudo
+                    isso, sabedoria e inteligência atreladas, <br>
+                    fazem parte do nosso processo de
+                    decisão em cada situação. Dessa <br>
+                    forma, entendemos que o conselho de
+                    Paulo gira em torno do entendimento <br>
+                    de uma vida com Deus baseada em
+                    aprendizado e vivência, para que assim, <br>
+                    consigamos tomar decisões sábias e
+                    que cooperam para o nosso bem no nosso <br>
+                    cotidiano. É importante que estejamos
+                    dispostos a adquirir esta sabedoria  <br>
+                    nossa vida, de maneira guiada por
+                    Deus, e pela sua vontade que é boa, <br>
+                    perfeita e agradável para nós! .</p>
+                    <h1>Conclusão</h1>
+                    <p>Deus nos chama para viver uma <br>
+                        vida com sabedoria, inteligência
+                        e posicionamento onde não nos <br>
+                        conformamos com as coisas ruins
+                        que vemos ao nosso redor. É algo bem <br>
+                        normal tomarmos decisões impulsivas,
+                        preferirmos estar em uma zona de <br>
+                        conforto, e insistirmos em ouvir nosso
+                        coração que muitas vezes não nos diz <br>
+                        nada. O que você pode fazer para viver
+                        de forma mais sábia? O que te afasta <br>
+                        de escutar a Deus nos momentos
+                        onde você deve se posicionar? Que <br>
+                        estejamos dispostos a viver com
+                        sabedoria junto daquele que nos Ama e <br>
+                        quer o melhor para nós! .</p>
+        </center>
+        <center>
+            <div class="anotacoes">
+               <h1>Anotações</h1>
+               <input type="text" id="input_anotacoes" placeholder="Faça suas anotações aqui..." class="input-anot">
+              <button onclick="anotar()">Ler anotação</button> <br> <br> <br>
+              <div style="color: aliceblue; font-size: larger;"> <span id="span_mensagem"></span></div>    
+            </div>
+          </center>
+
+</body>
+</html>
+<script>
+    var anot = [];
+   function anotar(){
+       
+       span_mensagem.innerHTML += ``
+    
+       var anotacao = input_anotacoes.value;
+
+       anot.push(anotacao);
+
+       for (let i = 0; i < anot.length; i++) {
+   
+           span_mensagem.innerHTML = `${anot[i]}`
+       }
+   }
+</script>

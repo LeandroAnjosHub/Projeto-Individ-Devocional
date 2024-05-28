@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With God | Devocional</title>
+    <link rel="stylesheet" href="./../css/leitRapida.css">
+</head>
+<body>
+    <div class="btn-nav-white">
+        <a href="./devo.html">
+            <h3> < Devocionais</h3>
+        </a>
+    </div>
+    <center>
+        <h1 class="fontBr">With God</h1>
+        </center> <br>
+    <center>
+        <center>
+            <h1>Nutrindo a alma</h1>
+            <p>Jesus respondeu: "Quem beber desta água terá sede <br>
+               outra vez, mas quem beber da água que eu lhe der <br>
+               nunca mais terá sede. Ao contrário, a água que <br>
+               eu lhe der se tornará nele uma fonte de água a jorrar <br>
+                para a vida eterna"<br> - João 4: 13-14 <br> (Se possível, leia do 1 ao 30)</p>
+                <h1>Contextualização</h1>
+                <p>A passagem presente na base bíblica <br>
+                    dessa devocional conta um momento
+                    da história de Jesus onde ele e seus <br>
+                    discípulos precisavam passar por
+                    Samaria. Existia na época grande <br>
+                    hostilidade entre judeus e samaritanos
+                    e um dos ensinamentos importantes <br>
+                    nessa passagem é o exemplo de
+                    Jesus ao enfrentar preconceitos <br>
+                    sócio-culturais e até mesmo machistas
+                    da época, ao conversar, aconselhar <br>
+                    e consolar a mulher samaritana e lhe
+                    apresentar uma visão de vida que a <br>
+                    transformou.</p>
+                    <h1>Reflexão</h1>
+                    <p>É muito comum que busquemos <br>
+                        conquistar coisas, status ou cumprir
+                        metas que estabelecemos para nós <br>
+                        mesmos para nos sentirmos mais
+                        completos. A mulher samaritana <br>
+                        representa um exemplo de como 
+                        vivemos uma vida buscando coisas <br>
+                        para nos definirem. No caso dela, que
+                        achava que se definia pela quantidade <br>
+                        de casamentos que já teve ou até
+                        mesmo pelas coisas que a sociedade <br>
+                        podia vir a falar dela. Jesus entretanto,
+                        mostrou uma visão diferente para <br>
+                        ela: a visão de que não existe nada
+                        que nos preencha mais do que viver <br>
+                        uma vida completa em espírito e em
+                        Verdade. No caso, Ele fala sobre a <br>
+                        água da vida que mata a sede, ou seja,
+                        quando encontramos verdadeiramente <br>
+                        a nutrição da alma através de uma vida
+                        de relacionamento com Deus, paramos <br>
+                        de tentar nos completar com coisas
+                        passageiras e externas porque Ele já <br>
+                        nos completa. A parte mais legal de
+                        todas é que Jesus fala que esse tipo <br>
+                        de água também jorra em todos os que
+                        estão ao nosso redor (vs. 14) e assim, <br>
+                        quando vivemos uma vida em Deus,
+                        nós nos sentimos bem ao fazer bem ao nosso <br>
+                        próximo, já que estamos vivendo no centro 
+                        da vontade do Pai para nós. Tudo depdende <br>
+                        de nós: dizer sim ou não para essa água
+                        e, assim como a mulher samaritana, <br>
+                        conhecermos o que realmente pode nos completar! .</p>
+                        <h1>Conclusão</h1>
+                        <p>O que podemos fazer hoje para aceitar <br>
+                           beber dessa água que nos preenche 
+                           verdadeiramente? Será que estamos dando <br>
+                           mais importância para coisas passageiras
+                           ou permitindo que coisas fracas nos <br>
+                           preencham momentaneamente? Com o que 
+                           tenho nutrido minha alma? Que estejamos <br>
+                           dispostos a aceitar essa água que Jesus 
+                           nos oferece, que nutri a nossa alma <br>
+                           verdadeiramente com algo verdadeiro,
+                           preciso e infalível. E que enfim, <br>
+                           sejamos seguros de que não estamos sozinhos,
+                           somos completos através da identidade <br>
+                           que o Pai nos oferece. Nós temos a Jesus! .'</p>
+        </center>
+        <center>
+            <div class="anotacoes">
+               <h1>Anotações</h1>
+               <input type="text" id="input_anotacoes" placeholder="Faça suas anotações aqui..." class="input-anot">
+              <button onclick="anotar()">Ler anotação</button> <br> <br> <br>
+              <div style="color: aliceblue; font-size: larger;"> <span id="span_mensagem"></span></div>    
+            </div>
+          </center>
+
+</body>
+</html>
+<script>
+    var anot = [];
+   function anotar(){
+       
+       span_mensagem.innerHTML += ``
+    
+       var anotacao = input_anotacoes.value;
+
+       anot.push(anotacao);
+
+       for (let i = 0; i < anot.length; i++) {
+   
+           span_mensagem.innerHTML = `${anot[i]}`
+       }
+   }
+</script>

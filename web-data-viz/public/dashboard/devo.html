@@ -137,6 +137,32 @@
             <h4 style="color: #4d6152;">Clique aqui para começar!</h4>
         </a>
      </div>
+    </div> <br>
+    <center>
+     <h1 style="color: aliceblue;">Vida com Deus</h1>
+    </center>
+    <div class="area-vida">
+        <div class="vida">
+            <img src="./../css/regador.jpeg" style="width: 300px; height: 290px; border-radius: 10px;">
+            <h2>Nutrindo a alma</h2>
+            <a href="./vida1.html">
+              <h4 style="color: #4d6152;">Clique aqui para começar!</h4>
+            </a>
+        </div>
+        <div class="vida">
+            <img src="./../css/intelig.jpeg" style="width: 300px; height: 290px; border-radius: 10px;">
+            <h2>Inteligência de sadeboria</h2>
+            <a href="./vida2.html">
+              <h4 style="color: #4d6152;">Clique aqui para começar!</h4>
+            </a>
+        </div>
+        <div class="vida1">
+            <img src="./../css/vocaci.jpeg" style="width: 300px; height: 290px; border-radius: 10px;">
+            <h2> Vocação </h2>
+            <a href="./vida3.html">
+              <h4 style="color: #4d6152;">Clique aqui para começar!</h4>
+            </a>
+        </div>
     </div>
 </div> 
 </div> 
@@ -153,26 +179,25 @@
      })
    
 
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
-    }
+    // function exibirAquarios() {
+    //     JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
+    //         document.getElementById("cardAquarios").innerHTML += `
+    //                 <div class="card-aquario">
+    //                     <div class="title-aquario">
+    //                         <h1>${item.descricao}</h1>
+    //                     </div>
+    //                     <div class="desc-aquario">
+    //                     <div class="temperatura">
+    //                         <p id="temp_aquario_${item.id}">-°C</p>
+    //                     </div>
+    //                     <div class="cor-alerta" id="card_${item.id}"></div>
+    //                 </div>
+    //                 </div>
+    //                 `
+    //     });
+    // }
 
     function buscarEmocoesporId(){
-        var emocao = '';
         var emocaoVar = req.body.emocaoServer;
         var nomeVar = req.body.nomeServer;
         
@@ -188,8 +213,33 @@
         emocoaoServer: emocaoVar
       }),
     })
-
     }
+
+    function obter_dados(nomeEmocao){
+
+        fetch("/usuarios/acrescentarQ")
+        .then(resposta => {
+
+            if(resposta.ok){
+                resposta.json().then(resposta =>{
+
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    mostrar(resposta, nomeEmocao)
+                });
+            } else{
+
+                console.error(`Nenhum dado encontrado ou erro na API`);
+            }
+        })
+    .catch(function(error){
+    console.erro(`Erro na obtenção dos dados do usuario: ${error.message}`);
+    });
+}
+
+ function mostrar(resposta, nomeEmocao){
+    
+ }
 
 </script>
 

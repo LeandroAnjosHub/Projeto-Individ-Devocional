@@ -30,7 +30,6 @@ create table quiz (
 	FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
 );
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
 
 create table usuarioEmocao (
 	idUsuEmocao INT PRIMARY KEY AUTO_INCREMENT,
