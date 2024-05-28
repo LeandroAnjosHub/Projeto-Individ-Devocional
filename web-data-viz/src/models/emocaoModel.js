@@ -1,6 +1,6 @@
 var database = require("../database/config")
 
-function buscarEmoporId(idUsuario, nomeEmocao){
+function buscarEmocoesporId(idUsuario, nomeEmocao, nome){
 
     var instrucaoSql = `SELECT ${nomeEmocao}.*, usuario.${nome} FROM emocoes JOIN usuarioEmocao 
     ON  fkEMocao = fkUsuario JOIN usuario ON idUsuario = ${idUsuario};`
@@ -8,9 +8,9 @@ function buscarEmoporId(idUsuario, nomeEmocao){
     return database.executar(instrucaoSql)
 }
 
-function cadastrarEmo(){
+function cadastrarEmo(nomeEmocao){
 
-    var instrucaoSql = `INSERT INTO (nome) emocoes VALUES (${nomeEmocao})`
+    var instrucaoSql = `INSERT INTO (nome) emocoes VALUES ('${nomeEmocao}');`
 
     return database.executar(instrucaoSql)
 
@@ -19,11 +19,6 @@ function cadastrarEmo(){
 }
 
 
-// function listar(){
-
-//         var instrucaoSql = ``
-// }
-
-module.exports = {buscarEmoporId,
+module.exports = {buscarEmocoesporId,
     cadastrarEmo
 };

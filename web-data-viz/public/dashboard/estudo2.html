@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With God | devocional</title>
+    <link rel="stylesheet" href="./../css/leitRapida.css">
+</head>
+<body>
+    <div class="btn-nav-white">
+        <a href="./devo.html">
+            <h3> < Devocionais</h3>
+        </a>
+    </div>
+    <center>
+        <h1 class="fontBr">With God</h1>
+        </center> <br>
+    <center>
+        <h1>Religiosidade</h1>
+        <p>Hipócritas! Bem profetizou isaías <br>
+           acerca de vocês, dizendo: "Este <br> 
+           povome honra com os lábios, <br>
+           mas o seu coração está longe de <br>
+           mim." <br> - Mateus 15: 7-8(leia do 1 ao 20)</p>
+           <h1>Contextualização</h1>
+           <p>Na passagem dessa devocional, Jesus <br>
+            enfrenta uma situação onde escribas
+            e fariseus (homens da lei e religiosos) <br>
+            confrontaram a ele e aos seus
+            discípulos por não lavarem as mãos <br>
+            (se purificarem) antes de começarem
+            a comer, afinal, essa era uma das <br>
+            tradições que eram consideradas
+            sagradas e por isso deveria ser seguida <br>
+            a risca. Assim, Jesus mostra a eles
+            uma visão diferente da situação e até <br>
+            mesmo os chama de hipócritas. Por
+            que afinal, homens tão 'corretos' e <br>
+            religiosos seriam hipócritas?</p>
+            <h1>Reflexão</h1>
+            <p>Aqui, Jesus se entristece pois vê que eles <br>
+                vivem pelas leis em nome de Deus mas
+                não amam a Deus verdadeiramente. <br>
+                Os escribas e fariseus não faziam o
+                bem porque amavam a Deus e sim <br>
+                porque amavam as leis e, dessa
+                forma, acabavam sendo prisioneiros <br>
+                da própria religião. Você percebe que
+                Jesus veio não somente para nos <br>
+                limpar dos nossos pecados, trazer sua
+                graça e Espírito, mas também para <br>
+                quebrar a corrente da Religiosidade
+                que mais prende o ser humano do que <br>
+                preenche o coração? Pois é. Cristo
+                não é mais um ditador religioso ou <br>
+                sociólogo, Ele é o próprio Pai que
+                vem pra nos trazer liberdade. Essa é <br>
+                a palavra. Em Cristo temos Liberdade
+                ( o que é diferente da libertinagem). <br>
+                Em Cristo temos um relacionamento
+                em que nos é ensinado sobre o amor <br>
+                de Deus por nós e do nosso amor
+                por Ele, com um coração puro e <br>
+                entregue que não se contamina com
+                atitudes que não condizem com o <br>
+                caráter de Cristo (vs.20). Deus não
+                está interessado em prisioneiros e <br>
+                muito menos em pessoas que seguem
+                regras estabelecidas pelos próprios <br>
+                homens, Deus nos ama tanto a ponto de 
+                nos chamar para viver um verdadeiro <br>
+                relacionamento com um coração
+                transformado pela sua graça, isso <br>
+                sim faz parte do Amor de Cristo. É
+                quebrando a corrente da religiosidade, <br>
+                que possamos verdadeiramente seguir a Ele
+                por amor, assim como Ele nos <br> 
+                ama sem pedir 
+                nada em troca! .</p>
+                <h1>Conclusão</h1>
+                <p>Jesus nos ensina que um verdadeiro <br>
+                    relacionamento é muito maior do
+                    que qualquer religiosidade que nos <br>
+                    aprisiona e nos impede de realmente
+                    conhecer e viver o amor de Deus. <br>
+                    Entenda que Deus te chama para um
+                    relacionamento verdadeiro. <br> 
+                    O que você precisa
+                    fazer para se afastar da religiosidade
+                    e verdadeiramente entrar em uma vida <br>
+                    de relacionamento com o Pai? Abra 
+                    seu coração hoje pra Ele. Cristo quer <br>
+                    te ouvir. Fale o que te incomoda, o que
+                    te alegra, esteja disposto e seja levado <br>
+                    pelos braços de Amor do Pai que
+                    quebra todas as correntes! .</p>
+    </center>
+    <center>
+        <div class="anotacoes">
+           <h1>Anotações</h1>
+           <input type="text" id="input_anotacoes" placeholder="Faça suas anotações aqui..." class="input-anot">
+          <button onclick="anotar()">Ler anotação</button> <br> <br> <br>
+          <div style="color: aliceblue; font-size: larger;"> <span id="span_mensagem"></span></div>    
+        </div>
+      </center>
+</body>
+</html>
+<script>
+    var anot = [];
+   function anotar(){
+       
+       span_mensagem.innerHTML += ``
+    
+       var anotacao = input_anotacoes.value;
+
+       anot.push(anotacao);
+
+       for (let i = 0; i < anot.length; i++) {
+   
+           span_mensagem.innerHTML = `${anot[i]}`
+       }
+   }
+</script>

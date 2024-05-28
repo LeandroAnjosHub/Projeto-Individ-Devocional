@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With God | Devocional</title>
+    <link rel="stylesheet" href="./../css/leitRapida.css">
+</head>
+<body>
+    <div class="btn-nav-white">
+        <a href="./devo.html">
+            <h3> < Devocionais</h3>
+        </a>
+    </div>
+    <center>
+        <h1 class="fontBr">With God</h1>
+        </center> <br>
+        <center>
+            <h1>O que é a Graça?</h1>
+            <p>Todavia, Deus, que é rico <br>
+               em misericórida, pelo grande <br>
+               amor com que nos amou, deu-nos <br>
+               a vida com Cristo quando ainda <br>
+               estávamos mortos em transgressões - <br>
+               pela GRAÇA vocês são salvos. <br> - Efésios 2: 4-5 (leia do 1 ao 10)</p>
+               <h1>Contextualização</h1>
+               <p>Efésios, é outra carta de Paulo <br>
+                escrita para essa igreja que
+                tem como o objetivo orienta-los sobre o <br>
+                caráter daqueles que verdadeiramente
+                andam com Cristo. É muito comum <br>
+                nessa carta encontrarmos versos que
+                falam sobre a vida de Cristo e tudo o <br>
+                que ele quis ensinar, principalmente
+                focando no significado da sua morte na <br>
+                Cruz. O texto base da devocional nos
+                explica sobre o caráter do ser humano <br>
+                e o caráter de Cristo.</p>
+                <h1>Reflexão</h1>
+                <p>Efésios 2 começa nos explicando como <br>
+                    antes de Jesus, o homem era escravo
+                    de uma vida de pecado, isso porque, <br>
+                    não conheciam verdadeiramente
+                    a Deus, e assim, viviam seguindo <br>
+                    os desejos dos próprios corações:
+                    guerras, intrigas, imoralidades de todos <br>
+                    os tipos, e isso os afastavam de Deus
+                    cada vez mais (vs 1-3). Entretanto, <br>
+                    Jesus veio nos mostrar que
+                    o nosso lugar é perto do Pai. Em vida, <br>
+                    Ele serviu pessoas, nos ensinou sobre
+                    o Amor ao próximo e sobre o Amor de Deus.<br>
+                    Jesus morreu por todos os
+                    nossos pecados, ou seja, Ele morreu <br>
+                    para quebrar a barreira que existia
+                    entre o homem e entre Deus. No fim, <br>
+                    Ele ressuscitou e disse que um dia
+                    voltará para buscar a todos os filhos <br>
+                    de Deus. Mas afinal, o que significa
+                    tudo isso? Jesus morreu por pessoas <br>
+                    que o maltratavam, por pessoas que
+                    já tinham morrido e por pessoas que <br>
+                    ainda não tinham nascido. Ele morreu,
+                    para que nós vivêssemos uma vida de <br>
+                    liberdade, conhecendo o verdadeiro
+                    caráter de Deus e isso é totalmente <br>
+                    imerecido! Jesus morreu a nossa morte 
+                    para que nós vivessemos a sua vida. <br>
+                    Nós não merecemos
+                    tamanha bondade, e é por isso que <br>
+                    o versículo base fala que pela GRAÇA
+                    dada por Deus nós somos salvos e isso <br>
+                    não vem de nós! Todas as vezes que
+                    tentamos viver em busca da salvação <br>
+                    pelos nossos próprios esforços, e não
+                    pela graça, estamos afirmando que <br>
+                    Jesus não foi o suficiente. A graça dEle
+                    nos basta! .</p>
+        </center>
+        <center>
+            <div class="anotacoes">
+               <h1>Anotações</h1>
+               <input type="text" id="input_anotacoes" placeholder="Faça suas anotações aqui..." class="input-anot">
+              <button onclick="anotar()">Ler anotação</button> <br> <br> <br>
+              <div style="color: aliceblue; font-size: larger;"> <span id="span_mensagem"></span></div>    
+            </div>
+          </center>
+</body>
+</html>
+<script>
+    var anot = [];
+   function anotar(){
+       
+       span_mensagem.innerHTML += ``
+    
+       var anotacao = input_anotacoes.value;
+
+       anot.push(anotacao);
+
+       for (let i = 0; i < anot.length; i++) {
+   
+           span_mensagem.innerHTML = `${anot[i]}`
+       }
+   }
+</script>

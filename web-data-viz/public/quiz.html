@@ -9,7 +9,15 @@
 </head>
 
 <body>
+    <div class="btn-nav-white">
+        <a href="./dashboard/devo.html">
+            <h3> < Inicial</h3>
+        </a>
+    </div>
     <center>
+        <div class="titulo">
+          <p> Sente que precisa conhecer mais da Bíblia? <br> Comece pelo nosso Quiz!</p>
+        </div> <br>   
         <div class="quiz">
             <br>
             <div id="quest1" class="alternativas">
@@ -153,12 +161,13 @@
         </div>
     </center>
     <div id="div_mensaResp"></div>
+    <div id="novamente"></div>
 </body>
 
 </html>
 <script>
     var respCerta = ['Davi', 'Belém', 'Harpa', 'manto', 'Jesus', 'boaTerra', 'Salomão', 'Josué', 'Ped', 'Longanimidade', 'lavou', 'paraiso', 'nao a condeno', 'sou o que sou', 'leao'];
-    var questErrada = [];
+    var quantAcertos = [];
 
     function verificar() {
 
@@ -173,6 +182,7 @@
         }
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
+            quantAcertos.push(respSelec)
         } else {  
         }
 
@@ -360,8 +370,11 @@
         }
        
         if (qtdAcertos == 1) {
-            div_mensagem.innerHTML = `Você acertou ${qtdAcertos} Questão, você pode se esforçar para ler um pouco mais a Bíblia, não é?`
-        } else if (qtdAcertos <= 9) {
+            div_mensagem.innerHTML = `Você acertou ${quantAcertos.length} Questão, você pode se esforçar para ler um pouco mais a Bíblia, não é?`
+        } else if(qtdAcertos <= 5){
+            div_mensagem.innerHTML = `Você acertou ${qtdAcertos} Questões, vamos lá amado!!`
+        }
+         else if (qtdAcertos <= 14) {
             div_mensagem.innerHTML = `Você acertou ${qtdAcertos} Questões!`
         } else if (qtdAcertos == 15) {
             div_mensagem.innerHTML = `Parabéns amado! Você acertou TODAS Questões! Jesus está contente!`
@@ -384,9 +397,8 @@
         quadroResp12.innerHTML = `<div class ="quadro"> <p> Lucas 23:39-43 </p>`
         quadroResp13.innerHTML = `<div class ="quadro"> <p> João 8:1-11 </p>`
         quadroResp14.innerHTML = `<div class ="quadro"> <p> Samuel 17:34-37 </p>`
-        quadroResp15.innerHTML = `<div class ="quadro"> <p> Êxodo 3:14 </p>`      
-
-
+        quadroResp15.innerHTML = `<div class ="quadro"> <p> Êxodo 3:14 </p>`        
+            
     //         fetch("/usuarios/acrescentarQ", {
     //   method: "POST",
     //   headers: {
@@ -399,8 +411,7 @@
     //     emailServer: emailVar,
     //     senhaServer: senhaVar
     //   }),
-    // })
-
-    }
+    // })    
+}
 
 </script>

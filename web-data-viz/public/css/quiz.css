@@ -76,3 +76,29 @@ body {
         color: aliceblue;
         top: -5px;
     }
+    a{
+        text-decoration: none;
+        color: aliceblue;
+    }
+    h1{
+        color: black;
+    }
+
+    .titulo{
+        display: flex;
+        width: 730px;
+        height: 85px;
+        background-color: #212124;
+        color: aliceblue;
+        border: 1px solid aliceblue;
+        border-radius: 20px;
+    }
+
+    .titulo p{
+        display: flex;
+        color: aliceblue;
+        position: relative;
+        top: -29px;
+        left: 57px;
+        font-size: xx-large;
+    }

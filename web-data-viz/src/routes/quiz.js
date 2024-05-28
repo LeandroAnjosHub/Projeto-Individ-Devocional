@@ -4,10 +4,10 @@ var router = express.Router();
 var quizController = require("../controllers/quizController");
 
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
-router.post("/cadastrar", function (req, res) {
-    quizController.cadastrar(req, res);
+router.post("/cadastrarQuiz", function (req, res) {
+    quizController.cadastrarqtd(req, res);
 })
 
-router.post("/autenticar", function (req, res) {
-    usuarioController.autenticar(req, res);
+router.post("/autenticarQuiz", function (req, res) {
+    quizController.buscarAcertosqtd(req, res);
 });

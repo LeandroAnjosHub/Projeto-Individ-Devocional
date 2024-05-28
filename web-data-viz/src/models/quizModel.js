@@ -1,16 +1,22 @@
 var database = require("../database/config")
 
-function buscarEmoporId(idUsuario){
+function buscarqtdAcertos(qtdAcertos, nome){
 
-    var instrucaoSql = `SELECT * FROM emocoes FROM usuario WHERE idUsuario = ${idUsuario}`
+
+    var instrucaoSql = `SELECT '${nome}', ${qtdAcertos} FROM quiz JOIN 
+      usuario ON ${idUsuario} = fkUsuario;`
 
     return database.executar(instrucaoSql)
 }
 
 
-// function listar(){
+function cadastrarqtdAcertos(qtdAcertos, idUsuario){
 
-//         var instrucaoSql = ``
-// }
+    var instrucaoSql = `INSERT INTO emocoes VALUES (default, ${qtdAcertos}, ${idUsuario});`
 
-module.exports = {buscarEmoporId};
+    return database.executar(instrucaoSql)
+}
+
+module.exports = {buscarqtdAcertos,
+cadastrarqtdAcertos
+};

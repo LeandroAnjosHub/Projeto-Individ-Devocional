@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With God | Devocional</title>
+    <link rel="stylesheet" href="./../css/leitRapida.css">
+</head>
+<body>
+    <div class="btn-nav-white">
+        <a href="./devo.html">
+            <h3> < Devocionais</h3>
+        </a>
+    </div>
+    <center>
+        <h1 class="fontBr">With God</h1>
+        </center> <br>
+    <center>
+        <center>
+            <h1>Fruto do Espírito</h1>
+            <p>Mas o fruto de Espírito é amor, <br>
+               alegria, paz, paciência, amabilidade, <br>
+               bondade, fidelidade, mansidão <br>
+               e domínio próprio. Contra essas <br>
+               coisas não há lei. <br> - Gálatas 5:23 (Se possível, leia do 16 ao 26)</p>
+               <h1>Contextualização</h1>
+               <p>A carta de Gálatas deixa bem clara <br>
+                quais são o fruto do Espírito. 
+                Não deixe de notar a palavra <br>
+                específicamente no singular,
+                ou seja, o FRUTO do Espírito <br>
+                é um só, mas os DONS, são muitos.
+                O FRUTO é usado para nos ajudar, <br>
+                para darmos um bom testemunho
+                de que temos o Espírito conosco. <br>
+                Os dons você pode não ter todos, 
+                mas nesta Devocional vamos usar <br>
+                frutos também para 
+                referenciar esses dons.
+                Este livro também deixa claro a  <br>
+                relação que devemos ter com nossa 
+                fé: a de liberdade vinda por meio de <br>
+                Cristo. Isso porque, mesmo após
+                a vida e morte de Jesus, muitas <br>
+                pessoas ainda achavam que para
+                ser salvas precisavam viver uma <br>
+                vida regrada de leis (construídas
+                pelos próprios homens), rituais e <br>
+                costumes considerados sagrados.
+                Nessa carta, e mais em específico, na <br>
+                base bíblica dessa devocional, Paulo
+                explica o verdadeiro significado de <br>
+                relacionamento e vida com Deus.</p>
+                <h1>Reflexão</h1>
+                <p>Quando amamos alguma coisa ou <br>
+                    alguém, queremos viver aquele amor.
+                    Estampamos em pôsteres, camisetas, <br>
+                    fotos, redes sociais, gritamos e
+                    choramos para proteger aquele amor. <br>
+                    Nós nos apegamos às coisas que
+                    amamos e essa é uma das maiores <br>
+                    características de nós como seres
+                    com almas e sentimentos. Entretanto, <br>
+                    muitas pessoas antigamente (como
+                    em Gálatas) e até mesmo hoje em dia, <br>
+                    insistem em dizer que amam a Deus,
+                    quando na verdade, não o amam. <br>
+                    Como assim? A verdade é simples
+                    e clara: quando amamos a Deus de <br>
+                    verdade, produzimos frutos! Frutos 
+                    esses que são descritos como coisas <br>
+                    boas, que fazem bem para nós e para
+                    aqueles que nos rodeiam. O que Paulo <br>
+                    quer dizer nesses versos é que quando
+                    amamos a Deus verdadeiramente, <br>
+                    plantamos coisas boas e colhemos
+                    isso através dos nossos frutos, e <br>
+                    tudo isso de forma livre, sem termos
+                    que nos apegar em leis, tradições <br>
+                    ou rituais pelo simples fato de que
+                    Jesus já morreu e ressuscitou para <br>
+                    perdoar nossos pecados e nos levar
+                    para mais perto de Deus. Jesus, em <br>
+                    vida, produziu todos esses frutos e nos
+                    ensinou através de exemplos práticos <br>
+                    como podemos viver uma vida que
+                    planta e colhe apenas frutos inspirados <br>
+                    no Amor do Pai. Não é possível que
+                    cultivemos o mesmo tipo de fruto em <br>
+                    uma única árvore (vs. 17),
+                    não existe fonte de duas águas. <br> 
+                    Cabe a nós a
+                    escolha diária de qual fruto produzir.</p>
+                    <h1>Conclusão</h1>
+                    <p>Uma vida com frutos do espírito é <br>
+                        aquela que está perto de Deus,
+                         quem anda com Jesus anda no Espírito, pois <br>
+                        tudo o que há bom dentro de nós reflete
+                        diretamente a luz dEle. Precisamos nos <br>
+                        perguntar: que tipo de fruto eu estou
+                        plantando hoje para colher amanhã? <br>
+                        Eu sou uma pessoa que transmite 
+                        paz para meu próximo? <br> Amor, alegria,
+                        fidelidade e paciência fazem parte <br>
+                        de quem eu sou, ou eu apenas estou
+                        plantando e colhendo frutos que me <br>
+                        afastam de Deus? O Pai te convida a
+                        colher os frutos do espírito todos os <br>
+                        dias! .</p>
+        </center>
+        <center>
+            <div class="anotacoes">
+               <h1>Anotações</h1>
+               <input type="text" id="input_anotacoes" placeholder="Faça suas anotações aqui..." class="input-anot">
+              <button onclick="anotar()">Ler anotação</button> <br> <br> <br>
+              <div style="color: aliceblue; font-size: larger;"> <span id="span_mensagem"></span></div>    
+            </div>
+          </center>
+</body>
+</html>
+<script>
+    var anot = [];
+   function anotar(){
+       
+       span_mensagem.innerHTML += ``
+    
+       var anotacao = input_anotacoes.value;
+
+       anot.push(anotacao);
+
+       for (let i = 0; i < anot.length; i++) {
+   
+           span_mensagem.innerHTML = `${anot[i]}`
+       }
+   }
+</script>

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./../css/estilo.css" />
 </head>
 
-<div onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica(), buscarEmocoesporId()">
+<div onload="buscarEmocoesporId()">
 
     <div class="janela">
 
@@ -22,7 +22,7 @@
             <h1>With God</h1>
 
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário!</span>!</h3>
+                <h3>Olá, <span id="b_usuario"></span>!</h3>
                 <h3> <span id="b_cpf"> </span></h3>
             </div>
             <div class="btn-nav">
@@ -56,7 +56,7 @@
             <div class="parametros-emocoes" id="div_quadro">
                 <div class="item-regua alerta-quente">
                     <img src="https://1.bp.blogspot.com/-ez7qHQUCoQU/VYl0oVdzAoI/AAAAAAAASVc/bRnMdL4ankI/s1600/Alegria__inside_out_01_joy_by_miacat7.jpg"> <br>    
-                    <a href="./quadroFeliz.html" class="button" style="color: rgb(0, 0, 0); background-color: yellow;"> Felicidade </a> <br>
+                    <a href="./quadroFeliz.html" class="button" style="color: rgb(0, 0, 0); background-color: yellow;" id="a_felicidade" onclick="feliz()"> Felicidade </a> <br>
                 </div>
                 <div class="item-regua">
                     <img src="https://s3-sa-east-1.amazonaws.com/loja2/e49633b13aba557d1a5b6d03522a8574.jpg" > <br>
@@ -108,7 +108,7 @@
             <br> - João 3:16</p> <br>
             <h2>O amor de Deus</h2>
             <a href="./leitRapida3.html">
-                <h4 style="color: #e8bc87;">clique aqui para começar!</h4>
+                <h4 style="color: #e8bc87;">Clique aqui para começar!</h4>
             </a>
         </div>
     </div> <br>
@@ -151,7 +151,7 @@
         </div>
         <div class="vida">
             <img src="./../css/intelig.jpeg" style="width: 300px; height: 290px; border-radius: 10px;">
-            <h2>Inteligência de sadeboria</h2>
+            <h2>Inteligência e sadeboria</h2>
             <a href="./vida2.html">
               <h4 style="color: #4d6152;">Clique aqui para começar!</h4>
             </a>
@@ -185,7 +185,7 @@
         <div class="estudo">
             <img src="./../css/graca.jpeg" style="width: 300px; height: 290px; border-radius: 10px;">
             <h2>o que é a Graça?</h2>
-            <a href="./estudo2.html">
+            <a href="./estudo3.html">
                 <h4 style="color: #4d6152;">Clique aqui para começar!</h4>
             </a>
         </div>
@@ -205,29 +205,13 @@
      })
    
 
-    // function exibirAquarios() {
-    //     JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-    //         document.getElementById("cardAquarios").innerHTML += `
-    //                 <div class="card-aquario">
-    //                     <div class="title-aquario">
-    //                         <h1>${item.descricao}</h1>
-    //                     </div>
-    //                     <div class="desc-aquario">
-    //                     <div class="temperatura">
-    //                         <p id="temp_aquario_${item.id}">-°C</p>
-    //                     </div>
-    //                     <div class="cor-alerta" id="card_${item.id}"></div>
-    //                 </div>
-    //                 </div>
-    //                 `
-    //     });
-    // }
-
-    function buscarEmocoesporId(){
-        var emocaoVar = req.body.emocaoServer;
-        var nomeVar = req.body.nomeServer;
+    function cadastrarEMo(){
+        var linkFelicidade = document.getElementsByName('a_felicidade');
+        var emoFeliz = linkFelicidade.getAttribute('href');
+        var nomeVar = sessionStorage.NOME_USUARIO;
         
-        fetch("/usuarios/acrescentarQ", {
+        
+        fetch("/usuarios/buscarEmoporId", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -236,13 +220,14 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
-        emocoaoServer: emocaoVar
+        emocaoServer: emoFeliz
       }),
     })
     }
 
     function obter_dados(nomeEmocao){
 
+        
         fetch("/usuarios/acrescentarQ")
         .then(resposta => {
 
@@ -262,10 +247,6 @@
     console.erro(`Erro na obtenção dos dados do usuario: ${error.message}`);
     });
 }
-
- function mostrar(resposta, nomeEmocao){
-    
- }
 
 </script>
 
