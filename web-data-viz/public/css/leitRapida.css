@@ -31,6 +31,7 @@ body {
     width: 300px;
     height: 30px;
     color: #ffffff;
+
   }
 
   .anotacoes button{
@@ -52,4 +53,9 @@ body {
  
  a{
   text-decoration: none;
+ }
+
+ .input-anot{
+  text-align: center;
+  font-size: large;
  }

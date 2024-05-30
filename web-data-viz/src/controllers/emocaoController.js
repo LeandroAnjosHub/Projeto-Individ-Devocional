@@ -1,22 +1,24 @@
 var emocaoModel = require("../models/emocaoModel");
 
-function buscarEmocoesporId(req, res){
-    var idUsuario = req.query.idUsario;
+function buscarEmoporId(req, res){
+    var idUsuario = req.body.idUsarioServer;
+    var emocao = req.body.emocaoServer;
 
-emocaoModel.buscarEmoporId(idUsuario).then((resultado) => {
+emocaoModel.buscarEmoporId(emocao, idUsuario).then((resultado) => {
     res.status(200).json(resultado);
 })
 }
 
 function cadastrarEmo(req, res){
-    var nomeEmocao = req.query.emocaoServer;
+    var emocao = req.body.emocaoServer;
+    var idUsuario = req.body.idUsuarioServer;
 
-    emocaoModel.cadastrarEmo(nomeEmocao).then((resultado) => {
+    emocaoModel.cadastrarEmo(emocao, idUsuario).then((resultado) => {
         res.status(200).json(resultado);
 })
 }
 
 module.exports = {
-    buscarEmocoesporId,
+    buscarEmoporId,
     cadastrarEmo
 }

@@ -111,6 +111,34 @@ img{
   justify-content: space-around;
 }
 
+.button{
+  display: flex;
+  cursor: pointer;
+}
+
+.alert{
+    display: flex;
+    flex-direction: row;
+    width: 380px;
+    height: 121px;
+    background-color: #212124; 
+    color: white; 
+    border: 1px solid aliceblue;
+    border-radius: 10px;
+    position: relative;
+    top: -174px;
+    left: 280px;
+  }
+
+  .alert p{
+    display: flex;
+    align-items: start;
+    font-size: large;
+    position: relative;
+    left: 15px;
+    top: -15px;
+  }
+
 .item-regua {
   /* width: 30%; */
   text-align: center;

@@ -95,8 +95,10 @@
         <center>
             <div class="anotacoes">
                <h1>Anotações</h1>
-               <input type="text" id="input_anotacoes" placeholder="Faça suas anotações aqui..." class="input-anot">
-              <button onclick="anotar()">Ler anotação</button> <br> <br> <br>
+               <p style="color: #8ba693;"> (Não se esqueça de colocar um título)</p>
+               <input type="text" id="input_titulo" placeholder="Coloque um Título..." class="input-anot"> <br> <br> <br>
+               <input type="text" id="input_anotacoes" placeholder="Faça suas anotações aqui...">
+              <button onclick="cadastrarAnot()">Ler anotação</button> <br> <br> <br>
               <div style="color: aliceblue; font-size: larger;"> <span id="span_mensagem"></span></div>    
             </div>
           </center>
@@ -105,17 +107,37 @@
 </html>
 <script>
     var anot = [];
-   function anotar(){
+   function cadastrarAnot(){
        
        span_mensagem.innerHTML += ``
     
-       var anotacao = input_anotacoes.value;
+       var descricao = input_anotacoes.value;
+       var titulo = input_titulo.value;
 
-       anot.push(anotacao);
-
-       for (let i = 0; i < anot.length; i++) {
+       anot.push(descricao);
    
-           span_mensagem.innerHTML = `${anot[i]}`
-       }
+           span_mensagem.innerHTML = `${descricao}`
+       
+           var idUsuario = sessionStorage.ID_USUARIO;
+
+        fetch("/anotacoes/cadastrarAnot", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+       body: JSON.stringify({
+         // crie um atributo que recebe o valor recuperado aqui
+         // Agora vá para o arquivo routes/usuario.js
+         descricaoServer: descricao,
+         idUsuarioServer: idUsuario,
+         tituloServer: titulo
+       }),
+     }).then((resposta)=>{
+        if(resposta.status == 200){
+            alert('Anotação cadastrada com sucesso!');
+        } else{
+            alert(resposta.status);
+        }
+     }); 
    }
 </script>

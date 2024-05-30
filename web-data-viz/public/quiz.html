@@ -22,7 +22,7 @@
             <br>
             <div id="quest1" class="alternativas">
                 <span> 1 - Qual desses <b>não</b> foi um discipulo de Jesus?</span>
-                <p><input type="radio" name="q1" value="Pedro" class="bolinha"> A) Pedro <br> </p>
+                <p><input type="radio" name="q1" value="Pedro"> A) Pedro <br> </p>
                 <p><input type="radio" name="q1" value="Tiago"> B) Tiago <br> </p>
                 <p><input type="radio" name="q1" value="Davi" id="resposta"> C) Davi <br> </p>
                 <p><input type="radio" name="q1" value="Marcos"> D) Marcos <br> <br> </p>
@@ -155,7 +155,7 @@
                 <a href="https://www.bibliaonline.com.br/ara/mt"><div id="quadroResp15"></div></a>
             </div> <br> 
             <center>
-                <button onclick="verificar()"><b>Verificar Acertos</b></button>
+                <button onclick="cadastrarqtd()"><b>Verificar Acertos</b></button>
             </center> <br> <br>
             <div id="div_mensagem" class="mensagem"></div>
         </div>
@@ -169,7 +169,7 @@
     var respCerta = ['Davi', 'Belém', 'Harpa', 'manto', 'Jesus', 'boaTerra', 'Salomão', 'Josué', 'Ped', 'Longanimidade', 'lavou', 'paraiso', 'nao a condeno', 'sou o que sou', 'leao'];
     var quantAcertos = [];
 
-    function verificar() {
+    function cadastrarqtd() {
 
         var valores = document.getElementsByName('q1');
         var respSelec = '';
@@ -397,21 +397,27 @@
         quadroResp12.innerHTML = `<div class ="quadro"> <p> Lucas 23:39-43 </p>`
         quadroResp13.innerHTML = `<div class ="quadro"> <p> João 8:1-11 </p>`
         quadroResp14.innerHTML = `<div class ="quadro"> <p> Samuel 17:34-37 </p>`
-        quadroResp15.innerHTML = `<div class ="quadro"> <p> Êxodo 3:14 </p>`        
-            
-    //         fetch("/usuarios/acrescentarQ", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     // crie um atributo que recebe o valor recuperado aqui
-    //     // Agora vá para o arquivo routes/usuario.js
-    //     qtdAcertosServer: qtdAcertosVar,
-    //     emailServer: emailVar,
-    //     senhaServer: senhaVar
-    //   }),
-    // })    
+        quadroResp15.innerHTML = `<div class ="quadro"> <p> Êxodo 3:14 </p>`
+        var idUsuario = sessionStorage.ID_USUARIO;
+       
+        fetch("/quiz/cadastrarqtd", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+       body: JSON.stringify({
+         // crie um atributo que recebe o valor recuperado aqui
+         // Agora vá para o arquivo routes/usuario.js
+         qtdAcertosServer: qtdAcertos,
+         idUsuarioServer: idUsuario
+       }),
+     }).then((resposta)=>{
+        if(resposta.status == 200){
+            alert('Quiz cadastrado com sucesso!');
+        } else{
+            alert('Erro ao cadastrar!');
+        }
+     }); 
 }
 
 </script>

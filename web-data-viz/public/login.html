@@ -138,13 +138,11 @@
                 console.log(resposta);
 
                 resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
+                    alert('Id de usuário: ' + json.idUsuario);
+                    // console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.CPF_USUARIO = json.cpf;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                    sessionStorage.ID_USUARIO = json.idUsuario;
 
                     setTimeout(function () {
                         window.location = "./dashboard/devo.html";
@@ -167,10 +165,6 @@
         })
 
         return false;
-   
-     
-   
-   
    
     }
 

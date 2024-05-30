@@ -12,7 +12,7 @@ CREATE TABLE usuario (
 
 CREATE TABLE emocoes (
 	idEmocao INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(30)
+	emocao VARCHAR(30)
 );
 
 CREATE TABLE anotacao (
@@ -25,7 +25,6 @@ CREATE TABLE anotacao (
 create table quiz (
 	idQuiz INT PRIMARY KEY AUTO_INCREMENT,
 	qtdAcertos VARCHAR(45),
-	qtdErros VARCHAR(45),
     fkUsuario INT,
 	FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
 );

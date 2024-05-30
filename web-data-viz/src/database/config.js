@@ -9,8 +9,7 @@ var mySqlConfig = {
     port: process.env.DB_PORT
 };
 
-function executar(instrucao) {
-
+function executar(instrucao, instrucao2) {
     if (process.env.AMBIENTE_PROCESSO !== "producao" && process.env.AMBIENTE_PROCESSO !== "desenvolvimento") {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM .env OU dev.env OU app.js\n");
         return Promise.reject("AMBIENTE NÃO CONFIGURADO EM .env");
@@ -19,14 +18,33 @@ function executar(instrucao) {
     return new Promise(function (resolve, reject) {
         var conexao = mysql.createConnection(mySqlConfig);
         conexao.connect();
+
+        // Executa a primeira instrução
         conexao.query(instrucao, function (erro, resultados) {
-            conexao.end();
             if (erro) {
+                conexao.end();
                 reject(erro);
+                return;
             }
             console.log(resultados);
-            resolve(resultados);
+
+            // Se instrucao2 for fornecida, executa a segunda instrução
+            if (instrucao2) {
+                conexao.query(instrucao2, function (erro2, resultados2) {
+                    conexao.end();
+                    if (erro2) {
+                        reject(erro2);
+                        return;
+                    }
+                    console.log(resultados2);
+                    resolve(resultados2);
+                });
+            } else {
+                conexao.end();
+                resolve(resultados);
+            }
         });
+
         conexao.on('error', function (erro) {
             return ("ERRO NO MySQL SERVER: ", erro.sqlMessage);
         });

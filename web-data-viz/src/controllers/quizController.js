@@ -1,13 +1,27 @@
 var quizModel = require("../models/quizModel");
 
-function buscarqtdAcertos(req, res){
-    var qtdAcertos = req.query.qtdAcertos;
+function buscarAcertosqtd(req, res){
+    var qtdAcertos = req.body.qtdAcertosServer;
 
-emocaoModel.buscarqtdAcertos(qtdAcertos).then((resultado) => {
+quizModel.buscarqtdAcertos(qtdAcertos).then((resultado) => {
     res.status(200).json(resultado);
 })
 }
+function cadastrarqtd(req, res){
+
+    var qtdAcertos = req.body.qtdAcertosServer;
+    var idUsario = req.body.idUsuarioServer;
+
+    quizModel.cadastrarqtd(qtdAcertos, idUsario).then((resultado) => {
+        res.status(200).json(resultado);
+    })
+
+}
+
+
+
 
 module.exports = {
-    buscarAcertosqtd
+    buscarAcertosqtd,
+    cadastrarqtd
 }

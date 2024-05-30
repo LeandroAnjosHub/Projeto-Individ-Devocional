@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./../css/estilo.css" />
 </head>
 
-<div onload="buscarEmocoesporId()">
+<div>
 
     <div class="janela">
 
@@ -56,26 +56,27 @@
             <div class="parametros-emocoes" id="div_quadro">
                 <div class="item-regua alerta-quente">
                     <img src="https://1.bp.blogspot.com/-ez7qHQUCoQU/VYl0oVdzAoI/AAAAAAAASVc/bRnMdL4ankI/s1600/Alegria__inside_out_01_joy_by_miacat7.jpg"> <br>    
-                    <a href="./quadroFeliz.html" class="button" style="color: rgb(0, 0, 0); background-color: yellow;" id="a_felicidade" onclick="feliz()"> Felicidade </a> <br>
+                    <span class="button" style="color: rgb(0, 0, 0); background-color: yellow;" id="a_felicidade" onclick="cadastrarEmo('felicidade')"> Felicidade </span> <br>
                 </div>
                 <div class="item-regua">
                     <img src="https://s3-sa-east-1.amazonaws.com/loja2/e49633b13aba557d1a5b6d03522a8574.jpg" > <br>
-                    <a href="./quadroTriste.html" class="button" style="color: black; background-color: blue;"> Tristeza </a> <br>
+                    <span class="button" style="color: black; background-color: blue;" onclick="cadastrarEmo('tristeza')"> Tristeza </span> <br>
                 </div>
                 <div class="item-regua">
                     <img src="https://i.pinimg.com/originals/74/74/9a/74749aebc340339b312a54f304a43f2e.jpg"> <br>
-                    <a href="./quadroRaiva.html" class="button" style="color: black; background-color: brown;"> Raiva </a> <br>
+                    <span class="button" style="color: black; background-color: brown;" onclick="cadastrarEmo('raiva')"> Raiva </span> <br>
                 </div>
                 <div class="item-regua"> 
                     <img src="https://ofuxico.com.br/wp-content/uploads/2023/11/ansiedade-divertida-mente.jpg"> <br>
-                    <a href="./quadroAnsi.html" class="button" style="color: black; background-color: chocolate;"> Ansiedade </a> <br>
+                    <span class="button" style="color: black; background-color: chocolate;" onclick="cadastrarEmo('ansiedade')"> Ansiedade </span> <br>
                 </div>
                     <div class="item-regua">
                         <img src="https://lh5.googleusercontent.com/proxy/OnkjB9uOPmvvMgq_5kXKmwBTfl7-c0Ou00w8WWvb40Wp9kJp1EWJoQvExDtaWwTr38hMKlzBOcVLkKtACfNkMcGK9w1_x6WpaMSNjr0cRdhxwYUWBqIboD8_t1jFGWb8ibNj76pj-rI"> <br>
-                        <a href="./quadroMedo.html" class="button" style="color: black; background-color: purple;">Medo</a> <br>
+                        <span class="button" style="color: black; background-color: purple;" onclick="cadastrarEmo('medo')">Medo</span> <br>
                     </div>
                 </div>
             </div>
+            <div id="div_alerta"></div>
          <br>
         <center>
             <h1 style="color: aliceblue;">Introdução</h1>
@@ -205,48 +206,47 @@
      })
    
 
-    function cadastrarEMo(){
-        var linkFelicidade = document.getElementsByName('a_felicidade');
-        var emoFeliz = linkFelicidade.getAttribute('href');
-        var nomeVar = sessionStorage.NOME_USUARIO;
-        
-        
-        fetch("/usuarios/buscarEmoporId", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
-        emocaoServer: emoFeliz
-      }),
-    })
-    }
+    function cadastrarEmo(emocao, idUsuario){
+        // var nomeVar = sessionStorage.NOME_USUARIO;
+        var idUsuario = sessionStorage.ID_USUARIO;
+        var idEmocao = sessionStorage.ID_EMOCAO;
 
-    function obter_dados(nomeEmocao){
 
-        
-        fetch("/usuarios/acrescentarQ")
-        .then(resposta => {
-
-            if(resposta.ok){
-                resposta.json().then(resposta =>{
-
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                    mostrar(resposta, nomeEmocao)
-                });
-            } else{
-
-                console.error(`Nenhum dado encontrado ou erro na API`);
+        div_alerta.innerHTML = `<div class="alert"> <p>Cadastrado<br><br><br>Indo para palavra sobre ${emocao}</p>`
+        setTimeout(()=>{
+            if(emocao == 'felicidade'){
+            window.location.href = './quadroFeliz.html'
             }
-        })
-    .catch(function(error){
-    console.erro(`Erro na obtenção dos dados do usuario: ${error.message}`);
-    });
-}
+              else if(emocao == 'tristeza'){
+                window.location.href = './quadroTriste.html'
+            } else if(emocao == 'raiva'){
+                window.location.href = './quadroRaiva.html'
+            } else if(emocao == 'ansiedade'){
+                window.location.href = './quadroAnsi.html'
+            } else if(emocao == 'medo'){
+                window.location.href = './quadroMedo.html'
+            }
+        }, 1500);
+        
+        
+         fetch("/emocoes/cadastrarEmo", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify({
+          emocaoServer: emocao,
+          idUsuarioServer: idUsuario
+         
+       }),
+     }).then((resposta) =>{
+        if(resposta.status == 200){
+            alert('Emoção cadastrada com sucesso! idUsuario: ' + idUsuario);
+        } else{
+            alert('Erro ao cadastrar!');
+        }
+     })
+    }
 
 </script>
 
