@@ -9,7 +9,7 @@ router.post("/cadastrarqtd", function (req, res) {
     quizController.cadastrarqtd(req, res);
 })
 
-router.post("/autenticarQuiz", function (req, res) {
+router.get("/buscarAcertosqtd/:idUsuario", function (req, res) {
     quizController.buscarAcertosqtd(req, res);
 });
 

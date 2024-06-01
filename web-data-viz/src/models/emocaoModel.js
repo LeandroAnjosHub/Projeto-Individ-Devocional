@@ -1,10 +1,12 @@
 var database = require("../database/config")
 
-function buscarEmoporId(idUsuario, emocao){
+function buscarEmoporId(idUsuario){
 
-    var instrucaoSql = `SELECT ${emocao}, ${idUsuario} FROM usuarioEmocao
+    var instrucaoSql = ` SELECT usuario.nome, emocoes.emocao 
+    FROM usuarioEmocao 
     JOIN emocoes ON idEmocao = fkEmocao
-     JOIN usuario ON idUsuario = ${idUsuario};`
+    JOIN usuario ON idUsuario = fkUsuario
+    WHERE idUsuario = ${idUsuario};`
 
     return database.executar(instrucaoSql)
 }

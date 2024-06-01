@@ -10,7 +10,7 @@
 
 
     <link rel="stylesheet" href="./../css/devo.css">
-    <link rel="stylesheet" href="./../css/estilo.css" />
+    <!-- <link rel="stylesheet" href="./../css/estilo.css" /> -->
 </head>
 
 <div>
@@ -212,7 +212,7 @@
         var idEmocao = sessionStorage.ID_EMOCAO;
 
 
-        div_alerta.innerHTML = `<div class="alert"> <p>Cadastrado<br><br><br>Indo para palavra sobre ${emocao}</p>`
+        div_alerta.innerHTML = `<div class="alert"> <p>Cadastrado!<br><br><br>Indo para palavra sobre ${emocao}</p>`
         setTimeout(()=>{
             if(emocao == 'felicidade'){
             window.location.href = './quadroFeliz.html'

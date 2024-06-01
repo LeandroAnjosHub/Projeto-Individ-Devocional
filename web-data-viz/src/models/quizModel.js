@@ -1,10 +1,9 @@
 var database = require("../database/config")
 
-function buscarAcertosqtd(qtdAcertos, nome){
+function buscarAcertosqtd(idUsuario){
 
-
-    var instrucaoSql = `SELECT ${nome}, ${qtdAcertos} FROM quiz JOIN 
-      usuario ON ${idUsuario} = fkUsuario;`
+    var instrucaoSql = `SELECT nome, qtdAcertos FROM quiz JOIN 
+      usuario ON idUsuario = ${idUsuario};`
 
     return database.executar(instrucaoSql)
 }

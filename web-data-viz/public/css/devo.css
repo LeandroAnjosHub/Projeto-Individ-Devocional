@@ -374,65 +374,6 @@ a{
   margin: 20px;
 }
 
-.temperatura,
-.umidade {
-  margin: 5px;
-  margin-left: 20px;
-  width: 75%;
-}
-
-.cor-alerta {
-  width: 13%;
-  height: 30%;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.btns-dash {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  padding: 0 30% 0 30%;
-}
-
-.graph {
-  width: 70%;
-  margin: auto;
-  padding-top: 10px;
-}
-
-.tituloGraficos {
-  color: rgb(216, 216, 216);
-  display: flex;
-  justify-content: center;
-}
-
-.btn-chart {
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: 0;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: #e6005a;
-  background-color: white;
-  margin: 5px;
-  border-radius: 3px;
-  cursor: pointer
-}
-
-.btn-pink {
-  color: white;
-  background-color: #e6005a;
-}
-
-.btn-white {
-  color: #e6005a;
-  background-color: white;
-
-}
-
 .label-captura {
   height: 80px;
 }
@@ -514,13 +455,16 @@ canvas {
 }
 
 .btn-nav {
-  width: 40%;
-  color: rgb(0, 0, 0);
-  background-color: #ffffff;
-  border-radius: 5px;
+  display: flex;
+  width: 150px;
+  height: 40px;
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
   text-align: center;
-  padding: 2% 5%;
-  border: 3px solid#000000;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-nav-white {
@@ -551,6 +495,7 @@ canvas {
   background-color: #000000;
   color: white;
   border-radius: 10px;
+  border: 2px solid aliceblue;
   text-align: center;
   padding: 10px 15px;
   margin-bottom: 100px;

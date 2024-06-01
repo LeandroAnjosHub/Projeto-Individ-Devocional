@@ -157,7 +157,7 @@
             <center>
                 <button onclick="cadastrarqtd()"><b>Verificar Acertos</b></button>
             </center> <br> <br>
-            <div id="div_mensagem" class="mensagem"></div>
+            <div id="div_mensagem" class="mensagem"></div><br>
         </div>
     </center>
     <div id="div_mensaResp"></div>
@@ -374,9 +374,13 @@
         } else if(qtdAcertos <= 5){
             div_mensagem.innerHTML = `Você acertou ${qtdAcertos} Questões, vamos lá amado!!`
         }
-         else if (qtdAcertos <= 14) {
+         else if (qtdAcertos <= 13) {
             div_mensagem.innerHTML = `Você acertou ${qtdAcertos} Questões!`
-        } else if (qtdAcertos == 15) {
+        }  else if(qtdAcertos == 14){
+            div_mensagem.innerHTML = `Uuuuuuh! Quase!<br> Você acertou ${qtdAcertos} Questões amado(a)!, na proxima você consegue!`
+        } 
+         
+        else if (qtdAcertos == 15) {
             div_mensagem.innerHTML = `Parabéns amado! Você acertou TODAS Questões! Jesus está contente!`
         }
         if (qtdAcertos < 1) {
