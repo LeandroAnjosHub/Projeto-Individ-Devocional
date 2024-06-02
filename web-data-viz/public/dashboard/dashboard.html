@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>With God | Gráficos</title>
 
-    
+
     <link rel="stylesheet" href="./../css/dashboards.css">
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
@@ -45,13 +45,13 @@
 
             <div class="btn-nav">
 
-                <h3>Gráficos</h3>
+                <h3>Gráficos e <br>informações</h3>
 
             </div>
 
             <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                <a href="./../quiz.html">
+                    <h3>Quiz Bíblico</h3>
                 </a>
             </div>
 
@@ -60,44 +60,50 @@
             </div>
 
         </div>
-        
+
 
         <div class="dash">
             <div id="alerta">
             </div>
 
-            <div class="btns-dash">
-                    <!-- O gráfico é chamado de acordo com o id (fk_Usuario) do banco  -->
-                    <button class="btn-chart btn-quiz" onclick="exibirDadosQuiz(1)" id="btnQuiz">Quiz</button>
-                    <button class="btn-chart btn-emocoes" onclick="exibirDadosEmocao(2)" id="btnEmocao">Emoções</button>
-            </div>
+            <div class="titulo">
+                <!-- O gráfico é chamado de acordo com o id (fk_Usuario) do banco  -->
+                <button class="btn-quiz" onclick="exibirDadosQuiz(1)" id="btnQuiz">
+                    <p style="font-size: medium;">Quiz</p>
+                </button>
+                <button class="btn-emocoes" onclick="exibirDadosEmocao(2)" id="btnEmocao">
+                    <p style="font-size: medium;">Emoções</p>
+                </button>
+            </div> <br> <br>
 
             <div id="graficos">
                 <div id="grafico1" class="display-block">
-                     
-                    <div class="graph">
-                        <canvas id="myChartCanvas1"></canvas>
-                    </div> 
-                     <div class="label-captura">
-                        <p id="avisoCaptura1" style="color: aliceblue;"></p>
-                    </div> 
-                </div>
-                <div id="grafico2" class="display-none">
-                    <h3 class="tituloGraficos">
-                        <span id="emocao"></span>
-                    </h3>
-                     <div class="graph">
-                        <canvas id="myChartCanvas2"></canvas>
-                    </div> 
+                    <center>
+                        <div id="tituloQ" class="tituloQuiz"></div>
+                    </center>
+                    <canvas id="myChartCanvas1" width="400" height="200"></canvas>
+
                     <div class="label-captura">
-                        <p id="avisoCaptura2" style="color: aliceblue"></p>
+                        <p id="avisoCaptura1" style="color: aliceblue;"></p>
                     </div>
                 </div>
+                <center>
+                    <div id="grafico2" class="display-none"> <br><br>
+                        <div id="tituloEmo"></div>
+                        <!-- <div class="area-emocoes"> -->
+                        <div class="area-info">
+                            <div id="infoEmocoes" class="informaEmo"></div>
+                            <div id="respostaEmocoes" class="emocoes"></div>
+                        </div><br><br>
+                        <div id="tabelaEmocoes" class="tebelaEmo"></div>
+                    </div>
             </div>
-        
+            </center>
         </div>
+
     </div>
-    
+    </div>
+
 
 </body>
 
@@ -105,107 +111,49 @@
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    
+
 
     let proximaAtualizacao;
 
     window.onload = obterDadosGraficos();
 
     function obterDadosGraficos() {
-        
+
         obterDadosGrafico(1)
         obterDadosGrafico1(2)
     }
 
-     function alterarTitulo(idUsuario) {
-         var tituloUsuario = document.getElementById(`tituloUsuario${idUsuario}`)
-        
-     }
+    function alterarTitulo(idUsuario) {
+        var tituloUsuario = document.getElementById(`tituloUsuario${idUsuario}`)
+
+    }
 
     function exibirDadosQuiz(idUsuario) {
-        
+
         var idUsuario = sessionStorage.ID_USUARIO;
 
         let todosOsGraficos = document.getElementById("graficos");
 
-         for (var i = 1; i <= todosOsGraficos.childElementCount; i++) {
-             // exibindo - ou não - o gráfico
-                 let elementoAtual = document.getElementById(`grafico${i}`)
-                 if (elementoAtual.classList.contains("display-block")) {
-                     elementoAtual.classList.remove("display-none")
-                 }
-                  elementoAtual.classList.add("display-block")
+        for (var i = 1; i <= todosOsGraficos.childElementCount; i++) {
+            // exibindo - ou não - o gráfico
+            let elementoAtual = document.getElementById(`grafico${i}`)
+            if (elementoAtual.classList.contains("display-block")) {
+                elementoAtual.classList.remove("display-block")
+            }
+            elementoAtual.classList.add("display-none")
+        }
 
-                    // alterando estilo do botão
-                    let btnAtual = document.getElementById(`btn${i}`)
-                    // if (btnAtual.classList.contains("btn-quiz")) {
-                        // btnAtual.classList.remove("btn-emocoes")
-                        // btnAtual.classList.add("btn-quiz")
-                    // }
-                    
-            
-         }
+        document.getElementById("grafico1").classList.remove("display-none");
+        document.getElementById("grafico1").classList.add("display-block");
 
-         // exibindo - ou não - o gráfico
-         let graficoExibir = document.getElementById(`grafico${idUsuario}`);
-        //  graficoExibir.classList.remove("btn-emocoes");
-        //  graficoExibir.classList.add("btn-quiz");
-
-         // alterando estilo do botão
-        //   let btnExibir = document.getElementById(`btn${idUsuario}`)
-        //   btnExibir.classList.remove("btn-quiz")
-        //   btnExibir.classList.add("btn-emocoes")
+        // Ativar botão de Quiz e desativar botão de Emoções
+        document.getElementById("btnQuiz").classList.add("active");
+        document.getElementById("btnEmocao").classList.remove("active");
     }
 
-    function exibirDadosEmocao(idUsuario) {
-        
-        var idUsuario = sessionStorage.ID_USUARIO;
-
-        let todosOsGraficos = document.getElementById("graficos");
-
-         for (var i = 1; i <= todosOsGraficos.childElementCount; i++) {
-             // exibindo - ou não - o gráfico
-                 let elementoAtual = document.getElementById(`grafico${i}`)
-                  if (elementoAtual.classList.contains("display-none")) {
-                     elementoAtual.classList.remove("display-block")
-                  }
-                 elementoAtual.classList.add("display-none")
-                 let btnAtual = document.getElementById(`btn${i}`)
-
-                    // alterando estilo do botão
-                    // let btnAtual = document.getElementById(`btn${i}`)
-                    // if (btnAtual.classList.contains("btn-quiz")) {
-                    //     btnAtual.classList.remove("btn-quiz")
-                    //     btnAtual.classList.add("btn-emocoes")
-                    // }
-                    
-            
-         }
-
-         // exibindo - ou não - o gráfico
-        //   let graficoExibir = document.getElementById(`grafico${idUsuario}`);
-        //   graficoExibir.classList.remove("display-none");
-        //   graficoExibir.classList.add("display-block");
-
-        //   // alterando estilo do botão
-        //    let btnExibir = document.getElementById(`btn${idUsuario}`)
-        //    btnExibir.classList.remove("btn-emocoes")
-        //    btnExibir.classList.add("btn-quiz")
-    }
-
-    // O gráfico é construído com três funções:
-    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
-    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
-    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
-
-    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de Quiz.
-    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
-    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
     function obterDadosGrafico(idUsuario) {
-        // var idUsuario = sessionStorage.ID_USUARIO;
+
+        var idUsuario = sessionStorage.ID_USUARIO;
         alterarTitulo(idUsuario)
 
         if (proximaAtualizacao != undefined) {
@@ -231,40 +179,11 @@
             });
     }
 
-    function obterDadosGrafico1(idUsuario) {
-         var idUsuario = sessionStorage.ID_USUARIO;
-        alterarTitulo(idUsuario)
-
-        if (proximaAtualizacao != undefined) {
-            clearTimeout(proximaAtualizacao);
-        }
-
-        fetch(`/emocoes/buscarEmoporId/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
-
-                    plotarGrafico1(resposta, idUsuario);
-
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-                console.error(error); // Adicione esta linha para imprimir o erro completo
-            });
-    }
-
-    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
     function plotarGrafico(resposta, idUsuario) {
 
-            
         console.log('iniciando plotagem do gráfico...');
+
+        tituloQ.innerHTML = `<p>Veja aqui as informações do seu Quiz!</p>"`
 
         // Criando estrutura para plotar gráfico - labels
         let labels = [];
@@ -280,7 +199,7 @@
                 borderColor: 'rgb(0, 0, 0)',
                 borderWidth: 1.5,
                 borderRadius: 1,
-                
+
             }]
         };
 
@@ -309,32 +228,144 @@
             data: dados,
             options: {
                 scales: {
-                y: {
-                    beginAtZero: true
-                }
-            },
-            plugins: {
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            var index = context.dataIndex;
-                            return `Tentativa ${index + 1}: Acertos:${context.parsed.y}`;
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                var index = context.dataIndex;
+                                return `Tentativa ${index + 1}: Acertos:${context.parsed.y}`;
+                            }
                         }
                     }
                 }
             }
-            }
         };
 
+        var ctx = document.getElementById('myChartCanvas1').getContext('2d');
+
         // Adicionando gráfico criado em div na tela
-        let myChart = new Chart(
-            document.getElementById(`myChartCanvas${idUsuario}`),
+        let myChart = new Chart(ctx,
             config
         );
-
-        // setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
 
         myChart.update();
     }
 
+
+    function exibirDadosEmocao(idUsuario) {
+
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        let todosOsGraficos = document.getElementById("graficos");
+
+        for (var i = 1; i <= todosOsGraficos.childElementCount; i++) {
+            // exibindo - ou não - o gráfico
+            let elementoAtual = document.getElementById(`grafico${i}`)
+            if (elementoAtual.classList.contains("display-block")) {
+                elementoAtual.classList.remove("display-block")
+            }
+            elementoAtual.classList.add("display-none")
+        }
+        // Exibir o gráfico de Emoções
+        document.getElementById("grafico2").classList.remove("display-none");
+        document.getElementById("grafico2").classList.add("display-block");
+
+        // Ativar botão de Emoções e desativar botão de Quiz
+        document.getElementById("btnEmocao").classList.add("active");
+        document.getElementById("btnQuiz").classList.remove("active");
+    }
+
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de Quiz.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+
+
+    function obterDadosGrafico1(idUsuario) {
+        var idUsuario = sessionStorage.ID_USUARIO;
+        alterarTitulo(idUsuario)
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/emocoes/buscarEmoporId/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    mostrarInfo(resposta, idUsuario);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                console.error(error); // Adicione esta linha para imprimir o erro completo
+            });
+    }
+
+    listaEmocoes = [];
+
+    //criar total felicidade, papapa
+    function mostrarInfo(resposta) {
+
+        tituloEmo.innerHTML = `<div class="tituloEmocao"><p>Veja aqui suas emoções!</p>`
+
+        console.log(`${JSON.stringify(resposta[2])}`);
+
+        var emocoes = resposta
+        var qtdFelicidade = 0;
+        var qtdTristeza = 0;
+        var qtdRaiva = 0;
+        var qtdAnsi = 0;
+        var qtdMedo = 0;
+
+        console.log(emocoes[2].emocao);
+
+        for (let i = 0; i < emocoes.length; i++) {
+            listaEmocoes.push(emocoes[i].emocao);
+        }
+        listaEmocoes.reverse();
+
+        for (let i = 0; i <= listaEmocoes.length; i++) {
+            if (listaEmocoes[i] === 'felicidade') {
+                qtdFelicidade++;
+            } else if (listaEmocoes[i] === 'tristeza') {
+                qtdTristeza++;
+            } else if (listaEmocoes[i] === 'raiva') {
+                qtdRaiva++;
+            } else if (listaEmocoes[i] === 'ansiedade') {
+                qtdAnsi++;
+            } else if (listaEmocoes[i] === 'medo') {
+                qtdMedo++;
+            }
+        }
+
+        infoEmocoes.innerHTML = `<div class="informaEmo"> Você já sentiu ${listaEmocoes.length} emoções!`
+
+        respostaEmocoes.innerHTML = `<div class="emocoes">Sentindo ${qtdFelicidade} vezes felicidade.<br>
+                                    ${qtdTristeza} vezes tristeza.<br> ${qtdRaiva} vezes raiva.<br>
+                                    ${qtdAnsi} vezes ansiedade.`;
+
+        tabelaEmocoes.innerHTML = `<div class="tabelaEmo"><b style="color: white";>Lista de todas as emoções sentidas:</b><br> ${listaEmocoes.join('<br>')}`
+    }
+
+    function limparSessao() {
+        window.location = "../login.html";
+    }
 </script>

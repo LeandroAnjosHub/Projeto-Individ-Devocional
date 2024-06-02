@@ -1,13 +1,13 @@
 var quizModel = require("../models/quizModel");
 
 function buscarAcertosqtd(req, res){
-    var qtdAcertos = req.body.qtdAcertosServer;
+    // var qtdAcertos = req.body.qtdAcertosServer;
     var idUsuario = req.params.idUsuario;
 
 
     console.log(`Recuperando últimos acertos para o usuário com ID: ${idUsuario}`);
 
-quizModel.buscarAcertosqtd(idUsuario, qtdAcertos).then((resultado) => {
+quizModel.buscarAcertosqtd(idUsuario).then((resultado) => {
    if(resultado.length > 0){
     res.status(200).json(resultado);
    } else{

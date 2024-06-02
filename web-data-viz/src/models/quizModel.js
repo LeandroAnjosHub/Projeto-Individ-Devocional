@@ -3,7 +3,7 @@ var database = require("../database/config")
 function buscarAcertosqtd(idUsuario){
 
     var instrucaoSql = `SELECT nome, qtdAcertos FROM quiz JOIN 
-      usuario ON idUsuario = ${idUsuario};`
+      usuario ON idUsuario = fkUsuario WHERE idUsuario = ${idUsuario};`
 
     return database.executar(instrucaoSql)
 }

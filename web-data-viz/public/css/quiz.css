@@ -91,11 +91,12 @@ body {
 
     .titulo p{
         display: flex;
-        color: aliceblue;
+        color: white;
         position: relative;
         top: -29px;
         left: 57px;
         font-size: xx-large;
+        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
     }
 
    

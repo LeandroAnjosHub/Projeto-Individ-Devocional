@@ -8,6 +8,7 @@ function buscarEmoporId(req, res){
 
 emocaoModel.buscarEmoporId(idUsuario, limite_dias).then((resultado) => {
     if(resultado.length > 0){
+       console.log(`\n\nDados em emoção cotroller: ${resultado}`)
         res.status(200).json(resultado);
     } else{
         res.status(204).send("Nenhum resultado encontrado!")
