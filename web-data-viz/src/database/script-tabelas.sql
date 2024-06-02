@@ -17,6 +17,7 @@ CREATE TABLE emocoes (
 
 CREATE TABLE anotacao (
 	idAnotacao INT PRIMARY KEY AUTO_INCREMENT,
+	titulo VARCHAR(30),
 	descricao VARCHAR(500),
 	fkUsuario INT,
 	FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
@@ -31,11 +32,12 @@ create table quiz (
 
 
 create table usuarioEmocao (
-	idUsuEmocao INT PRIMARY KEY AUTO_INCREMENT,
+	idUsuEmocao INT AUTO_INCREMENT,
 	fkUsuario int,
     fkEmocao int,
     foreign key (fkUsuario) references usuario (idUsuario),
-    foreign key (fkEmocao) references emocoes (idEmocao)
+    foreign key (fkEmocao) references emocoes (idEmocao),
+	primary key (idUsuEmocao fkUsuario, fkEmocao)
 );
 
 insert into usuario values 

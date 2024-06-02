@@ -335,7 +335,7 @@
         var qtdAnsi = 0;
         var qtdMedo = 0;
 
-        console.log(emocoes[2].emocao);
+        // console.log(emocoes[2].emocao);
 
         for (let i = 0; i < emocoes.length; i++) {
             listaEmocoes.push(emocoes[i].emocao);
@@ -362,7 +362,7 @@
                                     ${qtdTristeza} vezes tristeza.<br> ${qtdRaiva} vezes raiva.<br>
                                     ${qtdAnsi} vezes ansiedade.`;
 
-        tabelaEmocoes.innerHTML = `<div class="tabelaEmo"><b style="color: white";>Lista de todas as emoções sentidas:</b><br> ${listaEmocoes.join('<br>')}`
+        tabelaEmocoes.innerHTML = `<div class="tabelaEmo"><b style="color: white";>Lista de todas as emoções sentidas em sequência:</b><br> ${listaEmocoes.join('<br>')}`
     }
 
     function limparSessao() {
