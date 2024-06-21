@@ -96,7 +96,9 @@
                             <div id="respostaEmocoes" class="emocoes"></div>
                         </div><br><br>
                         <div id="tabelaEmocoes" class="tebelaEmo"></div>
+                        <canvas id="graficoPizzaEmocao" width="200" height="200"></canvas>
                     </div>
+                    
             </div>
             </center>
         </div>
@@ -115,7 +117,8 @@
 
     let proximaAtualizacao;
 
-    window.onload = obterDadosGraficos();
+    window.onload = obterDadosGraficos(); 
+    //função utilizada para obter dados das funções "exibirDadosQuiz" e "exibirDadosEmocao"
 
     function obterDadosGraficos() {
 
@@ -123,18 +126,20 @@
         obterDadosGrafico1(2)
     }
 
-    function alterarTitulo(idUsuario) {
+    function alterarTitulo(idUsuario) { //exibir os dados de acordo com o idUsuario
         var tituloUsuario = document.getElementById(`tituloUsuario${idUsuario}`)
 
     }
 
-    function exibirDadosQuiz(idUsuario) {
+    function exibirDadosQuiz(idUsuario) { //exibição dos dados do Quiz em forma de gráfico
 
         var idUsuario = sessionStorage.ID_USUARIO;
 
         let todosOsGraficos = document.getElementById("graficos");
 
-        for (var i = 1; i <= todosOsGraficos.childElementCount; i++) {
+        for (var i = 1; i <= todosOsGraficos.childElementCount; i++) { 
+        //estrutura de repetição para passar por todos os elementos dentro da div "graficos"
+        
             // exibindo - ou não - o gráfico
             let elementoAtual = document.getElementById(`grafico${i}`)
             if (elementoAtual.classList.contains("display-block")) {
@@ -149,9 +154,10 @@
         // Ativar botão de Quiz e desativar botão de Emoções
         document.getElementById("btnQuiz").classList.add("active");
         document.getElementById("btnEmocao").classList.remove("active");
-    }
+    } 
 
-    function obterDadosGrafico(idUsuario) {
+    function obterDadosGrafico(idUsuario) { 
+        //Função para obter os dados do gráfico de Quiz de acordo com o idUsuario
 
         var idUsuario = sessionStorage.ID_USUARIO;
         alterarTitulo(idUsuario)
@@ -160,6 +166,7 @@
             clearTimeout(proximaAtualizacao);
         }
 
+        //Faz uma requisição para obter os dados do Quiz
         fetch(`/quiz/buscarAcertosqtd/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
@@ -175,10 +182,11 @@
         })
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-                console.error(error); // Adicione esta linha para imprimir o erro completo
+                console.error(error); 
             });
     }
 
+    // Função para plotar o gráfico de Quiz
     function plotarGrafico(resposta, idUsuario) {
 
         console.log('iniciando plotagem do gráfico...');
@@ -222,7 +230,7 @@
         console.log(dados.datasets)
         console.log('----------------------------------------------')
 
-        // Criando estrutura para plotar gráfico - config
+        // Configuração do Gráfico
         const config = {
             type: 'bar',
             data: dados,
@@ -247,7 +255,7 @@
 
         var ctx = document.getElementById('myChartCanvas1').getContext('2d');
 
-        // Adicionando gráfico criado em div na tela
+        // Cria e adiciona o gráfico na tela
         let myChart = new Chart(ctx,
             config
         );
@@ -255,7 +263,7 @@
         myChart.update();
     }
 
-
+    //Função para exibir os dados das Emoções
     function exibirDadosEmocao(idUsuario) {
 
         var idUsuario = sessionStorage.ID_USUARIO;
@@ -282,7 +290,6 @@
     // O gráfico é construído com três funções:
     // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
     // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
-    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
 
     // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de Quiz.
     // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
@@ -291,7 +298,7 @@
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
 
-
+    // Função para obter os dados do gráfico de Emoções
     function obterDadosGrafico1(idUsuario) {
         var idUsuario = sessionStorage.ID_USUARIO;
         alterarTitulo(idUsuario)
@@ -300,6 +307,7 @@
             clearTimeout(proximaAtualizacao);
         }
 
+         // Faz uma requisição para obter os dados das Emoções
         fetch(`/emocoes/buscarEmoporId/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
@@ -319,9 +327,10 @@
             });
     }
 
+     // Variável para armazenar as emoções
     listaEmocoes = [];
 
-    //criar total felicidade, papapa
+    //// Função para mostrar as informações das emoções
     function mostrarInfo(resposta) {
 
         tituloEmo.innerHTML = `<div class="tituloEmocao"><p>Veja aqui suas emoções!</p>`
@@ -335,13 +344,13 @@
         var qtdAnsi = 0;
         var qtdMedo = 0;
 
-        // console.log(emocoes[2].emocao);
-
+         // Conta a quantidade de cada emoção
         for (let i = 0; i < emocoes.length; i++) {
             listaEmocoes.push(emocoes[i].emocao);
         }
         listaEmocoes.reverse();
 
+        // Estrutura de repetição para contar a quantidade de cada emoção
         for (let i = 0; i <= listaEmocoes.length; i++) {
             if (listaEmocoes[i] === 'felicidade') {
                 qtdFelicidade++;
@@ -358,13 +367,70 @@
 
         infoEmocoes.innerHTML = `<div class="informaEmo"> Você já sentiu ${listaEmocoes.length} emoções!`
 
-        respostaEmocoes.innerHTML = `<div class="emocoes">Sentindo ${qtdFelicidade} vezes felicidade.<br>
-                                    ${qtdTristeza} vezes tristeza.<br> ${qtdRaiva} vezes raiva.<br>
-                                    ${qtdAnsi} vezes ansiedade.`;
+        respostaEmocoes.innerHTML = `<div class="emocoes">Sentindo ${qtdFelicidade} vez(es) felicidade.<br>
+                                    ${qtdTristeza} vezes tristeza.<br> ${qtdRaiva} vez(es) raiva.<br>
+                                    ${qtdAnsi} vez(es) ansiedade <br>${qtdMedo} vez(es) medo.`;
 
         tabelaEmocoes.innerHTML = `<div class="tabelaEmo"><b style="color: white";>Lista de todas as emoções sentidas em sequência:</b><br> ${listaEmocoes.join('<br>')}`
+
+            plotarGraficoEmocoes(qtdFelicidade, qtdTristeza, qtdRaiva, qtdAnsi, qtdMedo);
     }
 
+    // Função para limpar as informações das emoções
+    function limparInfo() {
+
+    tituloEmo.innerHTML = '';
+    infoEmocoes.innerHTML = '';
+    respostaEmocoes.innerHTML = '';
+    tabelaEmocoes.innerHTML = '';
+}
+
+ //função para plotar gráfico das emoções   
+ function plotarGraficoEmocoes(felicidade, tristeza, raiva, ansiedade, medo) {
+    
+    var ctx = document.getElementById('graficoPizzaEmocao').getContext('2d');
+    
+    // Define os dados do gráfico
+    var data = {
+        labels: ['Felicidade', 'Tristeza', 'Raiva', 'Ansiedade', 'Medo'],
+        datasets: [{
+            data: [felicidade, tristeza, raiva, ansiedade, medo],
+            backgroundColor: ['#FFFF00', '#2323a3', '#a52a2a', '#d2691e', '#800080'],
+            hoverBackgroundColor: ['#FFFF66', '#6666DD', '#FF6666', '#FFB84D', '#993399']
+        }]
+    };
+
+    var options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true,
+                position: 'top',
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(emocaoItem) {
+                        return emocaoItem.label + ': ' + emocaoItem.raw;
+                    }
+                }
+            }
+        }
+    };
+
+    var graficoPizza = new Chart(ctx, {
+        type: 'pie',
+        data: data,
+        options: options
+    });
+
+    graficoPizza.update();
+}
+
+
+// Limpa as informações das emoções a cada 7 dias
+setInterval(limparInfo, 7 * 24 * 60 * 60 * 1000);
+
+    //Função para voltar para a tela de Login
     function limparSessao() {
         window.location = "../login.html";
     }

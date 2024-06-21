@@ -93,14 +93,14 @@ body {
 .display-block {
   display: block;
 }
-
+/* 
 canvas {
   display: flex;
    width: 100% !important;
   height: 100% !important;
   position: relative;
   top: -70px; 
-}
+} */
 
 /* PAGINA DOS GRÁFICOS 2023 */
 
@@ -271,7 +271,7 @@ canvas{
 .area-info{
   display: flex;
   width: 600px;
-  height: 140px;
+  height: 156px;
   background-color: #212124;
   border: 2px solid white;
   border-radius: 14px;
@@ -293,6 +293,7 @@ canvas{
   position: relative;
   top: -80px;
 }
+
 
 /* .area-emocoes{
   display: flex;
