@@ -93,14 +93,14 @@ body {
 .display-block {
   display: block;
 }
-/* 
+
 canvas {
   display: flex;
    width: 100% !important;
-  height: 100% !important;
-  position: relative;
-  top: -70px; 
-} */
+  height: auto;
+  /* position: relative;
+  top: -70px;  */
+} 
 
 /* PAGINA DOS GRÁFICOS 2023 */
 
@@ -212,11 +212,11 @@ canvas {
   cursor: pointer;
 }
 
-canvas{
+/* canvas{
   display: flex;
   width: 1000px;
   height: 700px;
-}
+} */
 
 .tituloQuiz p{
   display: flex;
@@ -294,6 +294,38 @@ canvas{
   top: -80px;
 }
 
+.tituloEm {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  font-size: xx-large;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  position: relative;
+  top: 30px;
+}
+
+/* #graficoPizzaEmocao {
+  display: flex;
+  position: relative;
+  width: 600px !important;
+  height: 600px !important;
+} */
+
+ .grafiEmo{
+  display: flex;
+  width: 660px ;
+  height: 560px ;
+  position: relative;
+  top: 50px;
+} 
+
+.percentEmo{
+  display: flex;
+  font-size: x-large;
+  color: white;
+}
 
 /* .area-emocoes{
   display: flex;

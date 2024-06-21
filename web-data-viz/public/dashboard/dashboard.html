@@ -96,9 +96,16 @@
                             <div id="respostaEmocoes" class="emocoes"></div>
                         </div><br><br>
                         <div id="tabelaEmocoes" class="tebelaEmo"></div>
-                        <canvas id="graficoPizzaEmocao" width="200" height="200"></canvas>
+                        <center>
+                            <div id="tituloE" class="tituloEm"></div>
+                        </center>
+                        <div class="grafiEmo">
+                         <canvas id="graficoPizzaEmocao"></canvas>
+                        </div>
+                        <div id="percentEm" class="percentEmo">
+
+                        </div>
                     </div>
-                    
             </div>
             </center>
         </div>
@@ -390,16 +397,20 @@
     
     var ctx = document.getElementById('graficoPizzaEmocao').getContext('2d');
     
-    // Define os dados do gráfico
+    //Titulo do Gráfico
+    tituloE.innerHTML = `Gráfico representativo das emoções sentidas!`
+    
+    // Define os dados do gráfico e as cores
     var data = {
         labels: ['Felicidade', 'Tristeza', 'Raiva', 'Ansiedade', 'Medo'],
         datasets: [{
             data: [felicidade, tristeza, raiva, ansiedade, medo],
-            backgroundColor: ['#FFFF00', '#2323a3', '#a52a2a', '#d2691e', '#800080'],
+            backgroundColor: ['#ffff00', '#2323a3', '#a52a2a', '#d2691e', '#800080'],
             hoverBackgroundColor: ['#FFFF66', '#6666DD', '#FF6666', '#FFB84D', '#993399']
         }]
     };
 
+    //Define as configurações do gráfico
     var options = {
         responsive: true,
         plugins: {
@@ -408,21 +419,27 @@
                 position: 'top',
             },
             tooltip: {
-                callbacks: {
+                callbacks: { //Personalizando o rótulo do tooltip
                     label: function(emocaoItem) {
-                        return emocaoItem.label + ': ' + emocaoItem.raw;
+                        var dataset = emocaoItem.chart.data.datasets[0]; //Pega os dados do gráfico
+                        var total = dataset.data.reduce((sum, value) => sum + value, 0); //Calcula o total das emoções sentidas (reduzindo a um único valor)
+                        var valorAtual = dataset.data[emocaoItem.dataIndex]; //Pega o valor atual da emoção
+                        var porcentagem = ((valorAtual / total) * 100).toFixed(2); //Faz o cálculo da porcentagem da emoção
+                        return emocaoItem.label + ': ' + emocaoItem.raw + ' (' + porcentagem + '%)'; //Retorna o rótulo, quantidade e a porcentagem da emoção
                     }
                 }
             }
         }
     };
 
+    //Definindo o tipo, dados e opções específicadas do gráfico
     var graficoPizza = new Chart(ctx, {
         type: 'pie',
         data: data,
         options: options
     });
 
+    //Atualizando o gráfico 
     graficoPizza.update();
 }
 
