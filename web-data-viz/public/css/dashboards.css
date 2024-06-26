@@ -327,9 +327,11 @@ canvas {
   color: white;
 }
 
-/* .area-emocoes{
+.tituloL{
   display: flex;
   position: relative;
-  top: -70px;
-
-} */
+  left: 30%;
+  font-size: xx-large;
+  color: white;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}

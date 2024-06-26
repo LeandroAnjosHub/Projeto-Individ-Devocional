@@ -7,17 +7,17 @@ body {
   background-color: hsl(7, 8%, 57%);
 }
 
-@font-face {
-  font-family: breath;
+
+  @font-face {
+  font-family: Breathing;
   src: url(../../Breathing.ttf);
-}
+} 
 
 .fontBr{
-  font-family: breath;
+  font-family: Breathing;
   color: #000000;
   width: fit-content;
   font-weight: 500;
-  
 }
 
 :root {
