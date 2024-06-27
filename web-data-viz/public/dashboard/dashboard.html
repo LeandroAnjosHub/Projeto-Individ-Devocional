@@ -285,6 +285,7 @@
         myChart.update();
     }
 
+    //Função para exibir Gráfico de PIzza do Quiz
     function plotarGraficoPizzaQ(resposta, idUsuario){
 
         var ctx = document.getElementById('graficoPizzaQ').getContext('2d');
@@ -296,15 +297,6 @@
     var qtdAcertos = +ultimaTent.qtdAcertos || 0;
     var qtdErros = +ultimaTent.qtdErros || 0;
     var totalRespostas = qtdAcertos + qtdErros;
-
-    console.log(Object.keys(ultimaTent));
-
-
-    //    for (var i = 0; i < resposta.length; i++) {
-    //      var ultimaTent = resposta[resposta.length - 1];
-    //      dados.datasets[0].data.unshift(ultimaTent.qtdAcertos);
-    //      dados.datasets[0].data.unshift(ultimaTent.qtdErros);
-    //    }
     
     // Define os dados do gráfico e as cores
     var data = {
@@ -316,7 +308,6 @@
         }]
     };
 
-    console.log(totalRespostas);
     //Define as configurações do gráfico
     var options = {
         responsive: true,
@@ -332,12 +323,13 @@
                         var label = qtdItem.chart.data.labels[qtdItem.dataIndex]; //Pega os dados do gráfico
                         var valorAtual = dataset.data[qtdItem.dataIndex]; //Pega o valor atual da emoção
                         var porcentagem = ((valorAtual / totalRespostas) * 100).toFixed(2); //Faz o cálculo da porcentagem de cada quantidade
-                        return `${label}: ${valorAtual} (${porcentagem}%)`; //Retorna o rótulo, quantidade e a porcentagem de cada quantidade
+                        return `${label}: ${valorAtual} (${porcentagem}%)`; //Retorna o rótulo, quantidade e a porcentagem dos acertos e erros
                     }
-                }
+                }     //Tudo dia 26 e 27/06
             }
         }
     };                                   
+    
     //Definindo o tipo, dados e opções específicadas do gráfico
     var graficoPizzaQu = new Chart(ctx, {
         type: 'pie',
