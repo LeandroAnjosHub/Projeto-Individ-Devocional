@@ -25,8 +25,8 @@ CREATE TABLE anotacao (
 
 create table quiz (
 	idQuiz INT PRIMARY KEY AUTO_INCREMENT,
-	qtdAcertos VARCHAR(45),
-    qtdErros VARCHAR(45),
+	qtdAcertos INT,
+    qtdErros INT,
     fkUsuario INT,
 	FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
 );
