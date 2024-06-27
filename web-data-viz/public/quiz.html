@@ -174,6 +174,7 @@
         var valores = document.getElementsByName('q1');
         var respSelec = '';
         var qtdAcertos = 0;
+        var qtdErros = 0;
 
         for (var i = 0; i < valores.length; i++) {
             if (valores[i].checked) {
@@ -184,6 +185,7 @@
             qtdAcertos++;
             quantAcertos.push(respSelec)
         } else {  
+          qtdErros++;
         }
 
         var valores2 = document.getElementsByName('q2');
@@ -197,6 +199,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+            qtdErros++;
         }
 
         var valores3 = document.getElementsByName('q3');
@@ -210,6 +213,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+            qtdErros++;
         }
 
         var valores4 = document.getElementsByName('q4');
@@ -223,6 +227,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+            qtdErros++;
         }
 
         var valores5 = document.getElementsByName('q5');
@@ -236,6 +241,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+            qtdErros++;
         }
 
         var valores6 = document.getElementsByName('q6');
@@ -249,6 +255,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+            qtdErros++;
         }
 
         var valores7 = document.getElementsByName('q7');
@@ -262,7 +269,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
-           
+            qtdErros++; 
         }
 
         var valores8 = document.getElementsByName('q8');
@@ -276,6 +283,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+            qtdErros++;
         }
 
         var valores9 = document.getElementsByName('q9');
@@ -289,6 +297,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+            qtdErros++;
         }
 
         var valores10 = document.getElementsByName('q10');
@@ -302,6 +311,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+            qtdErros++;
         }
 
         var valores11 = document.getElementsByName('q11');
@@ -315,6 +325,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+            qtdErros++;
         }
 
         var valores12 = document.getElementsByName('q12');
@@ -328,6 +339,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+            qtdErros++;
         }
 
         var valores13 = document.getElementsByName('q13');
@@ -341,6 +353,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+            qtdErros++;
         }
 
         var valores14 = document.getElementsByName('q14');
@@ -354,6 +367,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+            qtdErros++;
         }
 
         var valores15 = document.getElementsByName('q15');
@@ -367,6 +381,7 @@
         if (respCerta.indexOf(respSelec) != -1) {
             qtdAcertos++;
         } else {
+            qtdErros++;
         }
        
         if (qtdAcertos == 1) {
@@ -413,6 +428,7 @@
          // crie um atributo que recebe o valor recuperado aqui
          // Agora vá para o arquivo routes/usuario.js
          qtdAcertosServer: qtdAcertos,
+         qtdErrosServer: qtdErros,
          idUsuarioServer: idUsuario
        }),
      }).then((resposta)=>{

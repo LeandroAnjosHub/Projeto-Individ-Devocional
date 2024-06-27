@@ -212,11 +212,6 @@ canvas {
   cursor: pointer;
 }
 
-/* canvas{
-  display: flex;
-  width: 1000px;
-  height: 700px;
-} */
 
 .tituloQuiz p{
   display: flex;
@@ -633,6 +628,28 @@ canvas {
   top: -10px;
 }
 
+.grafiPizzaQ{
+  display: flex;
+  width: 660px;
+  height: 560px;
+  position: relative;
+  top: 50px;
+  justify-content: center;
+}
 
+.alinhamento{
+  display: flex;
+  height: 560px;
+  width: 100%;
+  justify-content: center;
+}
 
-
+.tituloPQ{
+  display: flex;
+  font-size: xx-large;
+  color: white;
+  align-items: center;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  justify-content: center;
+  margin-top: 20px;
+}

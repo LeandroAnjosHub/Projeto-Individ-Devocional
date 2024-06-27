@@ -20,9 +20,10 @@ quizModel.buscarAcertosqtd(idUsuario).then((resultado) => {
 function cadastrarqtd(req, res){
 
     var qtdAcertos = req.body.qtdAcertosServer;
+    var qtdErros = req.body.qtdErrosServer;
     var idUsario = req.body.idUsuarioServer;
 
-    quizModel.cadastrarqtd(qtdAcertos, idUsario).then((resultado) => {
+    quizModel.cadastrarqtd(qtdAcertos, qtdErros, idUsario).then((resultado) => {
         res.status(200).json(resultado);
     })
 
