@@ -330,8 +330,309 @@ canvas {
 .tituloL{
   display: flex;
   position: relative;
+  left: 41%;
+  font-size: 39px;
+  color: white;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}
+
+ .louvores{
+  display: flex;
+  flex-direction: row;
+}
+
+.lovAlegre{
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+}
+
+.lovAlegre h2{
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 75px;
+  top: 10px;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}
+
+.lovAlegre p{
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -10px;
+}
+
+.inframe{
+  display: flex;
+  position: relative;
+  left: 20px;
+  top: -10px;
+}
+
+.lovDia{
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-left: 70px;
+}
+
+.lovDia h2{
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 52px;
+  top: 10px;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}
+
+.lovDia p{
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -10px;
+}
+
+
+.lovAc{
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-left: 70px;
+}
+
+.lovAc h2{
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 60px;
+  top: 10px;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}
+
+.lovAc p{
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -10px;
+}
+
+.louvores-e-outros{
+  display: flex;
+  flex-direction: row;
+}
+
+.lovAd{
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-top: 70px;
+}
+
+.lovAd h2{
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 85px;
+  top: 10px;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}
+
+.lovAd p{
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -10px;
+}
+
+.lovAs{
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-top: 70px;
+  margin-left: 70px;
+}
+
+.lovAs h2{
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 85px;
+  top: 10px;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}
+
+.lovAs p{
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -10px;
+}
+
+.lovI{
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-top: 70px;
+  margin-left: 70px;
+}
+
+.lovI h2{
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 40px;
+  top: 10px;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}
+
+.lovI p{
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -10px;
+}
+
+.pregacoes{
+  display: flex;
+  flex-direction: row;
+}
+
+.tituloPreg{
+  display: flex;
+  position: relative;
   left: 30%;
   font-size: xx-large;
   color: white;
   text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  margin-top: 10px;
 }
+
+.preg1{
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-top: 10px;
+}
+
+.preg1 h2{
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 80px;
+  top: 10px;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}
+
+.preg1 p{
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -10px;
+}
+
+.preg2{
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-left: 70px;
+  margin-top: 10px;
+}
+
+.preg2 h2{
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 100px;
+  top: 10px;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}
+
+.preg2 p{
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -10px;
+}
+
+.preg3{
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-left: 70px;
+  margin-top: 10px;
+}
+
+.preg3 h2{
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 110px;
+  top: 10px;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}
+
+.preg3 p{
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -10px;
+}
+
+
+
+
