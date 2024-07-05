@@ -85,7 +85,8 @@ SELECT usuario.nome, emocoes.emocao
     JOIN usuario ON idUsuario = fkUsuario
     WHERE idUsuario = 4;
     
-    
-    
-SELECT qtdAcertos FROM quiz WHERE qtdAcertos >= 7;    
+SELECT qtdAcertos FROM quiz WHERE qtdAcertos >= 7;
+
+SELECT max(qtdAcertos), min(qtdAcertos) from quiz
+  JOIN usuario on idUsuario = fkUsuario WHERE idUsuario = 2;    
             
