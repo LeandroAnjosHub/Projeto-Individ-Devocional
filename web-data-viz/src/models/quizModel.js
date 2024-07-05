@@ -8,7 +8,6 @@ function buscarAcertosqtd(idUsuario){
     return database.executar(instrucaoSql)
 }
 
-
 function cadastrarqtd(qtdAcertos, qtdErros, idUsuario){
 
     var instrucaoSql = `INSERT INTO quiz VALUES (default, ${qtdAcertos}, ${qtdErros}, ${idUsuario});`
@@ -16,6 +15,15 @@ function cadastrarqtd(qtdAcertos, qtdErros, idUsuario){
     return database.executar(instrucaoSql)
 }
 
+function buscarMinMaxAcertos(idUsuario){
+
+  var instrucaoSql = `SELECT max(qtdAcertos), min(qtdAcertos) from quiz
+    JOIN usuario on idUsuario = fkUsuario WHERE idUsuario = ${idUsuario};`
+
+    return database.executar(instrucaoSql)
+}
+
 module.exports = {buscarAcertosqtd,
-cadastrarqtd
+cadastrarqtd,
+buscarMinMaxAcertos
 };

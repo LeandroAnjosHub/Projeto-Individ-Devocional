@@ -92,9 +92,11 @@
                     <div class="label-captura">
                         <p id="avisoCaptura1" style="color: aliceblue;"></p>
                     </div>
-                    <center>
                     <div id="tituloPQ" class="tituloPQ"></div>
-                   </center>
+                   <div  class="areaAc">
+                   <div id="quantidade1" class="quantidadeAc"></div>
+                   <div id="quantidade2" class="quantidademAc"></div>
+                </div>
                    <div class="alinhamento">
                     <div class="grafiPizzaQ">
                         <canvas id="graficoPizzaQ"></canvas>
@@ -196,6 +198,25 @@
 
                     plotarGrafico(resposta, idUsuario);
                     plotarGraficoPizzaQ(resposta, idUsuario);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                console.error(error); 
+            });
+
+            //Outra requisição para buscar quantidade mínima e máxima de acertos, 05/07
+            fetch(`/quiz/buscarMinMaxAcertos/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    mostrarMaxMix(resposta, idUsuario);
 
                 });
             } else {
@@ -339,6 +360,26 @@
 
     //Atualizando o gráfico 
     graficoPizzaQu.update();
+
+    }
+
+
+    const acertosMaxeMix = [];
+    function mostrarMaxMix(resposta){
+
+        console.log(`${JSON.stringify(resposta[0])}`);
+
+        let maxAcertos = resposta[0]['max(qtdAcertos)'];
+        let minAcertos = resposta[0]['min(qtdAcertos)'];
+    
+    // Verificando os valores de máximo e mínimo
+    console.log(`Máximo de acertos: ${maxAcertos}`);
+    console.log(`Mínimo de acertos: ${minAcertos}`);
+    
+         quantidade1.innerHTML = `MÁXIMO de acertos já obtidos: <br> <center><p>${maxAcertos}</p></center> <br>`;
+
+         quantidade2.innerHTML = `MÍNIMO de acertos já obtidos: <br> <center><p>${minAcertos}</p></center> <br>`;
+
 
     }
 

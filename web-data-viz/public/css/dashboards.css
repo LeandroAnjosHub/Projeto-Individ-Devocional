@@ -641,15 +641,68 @@ canvas {
   display: flex;
   height: 560px;
   width: 100%;
-  justify-content: center;
+  position: relative;
+  left: 200px;
+  top: -200px;
 }
 
 .tituloPQ{
   display: flex;
   font-size: xx-large;
   color: white;
-  align-items: center;
   text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
-  justify-content: center;
+  position: relative;
+  left: 240px;
   margin-top: 20px;
 }
+
+.quantidadeAc{
+  display: flex;
+  font-size: 20px;
+  color: white;
+  border: 2px solid white;
+  width: 200px;
+  height: 90px;
+  border-radius: 12px;
+  flex-direction: column;
+  position: relative;
+  left: 80%;
+}
+
+.quantidademAc{
+  display: flex;
+  font-size: 20px;
+  color: white;
+  border: 2px solid white;
+  width: 200px;
+  height: 90px;
+  border-radius: 12px;
+  flex-direction: column;
+  position: relative;
+  left: 80%;
+  top: 20px;
+}
+
+.quantidadeAc p{
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+  position: relative;
+  top: -8px;
+}
+
+.quantidademAc p{
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+  position: relative;
+  top: -8px;
+}
+
+.areaAc{
+  display: flex;
+  position: relative;
+  left: 59%;
+  width: 300px;
+  flex-direction: column;
+  top: 80px;
+}
+

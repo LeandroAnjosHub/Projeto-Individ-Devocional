@@ -13,4 +13,8 @@ router.get("/buscarAcertosqtd/:idUsuario", function (req, res) {
     quizController.buscarAcertosqtd(req, res);
 });
 
+router.get("/buscarMinMaxAcertos/:idUsuario", function (req, res) {
+    quizController.buscarMinMaxAcertos(req, res);
+});
+
 module.exports = router;
