@@ -16,9 +16,11 @@ quizModel.buscarAcertosqtd(idUsuario).then((resultado) => {
 })
 }
 
+//Tudo 05/07
+//Adicionei uma função para fazer um select onde serão exibidas a quantidade máxima e mínima de acertos do usuário 05/07
 function buscarMinMaxAcertos(req, res){
-    // var qtdAcertos = req.body.qtdAcertosServer;
-    var idUsuario = req.params.idUsuario;
+    
+    var idUsuario = req.params.idUsuario;//Parametro a ser usado na função
 
     console.log(`Recuperando mínimo e máxima qtdAcertos para o usuário com ID: ${idUsuario}`);
 

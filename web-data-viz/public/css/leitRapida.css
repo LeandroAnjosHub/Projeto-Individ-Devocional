@@ -5,12 +5,19 @@ body {
     background-color: #2d2d2d;
 }
 
+@font-face {
+  font-family: 'Breathing';
+  src: url(./../Fontes/breathing.ttf);
+}  
+
+
 .fontBr{
-    font-family: breath;
-    color: #ffffff;
-    width: fit-content;
-    font-weight: 500;
-  }
+  font-family: 'Breathing', sans-serif;
+  color: #ffffff;
+  width: fit-content;
+  font-weight: 500;
+  font-size: 40px;
+}
 
   h1{
     color: #8ba693;

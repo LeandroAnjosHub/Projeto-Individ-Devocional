@@ -31,7 +31,7 @@
 
     <div class="janela">
         <div class="header-left">
-            <h1>With God</h1>
+            <h1 class="fontBr">With God</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario"></span>!</h3>
@@ -93,15 +93,15 @@
                         <p id="avisoCaptura1" style="color: aliceblue;"></p>
                     </div>
                     <div id="tituloPQ" class="tituloPQ"></div>
-                   <div  class="areaAc">
-                   <div id="quantidade1" class="quantidadeAc"></div>
-                   <div id="quantidade2" class="quantidademAc"></div>
-                </div>
-                   <div class="alinhamento">
-                    <div class="grafiPizzaQ">
-                        <canvas id="graficoPizzaQ"></canvas>
+                    <div class="areaAc">
+                        <div id="quantidade1" class="quantidadeAc"></div>
+                        <div id="quantidade2" class="quantidademAc"></div>
                     </div>
-                   </div>
+                    <div class="alinhamento">
+                        <div class="grafiPizzaQ">
+                            <canvas id="graficoPizzaQ"></canvas>
+                        </div>
+                    </div>
                 </div>
                 <center>
                     <div id="grafico2" class="display-none"> <br><br>
@@ -116,7 +116,7 @@
                             <div id="tituloE" class="tituloEm"></div>
                         </center>
                         <div class="grafiEmo">
-                         <canvas id="graficoPizzaEmocao"></canvas>
+                            <canvas id="graficoPizzaEmocao"></canvas>
                         </div>
                         <div id="percentEm" class="percentEmo">
 
@@ -140,7 +140,7 @@
 
     let proximaAtualizacao;
 
-    window.onload = obterDadosGraficos(); 
+    window.onload = obterDadosGraficos();
     //função utilizada para obter dados das funções "exibirDadosQuiz" e "exibirDadosEmocao"
 
     function obterDadosGraficos() {
@@ -160,9 +160,9 @@
 
         let todosOsGraficos = document.getElementById("graficos");
 
-        for (var i = 1; i <= todosOsGraficos.childElementCount; i++) { 
-        //estrutura de repetição para passar por todos os elementos dentro da div "graficos"
-        
+        for (var i = 1; i <= todosOsGraficos.childElementCount; i++) {
+            //estrutura de repetição para passar por todos os elementos dentro da div "graficos"
+
             // exibindo - ou não - o gráfico
             let elementoAtual = document.getElementById(`grafico${i}`)
             if (elementoAtual.classList.contains("display-block")) {
@@ -177,9 +177,9 @@
         // Ativar botão de Quiz e desativar botão de Emoções
         document.getElementById("btnQuiz").classList.add("active");
         document.getElementById("btnEmocao").classList.remove("active");
-    } 
+    }
 
-    function obterDadosGrafico(idUsuario) { 
+    function obterDadosGrafico(idUsuario) {
         //Função para obter os dados do gráfico de Quiz de acordo com o idUsuario
 
         var idUsuario = sessionStorage.ID_USUARIO;
@@ -206,11 +206,11 @@
         })
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-                console.error(error); 
+                console.error(error);
             });
 
-            //Outra requisição para buscar quantidade mínima e máxima de acertos, 05/07
-            fetch(`/quiz/buscarMinMaxAcertos/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+        //Outra requisição para buscar quantidade mínima e máxima de acertos, 05/07
+        fetch(`/quiz/buscarMinMaxAcertos/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -225,7 +225,7 @@
         })
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-                console.error(error); 
+                console.error(error);
             });
     }
 
@@ -307,80 +307,80 @@
     }
 
     //Função para exibir Gráfico de PIzza do Quiz
-    function plotarGraficoPizzaQ(resposta, idUsuario){
+    function plotarGraficoPizzaQ(resposta, idUsuario) {
 
         var ctx = document.getElementById('graficoPizzaQ').getContext('2d');
-    
-    //Titulo do Gráfico
-    tituloPQ.innerHTML = `Gráfico representativo de erros e acertos!`
 
-    var ultimaTent = resposta[0];
-    var qtdAcertos = +ultimaTent.qtdAcertos || 0;
-    var qtdErros = +ultimaTent.qtdErros || 0;
-    var totalRespostas = qtdAcertos + qtdErros;
-    
-    // Define os dados do gráfico e as cores
-    var data = {
-        labels: ['Acertos', 'Erros'],
-        datasets: [{
-            data: [qtdAcertos, qtdErros],
-            backgroundColor: ['#176303', '#b4000e'],
-            hoverBackgroundColor: ['#2f8218', '#ea444f']
-        }]
-    };
+        //Titulo do Gráfico
+        tituloPQ.innerHTML = `Gráfico representativo de erros e acertos!`
 
-    //Define as configurações do gráfico
-    var options = {
-        responsive: true,
-        plugins: {
-            legend: {
-                display: true,
-                position: 'top',
-            },
-            tooltip: {
-                callbacks: { //Personalizando o rótulo do tooltip
-                    label: function(qtdItem) {
-                        var dataset = qtdItem.chart.data.datasets[0];
-                        var label = qtdItem.chart.data.labels[qtdItem.dataIndex]; //Pega os dados do gráfico
-                        var valorAtual = dataset.data[qtdItem.dataIndex]; //Pega o valor atual da emoção
-                        var porcentagem = ((valorAtual / totalRespostas) * 100).toFixed(2); //Faz o cálculo da porcentagem de cada quantidade
-                        return `${label}: ${valorAtual} (${porcentagem}%)`; //Retorna o rótulo, quantidade e a porcentagem dos acertos e erros
-                    }
-                }     //Tudo dia 26 e 27/06
+        var ultimaTent = resposta[0];
+        var qtdAcertos = +ultimaTent.qtdAcertos || 0;
+        var qtdErros = +ultimaTent.qtdErros || 0;
+        var totalRespostas = qtdAcertos + qtdErros;
+
+        // Define os dados do gráfico e as cores
+        var data = {
+            labels: ['Acertos', 'Erros'],
+            datasets: [{
+                data: [qtdAcertos, qtdErros],
+                backgroundColor: ['#176303', '#b4000e'],
+                hoverBackgroundColor: ['#2f8218', '#ea444f']
+            }]
+        };
+
+        //Define as configurações do gráfico
+        var options = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: { //Personalizando o rótulo do tooltip
+                        label: function (qtdItem) {
+                            var dataset = qtdItem.chart.data.datasets[0];
+                            var label = qtdItem.chart.data.labels[qtdItem.dataIndex]; //Pega os dados do gráfico
+                            var valorAtual = dataset.data[qtdItem.dataIndex]; //Pega o valor atual da emoção
+                            var porcentagem = ((valorAtual / totalRespostas) * 100).toFixed(2); //Faz o cálculo da porcentagem de cada quantidade
+                            return `${label}: ${valorAtual} (${porcentagem}%)`; //Retorna o rótulo, quantidade e a porcentagem dos acertos e erros
+                        }
+                    }     //Tudo dia 26 e 27/06
+                }
             }
-        }
-    };                                   
-    
-    //Definindo o tipo, dados e opções específicadas do gráfico
-    var graficoPizzaQu = new Chart(ctx, {
-        type: 'pie',
-        data: data,
-        options: options
-    });
+        };
 
-    //Atualizando o gráfico 
-    graficoPizzaQu.update();
+        //Definindo o tipo, dados e opções específicadas do gráfico
+        var graficoPizzaQu = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: options
+        });
+
+        //Atualizando o gráfico 
+        graficoPizzaQu.update();
 
     }
 
 
-    const acertosMaxeMix = [];
-    function mostrarMaxMix(resposta){
+    //Função para mostrar as informações da função 'mostrarMaxMix'/ Tudo 05/07
+    function mostrarMaxMix(resposta) {
 
-        console.log(`${JSON.stringify(resposta[0])}`);
+        console.log(`${JSON.stringify(resposta[0])}`);//Convertendo resposta para uma String
 
+        //Declarando variáveis de maximo e minimo
         let maxAcertos = resposta[0]['max(qtdAcertos)'];
         let minAcertos = resposta[0]['min(qtdAcertos)'];
-    
-    // Verificando os valores de máximo e mínimo
-    console.log(`Máximo de acertos: ${maxAcertos}`);
-    console.log(`Mínimo de acertos: ${minAcertos}`);
-    
-         quantidade1.innerHTML = `MÁXIMO de acertos já obtidos: <br> <center><p>${maxAcertos}</p></center> <br>`;
 
-         quantidade2.innerHTML = `MÍNIMO de acertos já obtidos: <br> <center><p>${minAcertos}</p></center> <br>`;
+        // Verificando os valores de máximo e mínimo
+        console.log(`Máximo de acertos: ${maxAcertos}`);
+        console.log(`Mínimo de acertos: ${minAcertos}`);
 
+        //Exibindo informações necessárias
+        quantidade1.innerHTML = `MÁXIMO de acertos já obtidos: <br> <center><p>${maxAcertos}</p></center> <br>`;
 
+        quantidade2.innerHTML = `MÍNIMO de acertos já obtidos: <br> <center><p>${minAcertos}</p></center> <br>`;
     }
 
     //Função para exibir os dados das Emoções
@@ -427,7 +427,7 @@
             clearTimeout(proximaAtualizacao);
         }
 
-         // Faz uma requisição para obter os dados das Emoções
+        // Faz uma requisição para obter os dados das Emoções
         fetch(`/emocoes/buscarEmoporId/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
@@ -447,7 +447,7 @@
             });
     }
 
-     // Variável para armazenar as emoções
+    // Variável para armazenar as emoções
     listaEmocoes = [];
 
     //// Função para mostrar as informações das emoções
@@ -464,7 +464,7 @@
         var qtdAnsi = 0;
         var qtdMedo = 0;
 
-         // Conta a quantidade de cada emoção
+        // Conta a quantidade de cada emoção
         for (let i = 0; i < emocoes.length; i++) {
             listaEmocoes.push(emocoes[i].emocao);
         }
@@ -493,72 +493,72 @@
 
         tabelaEmocoes.innerHTML = `<div class="tabelaEmo"><b style="color: white";>Lista de todas as emoções sentidas em sequência:</b><br> ${listaEmocoes.join('<br>')}`
 
-            plotarGraficoEmocoes(qtdFelicidade, qtdTristeza, qtdRaiva, qtdAnsi, qtdMedo);
+        plotarGraficoEmocoes(qtdFelicidade, qtdTristeza, qtdRaiva, qtdAnsi, qtdMedo);
     }
 
     // Função para limpar as informações das emoções
     function limparInfo() {
 
-    tituloEmo.innerHTML = '';
-    infoEmocoes.innerHTML = '';
-    respostaEmocoes.innerHTML = '';
-    tabelaEmocoes.innerHTML = '';
-}
+        tituloEmo.innerHTML = '';
+        infoEmocoes.innerHTML = '';
+        respostaEmocoes.innerHTML = '';
+        tabelaEmocoes.innerHTML = '';
+    }
 
- //função para plotar gráfico das emoções   
- function plotarGraficoEmocoes(felicidade, tristeza, raiva, ansiedade, medo) {
-    
-    var ctx = document.getElementById('graficoPizzaEmocao').getContext('2d');
-    
-    //Titulo do Gráfico
-    tituloE.innerHTML = `Gráfico representativo das emoções sentidas!`
-    
-    // Define os dados do gráfico e as cores
-    var data = {
-        labels: ['Felicidade', 'Tristeza', 'Raiva', 'Ansiedade', 'Medo'],
-        datasets: [{
-            data: [felicidade, tristeza, raiva, ansiedade, medo],
-            backgroundColor: ['#ffff00', '#2323a3', '#a52a2a', '#d2691e', '#800080'],
-            hoverBackgroundColor: ['#FFFF66', '#6666DD', '#FF6666', '#FFB84D', '#993399']
-        }]
-    };
+    //função para plotar gráfico das emoções   
+    function plotarGraficoEmocoes(felicidade, tristeza, raiva, ansiedade, medo) {
 
-    //Define as configurações do gráfico
-    var options = {
-        responsive: true,
-        plugins: {
-            legend: {
-                display: true,
-                position: 'top',
-            },
-            tooltip: {
-                callbacks: { //Personalizando o rótulo do tooltip
-                    label: function(emocaoItem) {
-                        var dataset = emocaoItem.chart.data.datasets[0]; //Pega os dados do gráfico
-                        var total = dataset.data.reduce((sum, value) => sum + value, 0); //Calcula o total das emoções sentidas (reduzindo a um único valor)
-                        var valorAtual = dataset.data[emocaoItem.dataIndex]; //Pega o valor atual da emoção
-                        var porcentagem = ((valorAtual / total) * 100).toFixed(2); //Faz o cálculo da porcentagem da emoção
-                        return emocaoItem.label + ': ' + emocaoItem.raw + ' (' + porcentagem + '%)'; //Retorna o rótulo, quantidade e a porcentagem da emoção
+        var ctx = document.getElementById('graficoPizzaEmocao').getContext('2d');
+
+        //Titulo do Gráfico
+        tituloE.innerHTML = `Gráfico representativo das emoções sentidas!`
+
+        // Define os dados do gráfico e as cores
+        var data = {
+            labels: ['Felicidade', 'Tristeza', 'Raiva', 'Ansiedade', 'Medo'],
+            datasets: [{
+                data: [felicidade, tristeza, raiva, ansiedade, medo],
+                backgroundColor: ['#ffff00', '#2323a3', '#a52a2a', '#d2691e', '#800080'],
+                hoverBackgroundColor: ['#FFFF66', '#6666DD', '#FF6666', '#FFB84D', '#993399']
+            }]
+        };
+
+        //Define as configurações do gráfico
+        var options = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: { //Personalizando o rótulo do tooltip
+                        label: function (emocaoItem) {
+                            var dataset = emocaoItem.chart.data.datasets[0]; //Pega os dados do gráfico
+                            var total = dataset.data.reduce((sum, value) => sum + value, 0); //Calcula o total das emoções sentidas (reduzindo a um único valor)
+                            var valorAtual = dataset.data[emocaoItem.dataIndex]; //Pega o valor atual da emoção
+                            var porcentagem = ((valorAtual / total) * 100).toFixed(2); //Faz o cálculo da porcentagem da emoção
+                            return emocaoItem.label + ': ' + emocaoItem.raw + ' (' + porcentagem + '%)'; //Retorna o rótulo, quantidade e a porcentagem da emoção
+                        }
                     }
                 }
             }
-        }
-    };
+        };
 
-    //Definindo o tipo, dados e opções específicadas do gráfico
-    var graficoPizza = new Chart(ctx, {
-        type: 'pie',
-        data: data,
-        options: options
-    });
+        //Definindo o tipo, dados e opções específicadas do gráfico
+        var graficoPizza = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: options
+        });
 
-    //Atualizando o gráfico 
-    graficoPizza.update();
-}
+        //Atualizando o gráfico 
+        graficoPizza.update();
+    }
 
 
-// Limpa as informações das emoções a cada 7 dias
-setInterval(limparInfo, 7 * 24 * 60 * 60 * 1000);
+    // Limpa as informações das emoções a cada 7 dias
+    setInterval(limparInfo, 7 * 24 * 60 * 60 * 1000);
 
     //Função para voltar para a tela de Login
     function limparSessao() {
