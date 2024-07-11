@@ -12,4 +12,9 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+//Adicionando nova função para fazer ranking, 11/07
+router.get("/buscarPontuacao/:idUsuario", function (req, res){
+    usuarioController.buscarPontuacao(req, res);
+});
+
 module.exports = router;

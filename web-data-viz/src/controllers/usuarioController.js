@@ -78,8 +78,25 @@ function cadastrar(req, res) {
             );
     }
 }
+//Adicionando a função em controller para verificar o resultado
+function buscarPontuacao(req, res){
+    
+    var idUsuario = req.params.idUsuario;//Parametro a ser usado na função
+
+    console.log(`Recuperando pontuação máxima dos usuários`);
+
+usuarioModel.buscarPontuacao(idUsuario).then((resultado) => {
+   if(resultado.length > 0){
+    res.status(200).json(resultado);
+   } else{
+    res.status(204).send("Nenhum resultado encontrado!")
+   }
+    
+})
+}
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    buscarPontuacao
 }

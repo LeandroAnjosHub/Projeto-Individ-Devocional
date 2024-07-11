@@ -80,6 +80,9 @@
                 <button class="btn-emocoes" onclick="exibirDadosEmocao(2)" id="btnEmocao">
                     <p style="font-size: medium;">Emoções</p>
                 </button>
+                <button class="btn-usuarios" onclick="exibirPontuacoes(3)" id="btnUsuarios">
+                    <p style="font-size: medium;">Ranking</p>
+                </button>
             </div> <br> <br>
 
             <div id="graficos">
@@ -147,6 +150,7 @@
 
         obterDadosGrafico(1)
         obterDadosGrafico1(2)
+        obterDadosGrafico2(3)
     }
 
     function alterarTitulo(idUsuario) { //exibir os dados de acordo com o idUsuario
@@ -559,6 +563,36 @@
 
     // Limpa as informações das emoções a cada 7 dias
     setInterval(limparInfo, 7 * 24 * 60 * 60 * 1000);
+
+    //Adicionando função para obter os dados do ranking, segundo o idUsuario, 11/07
+    function obterDadosGrafico2(idUsuario) {
+
+        var idUsuario = sessionStorage.ID_USUARIO;
+        alterarTitulo(idUsuario)
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        //Faz uma requisição para obter os dados do ranking através do select da função, 11/07
+        fetch(`/usuarios/buscarPontuacao/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    mostrarRanking(resposta, idUsuario); //Chamando outra função através dessa
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                console.error(error);
+            });
+        }
 
     //Função para voltar para a tela de Login
     function limparSessao() {

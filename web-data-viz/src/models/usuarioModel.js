@@ -22,7 +22,19 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucaoSql);
 }
 
+//Função para o Select do ranking, 11/07
+function buscarPontuacao(idUsuario){
+
+    //Executando comando 
+    var instrucaoSql = `SELECT usuario.nome, max(qtdAcertos) FROM usuario
+ JOIN quiz on idUsuario = fkUsuario GROUP BY nome;`
+  
+      //Retorna o comando executado
+      return database.executar(instrucaoSql)
+  }
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    buscarPontuacao
 };

@@ -94,6 +94,19 @@ body {
   align-items: center;
 }
 
+.btn-usuarios{
+  display: flex;
+  width: 190px;
+  height: 60px;
+  color: white;
+  background-color: #212124;
+  border: 2px solid aliceblue;
+  border-radius: 14px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
 .display-none {
   display: none;
 }
