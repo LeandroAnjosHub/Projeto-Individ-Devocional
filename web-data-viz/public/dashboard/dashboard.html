@@ -125,6 +125,10 @@
 
                         </div>
                     </div>
+                    <div class="display-none" id="tabela">
+                        <div id="tituloRank"></div>
+                        <div id="ranking"></div>
+                    </div>
             </div>
             </center>
         </div>
@@ -564,6 +568,33 @@
     // Limpa as informações das emoções a cada 7 dias
     setInterval(limparInfo, 7 * 24 * 60 * 60 * 1000);
 
+    function exibirPontuacoes(idUsuario) {
+
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        let todosOsGraficos = document.getElementById("graficos");
+
+        for (var i = 1; i <= todosOsGraficos.childElementCount; i++) {
+            //estrutura de repetição para passar por todos os elementos dentro da div "graficos"
+
+            // exibindo - ou não - o gráfico
+            let elementoAtual = document.getElementById(`grafico${i}`)
+            if (elementoAtual.classList.contains("display-block")) {
+                elementoAtual.classList.remove("display-block")
+            }
+            elementoAtual.classList.add("display-none")
+        }
+
+        document.getElementById("tabela").classList.remove("display-none");
+        document.getElementById("tabela").classList.add("display-block");
+
+        // Ativar botão de Rankinh e desativar outros botões, 12/07
+        document.getElementById("btnUsuarios").classList.add("active");
+        document.getElementById("btnEmocao").classList.remove("active");
+        document.getElementById("btnQuiz").classList.remove("active");
+
+    }
+
     //Adicionando função para obter os dados do ranking, segundo o idUsuario, 11/07
     function obterDadosGrafico2(idUsuario) {
 
@@ -579,7 +610,7 @@
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
+                    // resposta.reverse();
 
                     mostrarRanking(resposta, idUsuario); //Chamando outra função através dessa
 
@@ -592,7 +623,36 @@
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
                 console.error(error);
             });
+    }
+
+    //Função para exibir o Ranking, 12/07
+    function mostrarRanking(resposta) {
+
+        console.log(`${JSON.stringify(resposta[0])}`);//Convertendo resposta para uma String
+
+        let pontuacao = resposta[0]['max(qtdAcertos)'];
+        let nome = resposta[0]['nome'];
+
+        console.log(pontuacao);
+        console.log(nome);
+        let linha = '';
+
+        //for para exibição dos dados na tabela
+        for (let i = 0; i < resposta.length; i++) {
+            linha += `<tr> <td>${resposta[i].nome}</td>
+                      <td>${resposta[i]['max(qtdAcertos)']}</td></tr>`
         }
+
+        tituloRank.innerHTML = `Ranking de usuáris com maiores pontuações!`
+
+        //cração da tabela
+        ranking.innerHTML = `<table>
+                            <tr>
+                            <th>Nome</th><th>Pontação<th/>
+                            </tr>
+                            ${linha}
+                            </table>`                        
+    }//12/07
 
     //Função para voltar para a tela de Login
     function limparSessao() {

@@ -433,6 +433,10 @@ canvas {
   background-color: #4e4e4e;
 }
 
+.header-left .fontBr{
+  color: #cac2b5;
+}
+
 .dash-right {
   display: flex;
   width: 70%;
@@ -456,7 +460,7 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #a79986;
   font-weight: 300;
   font-size: 1.2rem;
 }

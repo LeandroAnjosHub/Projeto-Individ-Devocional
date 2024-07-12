@@ -27,7 +27,7 @@ function buscarPontuacao(idUsuario){
 
     //Executando comando 
     var instrucaoSql = `SELECT usuario.nome, max(qtdAcertos) FROM usuario
- JOIN quiz on idUsuario = fkUsuario GROUP BY nome;`
+ JOIN quiz on idUsuario = fkUsuario GROUP BY nome ORDER BY max(qtdAcertos) DESC;`//Alteração no comando para selecionar os dados do maior para menor, 12/07
   
       //Retorna o comando executado
       return database.executar(instrucaoSql)
