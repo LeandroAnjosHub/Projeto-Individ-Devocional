@@ -126,8 +126,9 @@
                         </div>
                     </div>
                     <div class="display-none" id="tabela">
-                        <div id="tituloRank"></div>
-                        <div id="ranking"></div>
+                        <div id="tituloRank" class="tituloRank"></div>
+                         <div id="ranking"></div>
+                       </div>
                     </div>
             </div>
             </center>
@@ -639,16 +640,19 @@
 
         //for para exibição dos dados na tabela
         for (let i = 0; i < resposta.length; i++) {
-            linha += `<tr> <td>${resposta[i].nome}</td>
-                      <td>${resposta[i]['max(qtdAcertos)']}</td></tr>`
+            linha += `<tr> 
+                      <td>${i + 1 + 'º'}</td>
+                      <td>${resposta[i].nome}</td>
+                      <td>${resposta[i]['max(qtdAcertos)']}</td>
+                      </tr>`
         }
 
-        tituloRank.innerHTML = `Ranking de usuáris com maiores pontuações!`
+        tituloRank.innerHTML = `Ranking de usuários com maiores pontuações!`
 
         //cração da tabela
         ranking.innerHTML = `<table>
                             <tr>
-                            <th>Nome</th><th>Pontação<th/>
+                            <th>Posição</th><th>Nome</th><th>Pontação<th/>
                             </tr>
                             ${linha}
                             </table>`                        

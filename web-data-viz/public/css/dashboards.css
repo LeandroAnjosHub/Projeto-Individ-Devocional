@@ -15,9 +15,13 @@ body {
 
 .fontBr{
   font-family: 'Breathing', sans-serif;
-  color: #000000;
+  color: #a79986;
   width: fit-content;
   font-weight: 500;
+}
+
+.header-left .fontBr{
+  color: #cac2b5;
 }
 
 .label-captura {
@@ -79,6 +83,7 @@ body {
   align-items: center;
   margin: 10px 0;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .btn-emocoes {
@@ -92,6 +97,7 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .btn-usuarios{
@@ -106,6 +112,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .display-none {
@@ -178,7 +185,7 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: white;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -198,6 +205,7 @@ canvas {
   text-align: center;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .btn-nav-white {
@@ -838,20 +846,36 @@ canvas {
   top: 80px;
 }
 
+.tituloRank{
+  display: flex;
+  font-size: xx-large;
+  color: white;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  position: relative;
+  left: 363px;
+  top: 20px;
+}
+
 table{
   background-color: #a79986;
-  border: 2px solid black;
+  border: 3px solid black;
   border-collapse: collapse;
-  width: 220px;
+  min-width: 600px;
+  font-size: 35px;
+  position: relative;
+  top: 70px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 td{
-  border: 2px solid black;
+  border: 3px solid black;
    padding: 4px; 
    text-align: center;
 }
 th{
-  border: 2px solid black;
+  border: 3px solid black;
+  background-color: #1f1d20;
+  color: #a79986;
 }
 
 
