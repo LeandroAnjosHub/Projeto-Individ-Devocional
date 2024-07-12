@@ -91,6 +91,6 @@ SELECT max(qtdAcertos), min(qtdAcertos) from quiz
   JOIN usuario on idUsuario = fkUsuario WHERE idUsuario = 2;
   
 SELECT usuario.nome, max(qtdAcertos) FROM usuario
- JOIN quiz on idUsuario = fkUsuario GROUP BY nome;
+ JOIN quiz on idUsuario = fkUsuario GROUP BY nome ORDER BY max(qtdAcertos) DESC;
   
             
