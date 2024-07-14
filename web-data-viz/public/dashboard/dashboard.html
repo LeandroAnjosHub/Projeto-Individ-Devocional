@@ -125,7 +125,7 @@
 
                         </div>
                     </div>
-                    <div class="display-none" id="tabela">
+                    <div id="grafico3" class="display-none">
                         <div id="tituloRank" class="tituloRank"></div>
                          <div id="ranking"></div>
                        </div>
@@ -569,6 +569,7 @@
     // Limpa as informações das emoções a cada 7 dias
     setInterval(limparInfo, 7 * 24 * 60 * 60 * 1000);
 
+    //Função para exibir dados do Ranking, 12/07
     function exibirPontuacoes(idUsuario) {
 
         var idUsuario = sessionStorage.ID_USUARIO;
@@ -586,8 +587,8 @@
             elementoAtual.classList.add("display-none")
         }
 
-        document.getElementById("tabela").classList.remove("display-none");
-        document.getElementById("tabela").classList.add("display-block");
+        document.getElementById("grafico3").classList.remove("display-none");
+        document.getElementById("grafico3").classList.add("display-block");
 
         // Ativar botão de Rankinh e desativar outros botões, 12/07
         document.getElementById("btnUsuarios").classList.add("active");
