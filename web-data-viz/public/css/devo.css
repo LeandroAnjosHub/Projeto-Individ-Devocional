@@ -23,7 +23,7 @@ body {
 
 .devo{
   display: flex;
-  /* width:calc(170vh - var(--tamanho-devo) - 2px); */
+   width:calc(170vh - var(--tamanho-devo) - 2px); 
   background-size: cover;
   background-color: #212124;
   float: right;

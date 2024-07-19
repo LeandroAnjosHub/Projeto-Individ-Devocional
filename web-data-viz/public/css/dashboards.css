@@ -765,6 +765,100 @@ canvas {
       left: 115px;
       top: -5px;
       }
+
+      .livrosP2{
+        display: flex;
+        flex-direction: row;
+      }
+
+      .liv4{
+        display: flex;
+        position: relative;
+        left: 100px;
+        flex-direction: column;
+        width: 340px;
+        border: solid 2px white;
+        border-radius: 14px;
+        margin-top: 30px;
+      }
+
+      .liv4 h2{
+        display: flex;
+        color: white;
+        text-decoration: none;
+        position: relative;
+        left: 30px;
+        top: 5px;
+        text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+        }
+      
+        .liv4 p{
+          display: flex;
+        font-size: large;
+        position: relative;
+        left: 115px;
+        top: -5px;
+        }
+
+        .liv5{
+          display: flex;
+          position: relative;
+          left: 100px;
+          flex-direction: column;
+          width: 340px;
+          border: solid 2px white;
+          border-radius: 14px;
+          margin-left: 70px;
+          margin-top: 30px;
+        }
+        
+          .liv5 h2{
+          display: flex;
+          color: white;
+          text-decoration: none;
+          position: relative;
+          left: 25px;
+          top: 5px;
+          text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+          }
+        
+          .liv5 p{
+            display: flex;
+          font-size: large;
+          position: relative;
+          left: 115px;
+          top: -5px;
+          }
+
+          .liv6{
+            display: flex;
+            position: relative;
+            left: 100px;
+            flex-direction: column;
+            width: 340px;
+            border: solid 2px white;
+            border-radius: 14px;
+            margin-left: 70px;
+            margin-top: 30px;
+          }
+          
+            .liv6 h2{
+            display: flex;
+            color: white;
+            text-decoration: none;
+            position: relative;
+            left: 25px;
+            top: 5px;
+            text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+            }
+          
+            .liv6 p{
+              display: flex;
+            font-size: large;
+            position: relative;
+            left: 115px;
+            top: -5px;
+            }
     
 
 
