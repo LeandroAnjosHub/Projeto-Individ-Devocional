@@ -563,6 +563,11 @@ canvas {
   flex-direction: row;
 }
 
+.pregacoes2{
+  display: flex;
+  flex-direction: row;
+}
+
 .tituloPreg{
   display: flex;
   position: relative;
@@ -655,6 +660,95 @@ canvas {
 }
 
 .preg3 p{
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -10px;
+}
+
+.preg4{
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-top: 30px;
+}
+
+.preg4 h2{
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 80px;
+  top: 10px;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}
+
+.preg4 p{
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -10px;
+}
+
+.preg5{
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-left: 70px;
+  margin-top: 30px;
+}
+
+.preg5 h2{
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 50px;
+  top: 10px;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}
+
+.preg5 p{
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -10px;
+}
+
+.preg6{
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-left: 70px;
+  margin-top: 30px;
+}
+
+.preg6 h2{
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 100px;
+  top: 10px;
+  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+}
+
+.preg6 p{
   display: flex;
   font-size: large;
   position: relative;
