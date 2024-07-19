@@ -105,6 +105,7 @@
                             <canvas id="graficoPizzaQ"></canvas>
                         </div>
                     </div>
+                    <div id="desc" class="descQ"></div>
                 </div>
                 <center>
                     <div id="grafico2" class="display-none"> <br><br>
@@ -127,12 +128,12 @@
                     </div>
                     <div id="grafico3" class="display-none">
                         <div id="tituloRank" class="tituloRank"></div>
-                         <div id="ranking"></div>
-                       </div>
+                        <div id="ranking"></div>
                     </div>
             </div>
-            </center>
         </div>
+        </center>
+    </div>
 
     </div>
     </div>
@@ -162,23 +163,30 @@
         var tituloUsuario = document.getElementById(`tituloUsuario${idUsuario}`)
 
     }
+    //Adicionando função para simplificar e esconder, ou não, cada gráfico, 18/07
+    function esconderTodosOsGraficos() {
+            let todosOsGraficos = document.getElementById("graficos");
+
+            //Removendo ou adicionando classes
+            
+            for (var i = 1; i <= todosOsGraficos.childElementCount; i++) {
+                let elementoAtual = document.getElementById(`grafico${i}`);
+                if (elementoAtual.classList.contains("display-block")) {
+                 elementoAtual.classList.remove("display-block")
+             }
+                elementoAtual.classList.remove("display-block");
+                elementoAtual.classList.add("display-none");
+            }
+        }
 
     function exibirDadosQuiz(idUsuario) { //exibição dos dados do Quiz em forma de gráfico
 
         var idUsuario = sessionStorage.ID_USUARIO;
+        esconderTodosOsGraficos();
 
         let todosOsGraficos = document.getElementById("graficos");
 
-        for (var i = 1; i <= todosOsGraficos.childElementCount; i++) {
-            //estrutura de repetição para passar por todos os elementos dentro da div "graficos"
-
-            // exibindo - ou não - o gráfico
-            let elementoAtual = document.getElementById(`grafico${i}`)
-            if (elementoAtual.classList.contains("display-block")) {
-                elementoAtual.classList.remove("display-block")
-            }
-            elementoAtual.classList.add("display-none")
-        }
+        //Removi o for para simplificar e melhorar a qualidade do código, 18/07
 
         document.getElementById("grafico1").classList.remove("display-none");
         document.getElementById("grafico1").classList.add("display-block");
@@ -186,6 +194,7 @@
         // Ativar botão de Quiz e desativar botão de Emoções
         document.getElementById("btnQuiz").classList.add("active");
         document.getElementById("btnEmocao").classList.remove("active");
+        document.getElementById("btnUsuarios").classList.remove("active");
     }
 
     function obterDadosGrafico(idUsuario) {
@@ -321,7 +330,9 @@
         var ctx = document.getElementById('graficoPizzaQ').getContext('2d');
 
         //Titulo do Gráfico
-        tituloPQ.innerHTML = `Gráfico representativo de erros e acertos!`
+        tituloPQ.innerHTML = `Gráfico representativo de erros e acertos!`;
+        //Adicionando descrição do gráfico de pizza do Quiz, 18/07
+        desc.innerHTML = `(Este gráfico mostra apenas a última tentativa de acertos)`;
 
         var ultimaTent = resposta[0];
         var qtdAcertos = +ultimaTent.qtdAcertos || 0;
@@ -396,17 +407,12 @@
     function exibirDadosEmocao(idUsuario) {
 
         var idUsuario = sessionStorage.ID_USUARIO;
+        esconderTodosOsGraficos();
 
         let todosOsGraficos = document.getElementById("graficos");
 
-        for (var i = 1; i <= todosOsGraficos.childElementCount; i++) {
-            // exibindo - ou não - o gráfico
-            let elementoAtual = document.getElementById(`grafico${i}`)
-            if (elementoAtual.classList.contains("display-block")) {
-                elementoAtual.classList.remove("display-block")
-            }
-            elementoAtual.classList.add("display-none")
-        }
+        //Removi o for para simplificar e melhorar a qualidade do código, 18/07
+
         // Exibir o gráfico de Emoções
         document.getElementById("grafico2").classList.remove("display-none");
         document.getElementById("grafico2").classList.add("display-block");
@@ -414,6 +420,7 @@
         // Ativar botão de Emoções e desativar botão de Quiz
         document.getElementById("btnEmocao").classList.add("active");
         document.getElementById("btnQuiz").classList.remove("active");
+        document.getElementById("btnUsuarios").classList.remove("active");
     }
 
     // O gráfico é construído com três funções:
@@ -570,22 +577,14 @@
     setInterval(limparInfo, 7 * 24 * 60 * 60 * 1000);
 
     //Função para exibir dados do Ranking, 12/07
-    function exibirPontuacoes(idUsuario) {
+    function exibirPontuacoes() {
 
         var idUsuario = sessionStorage.ID_USUARIO;
+        esconderTodosOsGraficos();
 
         let todosOsGraficos = document.getElementById("graficos");
 
-        for (var i = 1; i <= todosOsGraficos.childElementCount; i++) {
-            //estrutura de repetição para passar por todos os elementos dentro da div "graficos"
-
-            // exibindo - ou não - o gráfico
-            let elementoAtual = document.getElementById(`grafico${i}`)
-            if (elementoAtual.classList.contains("display-block")) {
-                elementoAtual.classList.remove("display-block")
-            }
-            elementoAtual.classList.add("display-none")
-        }
+       //Removi o for para simplificar e melhorar a qualidade do código, 18/07
 
         document.getElementById("grafico3").classList.remove("display-none");
         document.getElementById("grafico3").classList.add("display-block");
@@ -627,7 +626,7 @@
             });
     }
 
-    
+
     //Função para exibir o Ranking, 12/07
     function mostrarRanking(resposta) {
 
@@ -657,7 +656,7 @@
                             <th>Posição</th><th>Nome</th><th>Pontação<th/>
                             </tr>
                             ${linha}
-                            </table>`                        
+                            </table>`
     }//12/07
 
     //Função para voltar para a tela de Login

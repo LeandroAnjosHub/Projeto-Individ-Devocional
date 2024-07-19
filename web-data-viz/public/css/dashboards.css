@@ -984,6 +984,16 @@ canvas {
   margin-top: 20px;
 }
 
+.descQ{
+  display: flex;
+  position: relative;
+  color: white;
+  text-shadow: 1px 1px 1px  rgba(255, 255, 255, 0.3);
+  font-size: 23px;
+  top: -125px;
+  left: 250px;
+}
+
 .quantidadeAc{
   display: flex;
   font-size: 20px;

@@ -23,7 +23,7 @@ function cadastrar(nome, email, senha) {
 }
 
 //Função para o Select do ranking, 11/07
-function buscarPontuacao(idUsuario){
+function buscarPontuacao(){
 
     //Executando comando 
     var instrucaoSql = `SELECT usuario.nome, max(qtdAcertos) FROM usuario
