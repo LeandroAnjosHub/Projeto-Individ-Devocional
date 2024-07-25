@@ -11,16 +11,16 @@ body {
 @font-face {
   font-family: 'Breathing';
   src: url(./../Fontes/breathing.ttf);
-}  
+}
 
-.fontBr{
+.fontBr {
   font-family: 'Breathing', sans-serif;
   color: #a79986;
   width: fit-content;
   font-weight: 500;
 }
 
-.header-left .fontBr{
+.header-left .fontBr {
   color: #cac2b5;
 }
 
@@ -29,7 +29,7 @@ body {
   justify-content: center;
 }
 
-.titulo{
+.titulo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +66,7 @@ body {
 }
 
 .display-block .graph {
- display: flex;
+  display: flex;
 }
 
 
@@ -100,7 +100,7 @@ body {
   cursor: pointer;
 }
 
-.btn-usuarios{
+.btn-usuarios {
   display: flex;
   width: 190px;
   height: 60px;
@@ -129,11 +129,11 @@ body {
 
 canvas {
   display: flex;
-   width: 100% !important;
+  width: 100% !important;
   height: auto;
   /* position: relative;
   top: -70px;  */
-} 
+}
 
 /* PAGINA DOS GRÁFICOS 2023 */
 
@@ -247,7 +247,7 @@ canvas {
 }
 
 
-.tituloQuiz p{
+.tituloQuiz p {
   display: flex;
   align-items: center;
   text-align: center;
@@ -259,7 +259,7 @@ canvas {
   top: -50px;
 }
 
-.area-info .informaEmo{
+.area-info .informaEmo {
   display: flex;
   font-size: x-large;
   color: white;
@@ -267,7 +267,7 @@ canvas {
   top: -8px;
 }
 
-.emocoes{
+.emocoes {
   display: flex;
   font-size: large;
   color: white;
@@ -275,7 +275,7 @@ canvas {
   top: 5px;
 }
 
-.tabelaEmo{
+.tabelaEmo {
   display: flex;
   font-size: large;
   color: rgb(133, 128, 113);
@@ -291,13 +291,13 @@ canvas {
   margin-bottom: 2px;
 }
 
-.tabelaEmo b{
+.tabelaEmo b {
   display: flex;
   position: relative;
   top: 3px;
 }
 
-.area-info{
+.area-info {
   display: flex;
   width: 600px;
   height: 156px;
@@ -311,7 +311,7 @@ canvas {
   margin-top: -65px;
 }
 
-.tituloEmocao{
+.tituloEmocao {
   display: flex;
   align-items: center;
   text-align: center;
@@ -330,7 +330,7 @@ canvas {
   justify-content: center;
   color: white;
   font-size: xx-large;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
   position: relative;
   top: 30px;
 }
@@ -342,35 +342,35 @@ canvas {
   height: 600px !important;
 } */
 
- .grafiEmo{
+.grafiEmo {
   display: flex;
-  width: 660px ;
-  height: 560px ;
+  width: 660px;
+  height: 560px;
   position: relative;
   top: 50px;
-} 
+}
 
-.percentEmo{
+.percentEmo {
   display: flex;
   font-size: x-large;
   color: white;
 }
 
-.tituloL{
+.tituloL {
   display: flex;
   position: relative;
   left: 41%;
   font-size: 39px;
   color: white;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
- .louvores{
+.louvores {
   display: flex;
   flex-direction: row;
 }
 
-.lovAlegre{
+.lovAlegre {
   display: flex;
   position: relative;
   left: 100px;
@@ -380,17 +380,17 @@ canvas {
   border-radius: 14px;
 }
 
-.lovAlegre h2{
+.lovAlegre h2 {
   display: flex;
   color: white;
   text-decoration: none;
   position: relative;
   left: 75px;
   top: 10px;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-.lovAlegre p{
+.lovAlegre p {
   display: flex;
   font-size: large;
   position: relative;
@@ -398,14 +398,14 @@ canvas {
   top: -10px;
 }
 
-.inframe{
+.inframe {
   display: flex;
   position: relative;
   left: 20px;
   top: -10px;
 }
 
-.lovDia{
+.lovDia {
   display: flex;
   position: relative;
   left: 100px;
@@ -416,17 +416,17 @@ canvas {
   margin-left: 70px;
 }
 
-.lovDia h2{
+.lovDia h2 {
   display: flex;
   color: white;
   text-decoration: none;
   position: relative;
   left: 52px;
   top: 10px;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-.lovDia p{
+.lovDia p {
   display: flex;
   font-size: large;
   position: relative;
@@ -435,7 +435,7 @@ canvas {
 }
 
 
-.lovAc{
+.lovAc {
   display: flex;
   position: relative;
   left: 100px;
@@ -446,17 +446,17 @@ canvas {
   margin-left: 70px;
 }
 
-.lovAc h2{
+.lovAc h2 {
   display: flex;
   color: white;
   text-decoration: none;
   position: relative;
   left: 60px;
   top: 10px;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-.lovAc p{
+.lovAc p {
   display: flex;
   font-size: large;
   position: relative;
@@ -464,12 +464,12 @@ canvas {
   top: -10px;
 }
 
-.louvores-e-outros{
+.louvores-e-outros {
   display: flex;
   flex-direction: row;
 }
 
-.lovAd{
+.lovAd {
   display: flex;
   position: relative;
   left: 100px;
@@ -480,17 +480,17 @@ canvas {
   margin-top: 70px;
 }
 
-.lovAd h2{
+.lovAd h2 {
   display: flex;
   color: white;
   text-decoration: none;
   position: relative;
   left: 85px;
   top: 10px;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-.lovAd p{
+.lovAd p {
   display: flex;
   font-size: large;
   position: relative;
@@ -498,7 +498,7 @@ canvas {
   top: -10px;
 }
 
-.lovAs{
+.lovAs {
   display: flex;
   position: relative;
   left: 100px;
@@ -510,17 +510,17 @@ canvas {
   margin-left: 70px;
 }
 
-.lovAs h2{
+.lovAs h2 {
   display: flex;
   color: white;
   text-decoration: none;
   position: relative;
   left: 85px;
   top: 10px;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-.lovAs p{
+.lovAs p {
   display: flex;
   font-size: large;
   position: relative;
@@ -528,7 +528,7 @@ canvas {
   top: -10px;
 }
 
-.lovI{
+.lovI {
   display: flex;
   position: relative;
   left: 100px;
@@ -540,17 +540,17 @@ canvas {
   margin-left: 70px;
 }
 
-.lovI h2{
+.lovI h2 {
   display: flex;
   color: white;
   text-decoration: none;
   position: relative;
   left: 40px;
   top: 10px;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-.lovI p{
+.lovI p {
   display: flex;
   font-size: large;
   position: relative;
@@ -558,27 +558,27 @@ canvas {
   top: -10px;
 }
 
-.pregacoes{
+.pregacoes {
   display: flex;
   flex-direction: row;
 }
 
-.pregacoes2{
+.pregacoes2 {
   display: flex;
   flex-direction: row;
 }
 
-.tituloPreg{
+.tituloPreg {
   display: flex;
   position: relative;
   left: 30%;
   font-size: xx-large;
   color: white;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
   margin-top: 10px;
 }
 
-.preg1{
+.preg1 {
   display: flex;
   position: relative;
   left: 100px;
@@ -589,17 +589,17 @@ canvas {
   margin-top: 10px;
 }
 
-.preg1 h2{
+.preg1 h2 {
   display: flex;
   color: white;
   text-decoration: none;
   position: relative;
   left: 80px;
   top: 10px;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-.preg1 p{
+.preg1 p {
   display: flex;
   font-size: large;
   position: relative;
@@ -607,7 +607,7 @@ canvas {
   top: -10px;
 }
 
-.preg2{
+.preg2 {
   display: flex;
   position: relative;
   left: 100px;
@@ -619,17 +619,17 @@ canvas {
   margin-top: 10px;
 }
 
-.preg2 h2{
+.preg2 h2 {
   display: flex;
   color: white;
   text-decoration: none;
   position: relative;
   left: 100px;
   top: 10px;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-.preg2 p{
+.preg2 p {
   display: flex;
   font-size: large;
   position: relative;
@@ -637,7 +637,7 @@ canvas {
   top: -10px;
 }
 
-.preg3{
+.preg3 {
   display: flex;
   position: relative;
   left: 100px;
@@ -649,17 +649,17 @@ canvas {
   margin-top: 10px;
 }
 
-.preg3 h2{
+.preg3 h2 {
   display: flex;
   color: white;
   text-decoration: none;
   position: relative;
   left: 110px;
   top: 10px;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-.preg3 p{
+.preg3 p {
   display: flex;
   font-size: large;
   position: relative;
@@ -667,7 +667,7 @@ canvas {
   top: -10px;
 }
 
-.preg4{
+.preg4 {
   display: flex;
   position: relative;
   left: 100px;
@@ -678,17 +678,17 @@ canvas {
   margin-top: 30px;
 }
 
-.preg4 h2{
+.preg4 h2 {
   display: flex;
   color: white;
   text-decoration: none;
   position: relative;
   left: 80px;
   top: 10px;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-.preg4 p{
+.preg4 p {
   display: flex;
   font-size: large;
   position: relative;
@@ -696,7 +696,7 @@ canvas {
   top: -10px;
 }
 
-.preg5{
+.preg5 {
   display: flex;
   position: relative;
   left: 100px;
@@ -708,17 +708,17 @@ canvas {
   margin-top: 30px;
 }
 
-.preg5 h2{
+.preg5 h2 {
   display: flex;
   color: white;
   text-decoration: none;
   position: relative;
   left: 50px;
   top: 10px;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-.preg5 p{
+.preg5 p {
   display: flex;
   font-size: large;
   position: relative;
@@ -726,7 +726,7 @@ canvas {
   top: -10px;
 }
 
-.preg6{
+.preg6 {
   display: flex;
   position: relative;
   left: 100px;
@@ -738,17 +738,17 @@ canvas {
   margin-top: 30px;
 }
 
-.preg6 h2{
+.preg6 h2 {
   display: flex;
   color: white;
   text-decoration: none;
   position: relative;
   left: 100px;
   top: 10px;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-.preg6 p{
+.preg6 p {
   display: flex;
   font-size: large;
   position: relative;
@@ -756,22 +756,22 @@ canvas {
   top: -10px;
 }
 
-.livros{
+.livros {
   display: flex;
   flex-direction: row;
 }
 
-.tituloLiv{
+.tituloLiv {
   display: flex;
   position: relative;
   left: 37%;
   font-size: xx-large;
   color: white;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
   margin-top: 10px;
 }
 
-.liv1{
+.liv1 {
   display: flex;
   position: relative;
   left: 100px;
@@ -782,181 +782,283 @@ canvas {
   margin-top: 10px;
 }
 
-  .liv1 h2{
+.liv1 h2 {
   display: flex;
   color: white;
   text-decoration: none;
   position: relative;
   left: 15px;
   top: 5px;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
-  }
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
 
-  .liv1 p{
-    display: flex;
+.liv1 p {
+  display: flex;
   font-size: large;
   position: relative;
   left: 115px;
   top: -5px;
-  }
+}
 
-  .liv2{
-    display: flex;
-    position: relative;
-    left: 100px;
-    flex-direction: column;
-    width: 340px;
-    border: solid 2px white;
-    border-radius: 14px;
-    margin-left: 70px;
-    margin-top: 10px;
-  }
-  
-    .liv2 h2{
-    display: flex;
-    color: white;
-    text-decoration: none;
-    position: relative;
-    left: 85px;
-    top: 5px;
-    text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
-    }
-  
-    .liv2 p{
-      display: flex;
-    font-size: large;
-    position: relative;
-    left: 115px;
-    top: -5px;
-    }
-  
-    .liv3{
-      display: flex;
-      position: relative;
-      left: 100px;
-      flex-direction: column;
-      width: 340px;
-      border: solid 2px white;
-      border-radius: 14px;
-      margin-left: 70px;
-      margin-top: 10px;
-    }
-    
-      .liv3 h2{
-      display: flex;
-      color: white;
-      text-decoration: none;
-      position: relative;
-      left: 80px;
-      top: 5px;
-      text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
-      }
-    
-      .liv3 p{
-        display: flex;
-      font-size: large;
-      position: relative;
-      left: 115px;
-      top: -5px;
-      }
+.liv2 {
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-left: 70px;
+  margin-top: 10px;
+}
 
-      .livrosP2{
-        display: flex;
-        flex-direction: row;
-      }
+.liv2 h2 {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 85px;
+  top: 5px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
 
-      .liv4{
-        display: flex;
-        position: relative;
-        left: 100px;
-        flex-direction: column;
-        width: 340px;
-        border: solid 2px white;
-        border-radius: 14px;
-        margin-top: 30px;
-      }
+.liv2 p {
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -5px;
+}
 
-      .liv4 h2{
-        display: flex;
-        color: white;
-        text-decoration: none;
-        position: relative;
-        left: 30px;
-        top: 5px;
-        text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
-        }
-      
-        .liv4 p{
-          display: flex;
-        font-size: large;
-        position: relative;
-        left: 115px;
-        top: -5px;
-        }
+.liv3 {
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-left: 70px;
+  margin-top: 10px;
+}
 
-        .liv5{
-          display: flex;
-          position: relative;
-          left: 100px;
-          flex-direction: column;
-          width: 340px;
-          border: solid 2px white;
-          border-radius: 14px;
-          margin-left: 70px;
-          margin-top: 30px;
-        }
-        
-          .liv5 h2{
-          display: flex;
-          color: white;
-          text-decoration: none;
-          position: relative;
-          left: 25px;
-          top: 5px;
-          text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
-          }
-        
-          .liv5 p{
-            display: flex;
-          font-size: large;
-          position: relative;
-          left: 115px;
-          top: -5px;
-          }
+.liv3 h2 {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 80px;
+  top: 5px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
 
-          .liv6{
-            display: flex;
-            position: relative;
-            left: 100px;
-            flex-direction: column;
-            width: 340px;
-            border: solid 2px white;
-            border-radius: 14px;
-            margin-left: 70px;
-            margin-top: 30px;
-          }
-          
-            .liv6 h2{
-            display: flex;
-            color: white;
-            text-decoration: none;
-            position: relative;
-            left: 25px;
-            top: 5px;
-            text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
-            }
-          
-            .liv6 p{
-              display: flex;
-            font-size: large;
-            position: relative;
-            left: 115px;
-            top: -5px;
-            }
-    
+.liv3 p {
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -5px;
+}
 
+.livrosP2 {
+  display: flex;
+  flex-direction: row;
+}
 
-.grafiPizzaQ{
+.liv4 {
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-top: 30px;
+}
+
+.liv4 h2 {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 30px;
+  top: 5px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.liv4 p {
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -5px;
+}
+
+.liv5 {
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-left: 70px;
+  margin-top: 30px;
+}
+
+.liv5 h2 {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 25px;
+  top: 5px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.liv5 p {
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -5px;
+}
+
+.liv6 {
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-left: 70px;
+  margin-top: 30px;
+}
+
+.liv6 h2 {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 25px;
+  top: 5px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.liv6 p {
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 115px;
+  top: -5px;
+}
+
+.tituloFil {
+  display: flex;
+  position: relative;
+  left: 37%;
+  font-size: xx-large;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+  margin-top: 10px;
+}
+
+.filmes {
+  display: flex;
+  flex-direction: row;
+}
+
+.fil1 {
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-top: 10px;
+}
+
+.fil1 h2 {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 90px;
+  top: 5px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.fil1 p {
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 100px;
+  top: -5px;
+}
+
+.fil2 {
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-top: 10px;
+  margin-left: 70px;
+}
+
+.fil2 h2 {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 55px;
+  top: 5px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.fil2 p {
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 100px;
+  top: -5px;
+}
+
+.fil3 {
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-top: 10px;
+  margin-left: 70px;
+}
+
+.fil3 h2 {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 110px;
+  top: 5px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.fil3 p {
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 100px;
+  top: -5px;
+}
+
+.grafiPizzaQ {
   display: flex;
   width: 660px;
   height: 560px;
@@ -965,7 +1067,7 @@ canvas {
   justify-content: center;
 }
 
-.alinhamento{
+.alinhamento {
   display: flex;
   height: 560px;
   width: 100%;
@@ -974,27 +1076,27 @@ canvas {
   top: -200px;
 }
 
-.tituloPQ{
+.tituloPQ {
   display: flex;
   font-size: xx-large;
   color: white;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
   position: relative;
   left: 240px;
   margin-top: 20px;
 }
 
-.descQ{
+.descQ {
   display: flex;
   position: relative;
   color: white;
-  text-shadow: 1px 1px 1px  rgba(255, 255, 255, 0.3);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
   font-size: 23px;
   top: -125px;
   left: 250px;
 }
 
-.quantidadeAc{
+.quantidadeAc {
   display: flex;
   font-size: 20px;
   color: white;
@@ -1007,7 +1109,7 @@ canvas {
   left: 80%;
 }
 
-.quantidademAc{
+.quantidademAc {
   display: flex;
   font-size: 20px;
   color: white;
@@ -1021,21 +1123,21 @@ canvas {
   top: 20px;
 }
 
-.quantidadeAc p{
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+.quantidadeAc p {
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
   font-weight: bold;
   position: relative;
   top: -8px;
 }
 
-.quantidademAc p{
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+.quantidademAc p {
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
   font-weight: bold;
   position: relative;
   top: -8px;
 }
 
-.areaAc{
+.areaAc {
   display: flex;
   position: relative;
   left: 59%;
@@ -1044,17 +1146,17 @@ canvas {
   top: 80px;
 }
 
-.tituloRank{
+ .tituloRank {
   display: flex;
   font-size: xx-large;
   color: white;
-  text-shadow: 2px 2px 4px  rgba(255, 255, 255, 0.3);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
   position: relative;
   left: 363px;
   top: 20px;
 }
 
-table{
+table {
   background-color: #a79986;
   border: 3px solid black;
   border-collapse: collapse;
@@ -1065,15 +1167,14 @@ table{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-td{
+td {
   border: 3px solid black;
-   padding: 4px; 
-   text-align: center;
+  padding: 4px;
+  text-align: center;
 }
-th{
+
+th {
   border: 3px solid black;
   background-color: #1f1d20;
   color: #a79986;
 }
-
-

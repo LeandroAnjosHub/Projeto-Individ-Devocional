@@ -56,7 +56,7 @@
             </div>
 
             <div class="btn-nav-white">
-                <a href="./../pagLouvor.html">
+                <a href="./../cantinhoGosp.html"> <!-- Mudança do nome da página-->
                     <h3>Cantinho Gospel</h3>
                 </a>
             </div>
@@ -123,7 +123,6 @@
                             <canvas id="graficoPizzaEmocao"></canvas>
                         </div>
                         <div id="percentEm" class="percentEmo">
-
                         </div>
                     </div>
                     <div id="grafico3" class="display-none">
@@ -133,9 +132,6 @@
             </div>
         </div>
         </center>
-    </div>
-
-    </div>
     </div>
 
 
@@ -171,9 +167,6 @@
             
             for (var i = 1; i <= todosOsGraficos.childElementCount; i++) {
                 let elementoAtual = document.getElementById(`grafico${i}`);
-                if (elementoAtual.classList.contains("display-block")) {
-                 elementoAtual.classList.remove("display-block")
-             }
                 elementoAtual.classList.remove("display-block");
                 elementoAtual.classList.add("display-none");
             }
@@ -580,7 +573,7 @@
     function exibirPontuacoes() {
 
         var idUsuario = sessionStorage.ID_USUARIO;
-        esconderTodosOsGraficos();
+
 
         let todosOsGraficos = document.getElementById("graficos");
 
@@ -588,6 +581,8 @@
 
         document.getElementById("grafico3").classList.remove("display-none");
         document.getElementById("grafico3").classList.add("display-block");
+
+        esconderTodosOsGraficos();
 
         // Ativar botão de Rankinh e desativar outros botões, 12/07
         document.getElementById("btnUsuarios").classList.add("active");
