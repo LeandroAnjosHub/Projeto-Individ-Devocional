@@ -1058,6 +1058,101 @@ canvas {
   top: -5px;
 }
 
+.filmes2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.fil4 {
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-top: 20px;
+}
+
+.fil4 h2 {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 65px;
+  top: 5px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.fil4 p {
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 100px;
+  top: -5px;
+}
+
+.fil5 {
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-top: 20px;
+  margin-left: 70px;
+}
+
+.fil5 h2 {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 55px;
+  top: 5px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.fil5 p {
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 100px;
+  top: -5px;
+}
+
+.fil6 {
+  display: flex;
+  position: relative;
+  left: 100px;
+  flex-direction: column;
+  width: 340px;
+  border: solid 2px white;
+  border-radius: 14px;
+  margin-top: 20px;
+  margin-left: 70px;
+}
+
+.fil6 h2 {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 85px;
+  top: 5px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.fil6 p {
+  display: flex;
+  font-size: large;
+  position: relative;
+  left: 100px;
+  top: -5px;
+}
+
+
 .grafiPizzaQ {
   display: flex;
   width: 660px;
