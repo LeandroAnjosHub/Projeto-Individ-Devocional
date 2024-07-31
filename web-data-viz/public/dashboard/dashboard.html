@@ -183,6 +183,12 @@
         document.getElementById("grafico1").classList.remove("display-none");
         document.getElementById("grafico1").classList.add("display-block");
 
+        //Adicionando lógica para resolver problema do ranking, 31/07
+        if(document.getElementById("grafico3").classList.contains("display-block")){
+            document.getElementById("grafico3").classList.remove("display-block");
+            document.getElementById("grafico3").classList.add("display-none");
+        }
+        
         // Ativar botão de Quiz e desativar botão de Emoções
         document.getElementById("btnQuiz").classList.add("active");
         document.getElementById("btnEmocao").classList.remove("active");
@@ -399,6 +405,7 @@
     function exibirDadosEmocao(idUsuario) {
 
         var idUsuario = sessionStorage.ID_USUARIO;
+
         esconderTodosOsGraficos();
 
         let todosOsGraficos = document.getElementById("graficos");
@@ -408,6 +415,12 @@
         // Exibir o gráfico de Emoções
         document.getElementById("grafico2").classList.remove("display-none");
         document.getElementById("grafico2").classList.add("display-block");
+
+        //Adicionando lógica para resolver problema do ranking, 31/07
+        if(document.getElementById("grafico3").classList.contains("display-block")){
+            document.getElementById("grafico3").classList.remove("display-block");
+            document.getElementById("grafico3").classList.add("display-none");
+        }
 
         // Ativar botão de Emoções e desativar botão de Quiz
         document.getElementById("btnEmocao").classList.add("active");
@@ -572,7 +585,6 @@
     function exibirPontuacoes() {
 
         var idUsuario = sessionStorage.ID_USUARIO;
-
 
         let todosOsGraficos = document.getElementById("graficos");
 
